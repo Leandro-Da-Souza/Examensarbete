@@ -8,25 +8,26 @@
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import db from './db'
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+export default {
+  mounted() {
+    console.log(db)
   }
 }
+
+</script>
+
+<style lang="scss">
+@import './variables';
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: $global-font-family;
+    letter-spacing: 6%;
+    color: $global-font-color;
+    background-color: $global-bg-color;
+  }
 </style>
