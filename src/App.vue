@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Nav/>
     <Home/>
     <About/>
     <Services/>
@@ -11,6 +12,7 @@ import db from './db'
 import Home from './views/Home'
 import About from './views/About'
 import Services from './views/Services'
+import Nav from './components/Nav'
 
 export default {
   mounted() {
@@ -19,7 +21,8 @@ export default {
   components: {
     About,
     Home,
-    Services
+    Services,
+    Nav
   }
 }
 
