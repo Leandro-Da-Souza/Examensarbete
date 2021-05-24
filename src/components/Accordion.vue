@@ -1,9 +1,9 @@
 <template>
   <div class="accordion-wrapper">
       <div class="title-container">
-        <h2>{{title}}</h2>
-        <i class="fas fa-arrow-circle-down" @click="toggle = !toggle" v-if="!toggle"></i>
-        <i class="fas fa-arrow-circle-up" @click="toggle = !toggle" v-else></i>
+        <h3>{{title}}</h3>
+        <i class="fas fa-arrow-circle-down fa-lg" @click="toggle = !toggle" v-if="!toggle"></i>
+        <i class="fas fa-arrow-circle-up fa-lg" @click="toggle = !toggle" v-else></i>
       </div>
     <div class="content-container" v-if="toggle">
         <p>{{content}}</p>
@@ -42,18 +42,29 @@ export default {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    margin-bottom: 10px;
+    width: 90%;
     .title-container {
         background-color: $global-green-color;
         display: flex;
         justify-content: space-between;
         width: 100%;
         height: 100%;
-        i, h2 {
+        i, h3 {
             background-color: $global-green-color;
             color: $global-bg-color;
-            padding: 10px;
+            padding: 6px;
         }
-        // border: 1px solid red;
+        i {
+            margin-top: 5px
+        }
+    }
+    .content-container {
+        border: 1px solid $global-font-color;
+        border-top: none;
+        min-height: 100px;
+        min-width: 100%;
+        box-shadow: 0px 4px;
     }
 }
 
