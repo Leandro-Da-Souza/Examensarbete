@@ -25,6 +25,7 @@ export default {
 * {
     padding: 0;
     margin: 0;
+    margin-top: 20%;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -34,8 +35,11 @@ export default {
         width: 100vw;
         margin: 0 auto;
         h2 {
-            color: $global-heading-color;
-            text-align: center
+            color: $global-font-color;
+            text-align: center;
+            font-weight: normal;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
         }
     }
 }

@@ -58,13 +58,15 @@ export default {
         i {
             margin-top: 5px
         }
+        
     }
     .content-container {
-        border: 1px solid $global-font-color;
         border-top: none;
         min-height: 100px;
         min-width: 100%;
-        box-shadow: 0px 4px;
+        -webkit-box-shadow: -4px 6px 17px -3px rgba(0,0,0,0.64); 
+        box-shadow: -4px 6px 17px -3px rgba(0,0,0,0.64);
+;
     }
 }
 
