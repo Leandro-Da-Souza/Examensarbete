@@ -1,19 +1,22 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <Home/>
+    <About/>
   </div>
 </template>
 
 <script>
 import db from './db'
+import Home from './views/Home'
+import About from './views/About'
 
 export default {
   mounted() {
     console.log(db)
+  },
+  components: {
+    About,
+    Home
   }
 }
 
