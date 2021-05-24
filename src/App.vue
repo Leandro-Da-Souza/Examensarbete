@@ -2,6 +2,7 @@
   <div id="app">
     <Home/>
     <About/>
+    <Services/>
   </div>
 </template>
 
@@ -9,6 +10,7 @@
 import db from './db'
 import Home from './views/Home'
 import About from './views/About'
+import Services from './views/Services'
 
 export default {
   mounted() {
@@ -16,7 +18,8 @@ export default {
   },
   components: {
     About,
-    Home
+    Home,
+    Services
   }
 }
 
