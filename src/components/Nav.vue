@@ -1,9 +1,20 @@
 <template>
 <div class="nav-container">
     <div class="nav">
-        <img src="@/assets/Logo.svg" alt="logo" />
+        <a @click="$emit('close')" href="/#home">
+            <img src="@/assets/Logo.svg" alt="logo"/>
+        </a>
+        
         <i @click="showModal = true" class="hamburger-icon fas fa-bars fa-2x"></i>
 
+        <!--
+        <div class="links">
+            <router-link  to="/">HOME</router-link>
+            <router-link  to="/lineup">LINEUP</router-link>
+            <router-link  to="/tickets">TICKETS</router-link>
+            <router-link  to="/contact">CONTACT</router-link>
+            <router-link  to="/faq">FAQ</router-link>
+        </div>-->
         <MenuModal v-if="showModal" @close="showModal = false" />
     </div>
 </div>
@@ -27,10 +38,10 @@ export default {
 @import '../variables';
 
 .nav-container {
-      //position: absolute;
-      width: 100%;
-      z-index: 999;
-    }
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+}
 
 .nav{
     display: flex;

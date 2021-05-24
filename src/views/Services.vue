@@ -1,8 +1,10 @@
 <template>
-    <div class="services-wrapper">
-        <h1>Våra tjänster</h1>
-        <Accordion title="Gräsklippning"/>  
-        <Accordion title="Beskärning" content="The quick brown fox jumps over the lazy dog"/>  
+    <div id="services">
+        <div class="services-wrapper">
+            <h1>Våra tjänster</h1>
+            <Accordion title="Gräsklippning"/>  
+            <Accordion title="Beskärning" content="The quick brown fox jumps over the lazy dog"/>  
+        </div>
     </div>
 </template>
 
@@ -16,8 +18,12 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 @import '../variables';
+
+#services{
+    padding-top: 6rem;
+}
 
 * {
     padding: 0;

@@ -4,25 +4,32 @@
     <Home/>
     <About/>
     <Services/>
+    <References/>
+    <Contact/>
   </div>
 </template>
 
 <script>
 import db from './db'
+import Nav from './components/Nav'
 import Home from './views/Home'
 import About from './views/About'
 import Services from './views/Services'
-import Nav from './components/Nav'
+import References from './views/References'
+import Contact from './views/Contact.vue'
+
 
 export default {
   mounted() {
     console.log(db)
   },
   components: {
-    About,
+    Nav,
     Home,
+    About,
     Services,
-    Nav
+    References,
+    Contact
   }
 }
 
