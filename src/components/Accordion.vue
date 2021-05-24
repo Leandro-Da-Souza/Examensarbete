@@ -6,7 +6,7 @@
         <i class="fas fa-arrow-circle-up fa-lg" @click="toggle = !toggle" v-else></i>
       </div>
     <div class="content-container" v-if="toggle">
-        <p>{{content}}</p>
+        <p class="text-content">{{content}}</p>
     </div>
   </div>
 </template>
@@ -18,7 +18,7 @@ export default {
         title: String,
         content: {
             type: String,
-            default: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos magnam tempore illo deserunt sequi placeat, dicta, voluptatem repudiandae animi voluptas quos error architecto sed rem incidunt quisquam? Repellendus, porro modi!"
+            default: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos magnam tempore illo deserunt sequi placeat, dicta, voluptatem repudiandae animi voluptas quos error architecto sed rem incidunt quisquam?"
         }
     },
     data() {
@@ -66,7 +66,10 @@ export default {
         min-width: 100%;
         -webkit-box-shadow: -4px 6px 17px -3px rgba(0,0,0,0.64); 
         box-shadow: -4px 6px 17px -3px rgba(0,0,0,0.64);
-;
+        p {
+            font-size: 0.88rem;
+            padding: 0px 3px;
+        }       
     }
 }
 
