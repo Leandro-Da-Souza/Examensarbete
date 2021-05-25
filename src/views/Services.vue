@@ -1,10 +1,13 @@
 <template>
-    <div id="services">
-        <div class="services-wrapper">
-            <h1>Våra tjänster</h1>
-            <Accordion title="Gräsklippning"/>  
-            <Accordion title="Beskärning" content="The quick brown fox jumps over the lazy dog"/>  
-        </div>
+
+    <div class="services-wrapper" id="services">
+        <h2>Våra tjänster</h2>
+        <Accordion title="Gräsklippning"/>  
+        <Accordion title="Beskärning" content="The quick brown fox jumps over the lazy dog"/>  
+        <Accordion title="Ogränsrensning" />  
+        <Accordion title="Trädgårdsskötsel" content="random text" />  
+        <Accordion title="Trädgårdsdesign" />  
+
     </div>
 </template>
 
@@ -28,12 +31,21 @@ export default {
 * {
     padding: 0;
     margin: 0;
+    margin-top: 20%;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     .services-wrapper {
-        height: 100vh;
+        min-height: 100vh;
         width: 100vw;
-        h1 {
-            color: $global-heading-color;
+        margin: 0 auto;
+        h2 {
+            color: $global-font-color;
+            text-align: center;
+            font-weight: normal;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
         }
     }
 }
