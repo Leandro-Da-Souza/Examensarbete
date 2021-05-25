@@ -1,6 +1,6 @@
 <template>
-
-    <div class="services-wrapper" id="services">
+<div id="services">
+    <div class="services-wrapper">
         <h2>Våra tjänster</h2>
         <Accordion title="Gräsklippning"/>  
         <Accordion title="Beskärning" content="The quick brown fox jumps over the lazy dog"/>  
@@ -9,6 +9,7 @@
         <Accordion title="Trädgårdsdesign" />  
 
     </div>
+</div>
 </template>
 
 <script>
@@ -21,7 +22,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 @import '../variables';
 
 #services{
