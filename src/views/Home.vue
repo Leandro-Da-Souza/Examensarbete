@@ -13,7 +13,7 @@ export default {
   }
 }
 </script>
-<style lang="scss">
+<style scoped lang="scss">
   #home{
     height: 500px;
     padding-top: 6rem;

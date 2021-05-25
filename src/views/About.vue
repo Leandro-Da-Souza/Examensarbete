@@ -11,7 +11,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
   #about{
     padding-top: 6rem;
   }
