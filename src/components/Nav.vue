@@ -1,7 +1,7 @@
 <template>
 <div class="nav-container">
     <div class="nav">
-        <a @click="$emit('close')" href="/#home">
+        <a href="/#home">
             <img src="@/assets/Logo.svg" alt="logo"/>
         </a>
         

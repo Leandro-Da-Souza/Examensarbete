@@ -10,10 +10,10 @@
         </div>-->
 
         <ul class="nav-links">
-			<li @click="$emit('close')"><a href="/#about">About</a></li>
-			<li @click="$emit('close')"><a href="/#services">Services</a></li>
-			<li @click="$emit('close')"><a href="/#references">References</a></li>
-            <li @click="$emit('close')"><a href="/#contact">Contact</a></li>
+			<li><a @click="$emit('close')" href="/#about">About</a></li>
+			<li><a @click="$emit('close')" href="/#services">Services</a></li>
+			<li><a @click="$emit('close')" href="/#references">References</a></li>
+            <li><a @click="$emit('close')" href="/#contact">Contact</a></li>
 		</ul>
         <!--
          <div>
@@ -33,6 +33,9 @@ export default {
 
 #MenuModal{
     background-color: $global-green-color;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     position: fixed;
     top: 0;
     left: 0;
@@ -41,10 +44,27 @@ export default {
     .menu-overlay{
         z-index: 10;
     }
-    li{
+    .nav-links, li, a{
         background-color: $global-green-color;
-        color: #fff;
-        
+        font-size: 2rem;      
+    }
+
+    .nav-links{
+        padding: 3.2rem;
+        width: 100%;
+        li{
+            border-bottom: solid 2px rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            line-height: 6rem;
+            list-style: none;
+            margin-bottom: 0.4rem;
+            margin-top: 0.4rem;
+            a{
+                color: #fff;
+                font-family: $global-nav-font;
+                text-decoration: none;
+            }
+        }
     }
 }
 
