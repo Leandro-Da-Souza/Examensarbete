@@ -1,10 +1,14 @@
 <template>
     <div class="card-list">
         <ul>
-            <li v-for="(card, index) in cards" :key="index">
+            <li v-for="(card, index) in cards" :key="index" :style="listPosition">
                 <Card :item="card" :active="index == currentIndex" />
             </li>
         </ul>
+        <div class="dot-container">
+            <div class="dots" v-for="(card, index) in cards" :key="index">
+            </div>
+        </div>
     </div>
 </template>
 
@@ -35,7 +39,12 @@ export default {
                     quote: "corporis perferendis repellendus"
                 },
             ],
-            currentIndex: 0
+            currentIndex: 0,
+        }
+    },
+    computed: {
+        listPosition() {
+            return { transform: `translateX(-${this.currentIndex * 100}%)`}
         }
     }
 }
@@ -43,10 +52,29 @@ export default {
 
 <style scoped lang="scss">
     .card-list {
+        margin: 10px;
+        height: 60vh;
         ul {
             display: flex;
             overflow: scroll;
             list-style-type: none;
+            li {
+                margin: 20px 10px;
+            }
+        }
+        .dot-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .dots {
+                width: 10px;
+                margin: 10px;
+                height: 10px;
+                background-color: #000;
+                border-radius: 50%;
+                opacity: 50%;
+            }
         }
     }
 

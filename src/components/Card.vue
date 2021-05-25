@@ -22,8 +22,15 @@ export default {
 <style scoped lang="scss">
     .card {
         width: 287.45px;
+        height: 367px;
+        // padding: 10px 20px;
+        box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         img {
             width: 229px;
+            background-position: center;
         }
         .quote {
             font-style: italic;
