@@ -1,5 +1,5 @@
 <template>
-    <div class="card">
+    <div class="card" :class="active ? 'active-card' : ''">
         <img :src="item.img">
         <div class="description">{{item.description}}</div>
         <div class="quote">"{{item.quote}}"</div>
@@ -13,8 +13,8 @@ export default {
         "item",
         "active"
     ],
-    computed: {
-
+    mounted() {
+        console.log(this.active)
     }
 }
 </script>
@@ -34,7 +34,12 @@ export default {
         }
         .quote {
             font-style: italic;
-        }
+        } 
+    }
+    .active-card {
+            width: 290.45px;
+            height: 375px;
+            box-shadow: 0px 7px 7px rgba(0,0,0,0.35);
     }
 
 </style>
