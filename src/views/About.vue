@@ -1,6 +1,6 @@
 <template>
   <div id="about">
-    <h1>This is an about page</h1>
+    <h2>Vilka vi är och vad vi gör</h2>
   </div>
 </template>
 
@@ -14,5 +14,9 @@ export default {
 <style scoped lang="scss">
   #about{
     padding-top: 6rem;
+    h2{
+      font-weight: initial;
+      text-align: center;
+    }
   }
 </style>

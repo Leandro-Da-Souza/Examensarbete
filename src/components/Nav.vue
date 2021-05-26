@@ -56,9 +56,10 @@ export default {
     .hamburger-icon{
         color: $global-green-color;
         cursor: pointer;
-        //position: absolute;
-        //position: right;
+       // position: absolute;
+        //right: 100%;
         width: 50px;
+        
     }
     
 }
