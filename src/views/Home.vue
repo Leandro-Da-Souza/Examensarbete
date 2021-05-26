@@ -1,24 +1,22 @@
 <template>
   <div id="home">
-   <!-- <div v-for="i in [current]" :key="i">-->
+    <!--<transition name="fade" tag="div" >-->
      <div :style="bgImg">
        <div class="circle-home">
         <p>Plantera mera, hjälper dig med trädgården sedan 2007.</p>
         </div>
      </div>
-      <!--<img :src='require(`@/assets/${currentImg}`)'/>-->
-    
+    <!--</transition>-->
+
     <!--
     <a class="prev" @click="prev" href="#">&#10094; Previous</a>
     <a class="next" @click="next" href="#">Next&#10095; </a>-->
-    <!--
-    <Slider :image="images[0]"/>
-    -->
+    
   </div>
 </template>
 
 <script>
-//import Slider from '../components/homeSlider.vue'
+
 
 export default { 
   name: 'Home', 
@@ -38,12 +36,12 @@ export default {
       timer: 0,
     } 
   },
-  mounted: function() {
+  mounted() {
     this.startSlide();
   },
   methods:{
     startSlide() {
-      this.timer = setInterval(this.next, 10000);
+      this.timer = setInterval(this.next, 8000);
     },
     
     next() {
@@ -76,6 +74,7 @@ export default {
       background-position: center;
       height: 100vh;
       width: 100%;
+     
     }
     .circle-home{
       display: flex;
@@ -94,4 +93,22 @@ export default {
       
     }
   }
+/** 
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: all 10s ease;
+    overflow: hidden;
+    visibility: visible;
+    position: absolute;
+    width:100%;
+    opacity: 1;
+  }
+
+.fade-enter,
+.fade-leave-to {
+  visibility: hidden;
+  width:100%;
+  opacity: 0;
+}*/
+
 </style>
