@@ -40,6 +40,10 @@ export default {
                 },
             ],
             currentIndex: 0,
+            touch: {
+                startX: 0,
+                endX: 0
+            }
         }
     },
     computed: {
@@ -50,7 +54,38 @@ export default {
     methods: {
         changeImage(i) {
             this.currentIndex = i
+        },
+        nextIndex() {
+            if(this.currentIndex < this.cards.length - 1) {
+                this.currentIndex++
+            }
+        },
+        prevIndex() {
+            if(this.currentIndex > 0) {
+                this.currentIndex--;
+            }
+        },
+        touchstart(event) {
+            this.touch.startX = event.touches[0].clientX;
+            this.touch.endX = 0;
+        },
+        touchmove(event) {
+            this.touch.endX = event.touches[0].clientX;
+        },
+        touchend() {
+            if(!this.touch.endX || Math.abs(this.touch.endX - this.touch.startX) < 20)
+                return;
+          
+            if(this.touch.endX < this.touch.startX)
+                this.nextIndex()
+            else
+                this.prevIndex()
         }
+    },
+    mounted() {
+        this.$el.addEventListener('touchstart', event => this.touchstart(event));
+        this.$el.addEventListener('touchmove', event => this.touchmove(event));
+        this.$el.addEventListener('touchend', () => this.touchend());
     }
 }
 </script>
