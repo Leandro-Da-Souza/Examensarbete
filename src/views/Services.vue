@@ -32,13 +32,13 @@ export default {
 * {
     padding: 0;
     margin: 0;
-    margin-top: 20%;
+    // margin-top: 20%;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
     .services-wrapper {
-        min-height: 100vh;
+        // min-height: 100vh;
         width: 100vw;
         margin: 0 auto;
         h2 {

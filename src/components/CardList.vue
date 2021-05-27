@@ -93,7 +93,7 @@ export default {
 <style scoped lang="scss">
     .card-list {
         margin: 10px;
-        height: 65vh;
+        // height: 100vh;
         ul {
             display: flex;
             overflow: hidden;

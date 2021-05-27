@@ -22,6 +22,7 @@ export default {
 
 <style scoped lang="scss">
   #about{
+    border: 1px solid red;
     padding-top: 6rem;
     h2{
       font-weight: initial;
