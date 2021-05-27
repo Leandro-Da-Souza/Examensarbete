@@ -1,39 +1,15 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-import About from '../views/About.vue'
-import Services from '../views/Services.vue'
-import References from '../views/References.vue'
-import Contact from '../views/Contact.vue'
+import Landing from '../views/Landing.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home,
+    name: 'Landing',
+    component: Landing,
   },
-  {
-    path: '/about',
-    name: 'About',
-    component: About,
-  },
-  {
-    path: '/services',
-    name: 'Services',
-    component: Services,
-  },
-  {
-    path: '/references',
-    name: 'References',
-    component: References,
-  },
-  {
-    path: '/contact',
-    name: 'Contact',
-    component: Contact,
-  }
 ]
 
 const router = new VueRouter({
