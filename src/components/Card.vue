@@ -1,8 +1,8 @@
 <template>
     <div class="card" :class="active ? 'active-card' : ''">
         <img :src="item.img">
-        <div class="description">{{item.description}}</div>
-        <div class="quote">"{{item.quote}}"</div>
+        <p class="description">{{item.description}}</p>
+        <p class="quote">"{{item.quote}}"</p>
     </div>
 </template>
 
@@ -32,6 +32,9 @@ export default {
             width: 229px;
             background-position: center;
         }
+        .description {
+            padding: 10px 20px;
+        }
         .quote {
             font-style: italic;
         } 
@@ -40,6 +43,7 @@ export default {
             width: 290.45px;
             height: 375px;
             box-shadow: 0px 7px 7px rgba(0,0,0,0.35);
+            transition: all 0.5s ease;
     }
 
 </style>

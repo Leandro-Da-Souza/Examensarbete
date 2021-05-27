@@ -48,7 +48,10 @@ export default {
     },
     computed: {
         listPosition() {
-            return { transform: `translateX(-${this.currentIndex * 100}%)`}
+            return { 
+                transform: `translateX(-${this.currentIndex * 100}%)`,
+                transition: `all 0.5s ease`
+            }
         },
     },
     methods: {
@@ -93,9 +96,10 @@ export default {
 <style scoped lang="scss">
     .card-list {
         margin: 10px;
-        // height: 100vh;
+        // width: calc(100% - 20px);
         ul {
             display: flex;
+            justify-content: space-between;
             overflow: hidden;
             list-style-type: none;
             li {
@@ -122,5 +126,6 @@ export default {
             }
         }
     }
+   
 
 </style>
