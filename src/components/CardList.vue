@@ -97,12 +97,12 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '../variables';
     .card-list {
         margin: 10px;
-        // width: calc(100% - 20px);
+        // width: 100%;
         ul {
             display: flex;
-            justify-content: space-between;
             overflow: hidden;
             list-style-type: none;
             li {
@@ -118,7 +118,7 @@ export default {
                 width: 10px;
                 margin: 10px;
                 height: 10px;
-                background-color: #000;
+                background-color: $global-green-color;
                 border-radius: 50%;
                 opacity: 50%;
             }

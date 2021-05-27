@@ -30,7 +30,7 @@ export default {
         align-items: center;
         border-radius: 30px;
         img {
-            margin-top: 20px;
+            margin: 40px 0px;
             width: 229px;
             background-position: center;
         }
