@@ -1,7 +1,7 @@
 <template>
     <div class="card-list">
         <ul>
-            <li v-for="(card, index) in cards" :key="index" :style="listPosition">
+            <li v-for="(card, index) in cards" :key="index" :style="listPosition" @click="changeImage(index)" >
                 <Card :item="card" :active="index == currentIndex" />
             </li>
         </ul>
@@ -89,6 +89,9 @@ export default {
         this.$el.addEventListener('touchstart', event => this.touchstart(event));
         this.$el.addEventListener('touchmove', event => this.touchmove(event));
         this.$el.addEventListener('touchend', () => this.touchend());
+        // this.$el.addEventListener('onkeydown', event => this.touchstart(event));
+        // this.$el.addEventListener('onkeypress', event => this.touchmove(event));
+        // this.$el.addEventListener('onkeyup', this.touchend())
     }
 }
 </script>

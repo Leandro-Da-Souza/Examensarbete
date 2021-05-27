@@ -28,7 +28,9 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: center;
+        border-radius: 30px;
         img {
+            margin-top: 20px;
             width: 229px;
             background-position: center;
         }
@@ -44,6 +46,17 @@ export default {
             height: 375px;
             box-shadow: 0px 7px 7px rgba(0,0,0,0.35);
             transition: all 0.5s ease;
+    }
+
+    @media screen and(min-width: 768px) {
+        .card {
+            width: 450px;
+            height: 574.53px;
+            img {
+                width: 351px;
+                height: 242px;
+            }
+        }
     }
 
 </style>
