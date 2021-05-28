@@ -5,7 +5,7 @@
         <h1>LOGGA IN</h1>
         <form class="form-container" @submit.prevent="handleSubmit">
             <input type="text" name="username" v-model="username" placeholder="Användarnamn">
-            <input type="text" name="password" v-model="password" placeholder="Lösenord">
+            <input type="password" name="password" v-model="password" placeholder="Lösenord">
             <button type="submit">LOGGA IN</button>
         </form>
     </div>
@@ -57,7 +57,7 @@ export default {
         .form-container {
             display: flex;
             flex-direction: column;
-            input[type="text"] {
+            input[type="text"], input[type="password"] {
                 width: 250px;
                 height: 36px;
                 margin: 10px 0;
