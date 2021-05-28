@@ -39,7 +39,7 @@ export default {
                     quote: "corporis perferendis repellendus"
                 },
             ],
-            currentIndex: 0,
+            currentIndex: 1,
             touch: {
                 startX: 0,
                 endX: 0
