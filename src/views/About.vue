@@ -22,7 +22,8 @@ export default {
 
 <style scoped lang="scss">
   #about{
-    padding-top: 6rem;
+    padding-top: 3rem;
+
     h2{
       font-weight: initial;
       text-align: center;

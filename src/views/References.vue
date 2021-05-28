@@ -18,6 +18,7 @@ export default {
 <style lang="scss" scoped>
     #references {
         height: 100%;
+        padding-top: 6rem;
         h2 {
             text-align: center;
             font-weight: normal;

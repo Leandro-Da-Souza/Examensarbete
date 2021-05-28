@@ -26,7 +26,7 @@ export default {
 @import '../variables';
 
 #services{
-    padding-top: 6rem;
+    padding-top: 3rem;
 }
 
 * {

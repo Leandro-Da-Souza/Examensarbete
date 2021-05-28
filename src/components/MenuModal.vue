@@ -1,30 +1,25 @@
 <template>
     <div id="MenuModal">
         
-        <!--
-        <div class="links">
-            <router-link @click="$emit('close')" to="/about">About</router-link>
-            <router-link @click="$emit('close')" to="/services">Våra tjänster</router-link>
-            <router-link @click="$emit('close')" to="/references">Referenser</router-link>
-            <router-link @click="$emit('close')" to="/contact">Kontakt</router-link>
-        </div>-->
-
         <ul class="nav-links">
-			<li><a @click="$emit('close')" href="/#about">About</a></li>
-			<li><a @click="$emit('close')" href="/#services">Services</a></li>
-			<li><a @click="$emit('close')" href="/#references">References</a></li>
-            <li><a @click="$emit('close')" href="/#contact">Contact</a></li>
+			<li><a @click="$emit('close')" href="/#about">Om oss</a></li>
+			<li><a @click="$emit('close')" href="/#services">Våra tjänster</a></li>
+			<li><a @click="$emit('close')" href="/#references">Referenser</a></li>
+            <li><a @click="$emit('close'), scrollTo()">Kontakt</a></li>
 		</ul>
-        <!--
-         <div>
-            <router-view></router-view>
-        </div>-->
+     
     </div>   
 </template>
 
 <script>
 export default {
-    
+
+    methods:{
+        scrollTo() {
+        var element = document.getElementById("contact");
+        element.scrollIntoView({behavior: "smooth", block: 'start'}); // Top
+        }
+    } 
 }
 </script>
 
