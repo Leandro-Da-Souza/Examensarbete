@@ -1,7 +1,7 @@
 <template>
     <div class="card-list">
         <ul>
-            <li v-for="(card, index) in cards" :key="index" :style="listPosition">
+            <li v-for="(card, index) in cards" :key="index" :style="listPosition" @click="changeImage(index)" >
                 <Card :item="card" :active="index == currentIndex" />
             </li>
         </ul>
@@ -39,7 +39,7 @@ export default {
                     quote: "corporis perferendis repellendus"
                 },
             ],
-            currentIndex: 0,
+            currentIndex: 1,
             touch: {
                 startX: 0,
                 endX: 0
@@ -48,7 +48,10 @@ export default {
     },
     computed: {
         listPosition() {
-            return { transform: `translateX(-${this.currentIndex * 100}%)`}
+            return { 
+                transform: `translateX(-${this.currentIndex * 100}%)`,
+                transition: `all 0.5s ease`
+            }
         },
     },
     methods: {
@@ -86,14 +89,18 @@ export default {
         this.$el.addEventListener('touchstart', event => this.touchstart(event));
         this.$el.addEventListener('touchmove', event => this.touchmove(event));
         this.$el.addEventListener('touchend', () => this.touchend());
+        // this.$el.addEventListener('onkeydown', event => this.touchstart(event));
+        // this.$el.addEventListener('onkeypress', event => this.touchmove(event));
+        // this.$el.addEventListener('onkeyup', this.touchend())
     }
 }
 </script>
 
 <style scoped lang="scss">
+@import '../variables';
     .card-list {
         margin: 10px;
-        // height: 100vh;
+        // width: 100%;
         ul {
             display: flex;
             overflow: hidden;
@@ -111,7 +118,7 @@ export default {
                 width: 10px;
                 margin: 10px;
                 height: 10px;
-                background-color: #000;
+                background-color: $global-green-color;
                 border-radius: 50%;
                 opacity: 50%;
             }
@@ -122,5 +129,6 @@ export default {
             }
         }
     }
+   
 
 </style>
