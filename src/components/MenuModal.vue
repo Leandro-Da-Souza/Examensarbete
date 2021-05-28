@@ -2,10 +2,10 @@
     <div id="MenuModal">
         
         <ul class="nav-links">
-			<li><a @click="$emit('close'), scrollToTop()">Om oss</a></li>
+			<li><a @click="$emit('close')" href="/#about">Om oss</a></li>
 			<li><a @click="$emit('close')" href="/#services">Våra tjänster</a></li>
 			<li><a @click="$emit('close')" href="/#references">Referenser</a></li>
-            <li><a @click="$emit('close'), scrollToTop()">Kontakt</a></li>
+            <li><a @click="$emit('close'), scrollTo()">Kontakt</a></li>
 		</ul>
      
     </div>   
@@ -15,11 +15,11 @@
 export default {
 
     methods:{
-        scrollToTop() {
-        var element = document.getElementById("about");
-        element.scrollIntoView({behavior: "smooth"}); // Top
+        scrollTo() {
+        var element = document.getElementById("contact");
+        element.scrollIntoView({behavior: "smooth", block: 'start'}); // Top
         }
-    }   
+    } 
 }
 </script>
 

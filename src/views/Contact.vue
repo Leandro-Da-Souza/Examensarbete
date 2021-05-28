@@ -49,7 +49,7 @@ export default {
 @import '../variables';
 
     #contact{
-        margin-top: 3rem;
+        margin-top: 6rem;
         height: 80vh;
         .contact-container {
             h2 {
