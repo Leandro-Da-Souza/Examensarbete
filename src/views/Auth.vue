@@ -8,9 +8,22 @@
 import db from '../db';
 
 export default {
-    mounted() {
+    methods: {
+        async authenticateUser(name, pass) {
+            try {
+                const res = await db.auth().signInWithEmailAndPassword(name, pass)
+                console.log(res)
+                this.$router.push({name: 'Form', meta: res})
+            } catch (e) {
+                console.log(e)
+                this.$router.push({name: 'Login', meta: e})
+            }
+        }
+    },
+    mounted() { 
         console.log(db.auth)
-        console.log(this.$route)
+        const { username, password } = this.$route.params
+        this.authenticateUser(username, password)
     }
 }
 </script>
