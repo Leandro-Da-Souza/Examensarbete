@@ -65,6 +65,7 @@ export default {
 </script>
 <style scoped lang="scss">
   #home{
+    padding-top: 6rem;
     div{
       display: flex;
       align-items: center;

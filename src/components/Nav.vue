@@ -4,6 +4,8 @@
         <a href="/#home">
             <img src="@/assets/Logo.svg" alt="logo"/>
         </a>
+
+        <button @click="scrollToTop()">CLICK</button>
         
         <i @click="showModal = true" class="hamburger-icon fas fa-bars fa-2x"></i>
 
@@ -29,7 +31,13 @@ export default {
     },
     components:{
         MenuModal
-    }
+    },
+    methods:{
+        scrollToTop() {
+        var element = document.getElementById("contact");
+        element.scrollIntoView({behavior: "smooth"}); // Top
+        }
+    }  
     
 }
 </script>
@@ -61,6 +69,10 @@ export default {
         width: 50px;
         
     }
+    
+}
+
+@media screen and (min-width: 765px) {
     
 }
 
