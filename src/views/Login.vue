@@ -13,8 +13,6 @@
 </template>
 
 <script>
-import db from '../db';
-
 export default {    
     name: 'Login',
     data() {
@@ -30,12 +28,10 @@ export default {
                 password: this.password
             }
             console.log(loginInfo)
+            this.$router.push({name: 'Auth', params: loginInfo})
             this.username = ""
             this.password = ""
         }
-    },
-    mounted() {
-        console.log(db.auth)
     }
 }
 </script>

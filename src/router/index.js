@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Landing from '../views/Landing.vue'
 import Login from '../views/Login.vue'
+import Auth from '../views/Auth'
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,11 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: Login
+  },
+  {
+    path: '/auth',
+    name: 'Auth',
+    component: Auth
   }
 ]
 
