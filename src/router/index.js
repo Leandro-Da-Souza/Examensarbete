@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Landing from '../views/Landing.vue'
+import Login from '../views/Login.vue'
+import Auth from '../views/Auth'
+import Form from '../views/Form'
 
 Vue.use(VueRouter)
 
@@ -10,6 +13,21 @@ const routes = [
     name: 'Landing',
     component: Landing,
   },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login
+  },
+  {
+    path: '/auth',
+    name: 'Auth',
+    component: Auth
+  },
+  {
+    path: '/form',
+    name: 'Form',
+    component: Form
+  }
 ]
 
 const router = new VueRouter({
