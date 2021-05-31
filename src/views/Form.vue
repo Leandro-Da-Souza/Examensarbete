@@ -76,6 +76,7 @@ export default {
       border-radius: 20px;
       margin-top: 20px;
       text-indent: 15px;
+      padding-top: 5px;
     }
   }
 }
