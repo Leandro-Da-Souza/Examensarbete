@@ -6,7 +6,7 @@
         <form class="form-container" @submit.prevent="handleSubmit">
             <input type="text" name="username" v-model="username" placeholder="Användarnamn">
             <input type="password" name="password" v-model="password" placeholder="Lösenord">
-            <button type="submit">LOGGA IN</button>
+            <button type="submit" class="btn">LOGGA IN</button>
         </form>
     </div>
   </div>
@@ -69,18 +69,6 @@ export default {
                 border: none;
                 text-indent: 15px;
                 box-shadow: 2px 4px 6px rgba(0,0,0, 0.25)
-            }
-            button {
-                width: 97px;
-                height: 35px;
-                margin-top: 30px;
-                align-self: center;
-                font-size: 0.9rem;
-                font-weight: bold;
-                border: none;
-                background-color: $global-green-color;
-                color: #fff;
-                box-shadow: 2px 2px 4px rgba(0,0,0,0.25);
             }
         }
         
