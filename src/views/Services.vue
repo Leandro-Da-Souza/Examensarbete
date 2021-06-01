@@ -66,14 +66,6 @@ export default {
         p{
             font-size: 1.125rem;
         }
-    }
-    @media screen and (min-width: 1204px) {
-        h2{
-            font-size: 2.25rem;
-        }
-        .about-text{
-            font-size: 1.25rem; 
-        }
         .services-wrapper {
             grid-template: 1fr/ 1fr 1fr;
             width: 90vw;
@@ -81,6 +73,15 @@ export default {
             max-width: 43vw;
             }
         }
+    }
+    @media screen and (min-width: 1204px) {
+        h2{
+            font-size: 2.25rem;
+        }
+        p{
+            font-size: 1.25rem; 
+        }
+        
        
     }
     @media screen and (min-width: 1920px) {

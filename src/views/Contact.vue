@@ -75,7 +75,7 @@ export default {
                 justify-content: center;
                 align-items: center;
                 input[type="text"] {
-                    width: 15.25rem;
+                    width: 48vw;
                     height: 2.5rem;
                     margin: 10px 0;
                     border-radius: 1.25rem;
@@ -84,7 +84,7 @@ export default {
                     text-indent: 15px;
                 }
                 textarea {
-                    width: 15.25rem;
+                    width: 48vw;
                     height: 8rem;
                     margin: 10px 0;
                     border: none;
@@ -103,8 +103,7 @@ export default {
                     border: none;
                     box-shadow: 2px 2px 4px rgba(0,0,0,0.25);
                     border-radius: 6px;
-                }
-                
+                }  
             }
             .number {
                 text-align: center;
@@ -116,40 +115,45 @@ export default {
         
     }
     @media screen and (min-width: 765px) {
-            #contact{
-        margin-top: 6rem;
-        height: 80vh;
+        #contact{
+            margin-top: 6rem;
+            height: 80vh;
         .contact-container {
-            h2 {
-                font-size: 36px;
+            h2{
+                font-size: 1.9rem;
             }
-            .contact-info {
-                padding: 0px 2.5rem 0.5rem 2.5rem;
-                text-align: center;
-                letter-spacing: 0.8px;
+            p{
+                font-size: 1.125rem;
             }
-            
             .form-container {
                 input[type="text"] {
-                    width: 32rem;
-                    height: 3.75rem;
+                    max-width: 32rem;
+                    height: 3.2rem;
                     margin: 10px 0;
                     border-radius: 3rem;
                 }
                 textarea {
-                    width: 32rem;
-                    height: 11.5rem;
-                    margin: 10px 0;
+                    max-width: 32rem;
+                    height: 11rem;
                 }
                 button[type="submit"] {
-                    width: 150px;
-                    height: 50px;
-                    margin: 10px 0;
+                    width: 8rem;
+                    height: 40px;
                     font-size: 1.4rem;
-                    //border-radius: 6px;
                 }   
             }  
         }   
-    }           
+    } 
+    @media screen and (min-width: 1204px) {
+        h2{
+            font-size: 2.25rem;
+        }
+        p{
+            font-size: 1.25rem; 
+        }   
+    }
+    @media screen and (min-width: 1920px) {
+
+    }          
 }
 </style>
