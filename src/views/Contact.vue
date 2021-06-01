@@ -2,7 +2,7 @@
     <div id="contact">
         <div class="contact-container">
             <h2>Kontakta oss</h2>
-            <p class="contact-info">Om du har några frågor eller vill boka ett möta skicka ett mail så hör vi av oss så fort vi kan.</p>
+            <p class="contact-info">Om du har några frågor eller vill boka ett möte skicka ett mail så hör vi av oss så fort vi kan.</p>
             <form class="form-container" @submit.prevent="handleForm">
                 <input type="text" placeholder="namn" v-model="name">
                 <input type="text" placeholder="email" v-model="email">

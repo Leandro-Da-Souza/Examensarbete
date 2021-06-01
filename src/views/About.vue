@@ -4,11 +4,14 @@
     <img class="about-image" src="@/assets/about-image.jpg" alt="">
     <p class="about-text">
       <span>
-        Våra skickliga trädgårdsmästare och erfarna trädgårdsarbetare hjälper dig med din trädgård. 
+        Plantera mera har funnits på marknaden i 14 år och vi hjälper dig som bor i Stockholm med din trädgård. 
+        Vi erbjuder tjänster som lövblåsning, plantering, gräsklippning och mycket mer. 
       </span>
-     &nbsp;
       <span>
-         Mattis cursus amet elit, id et lobortis lacus, consectetur. Fermentum sed nam mauris est. In fames dictumst nisl auctor ac tempor pulvinar et. Egestas quam lorem luctus at nibh eget vitae, ut velit. Lectus turpis volutpat et purus tortor, amet. Neque, amet integer et, mi sit tortor gravida.
+        Vi har erfarna och utbildade trädgårdsmästare och trädgårdsarbetare som arbetat med alla typer av trädgårdar. 
+        Du behöver inte ha en stor trädgård för att boka ett möte med oss. Vi hjälper dig gärna med planteringar på din balkong, innergård, terass eller liknande.</span>
+      <span>
+        Vårt mål som företag är att du som kund alltid ska bli nöjd med vårt arbete. Boka gärna ett möte med oss för att vi ska kunna anpassa oss till just din trädgård och dina önskemål.
       </span>
     </p>
   </div>
@@ -30,14 +33,14 @@ export default {
       padding-bottom: 1.5rem;
     }
     .about-image{
-      height: 5.5rem;
+      height: 15vh;
       object-fit: cover;
       object-position: 0 58%;
       width: 100%;
     }
     .about-text{
       display: block;
-      padding: 1rem 2rem;
+      padding: 2rem 3rem;
       //white-space:nowrap;
       span{
         display: inline-block;
