@@ -1,13 +1,15 @@
 <template>
   <div class="accordion-wrapper">
-        <div class="title-container">
+        <div class="title-container" @click="toggle = !toggle">
             <h3>{{title}}</h3>
-            <i class="fas fa-arrow-circle-down fa-lg" @click="toggle = !toggle" v-if="!toggle"></i>
-            <i class="fas fa-arrow-circle-up fa-lg" @click="toggle = !toggle" v-else></i>
+            <i class="fas fa-arrow-circle-down fa-lg" v-if="!toggle"></i>
+            <i class="fas fa-arrow-circle-up fa-lg" v-else></i>
         </div>
-        <div class="content-container" v-if="toggle">
-            <p class="text-content">{{content}}</p>
-        </div>
+        <transition name="fade">
+            <div class="content-container" v-if="toggle">
+                <p class="text-content">{{content}}</p>
+            </div>
+        </transition>
   </div>
 </template>
 
@@ -54,24 +56,36 @@ export default {
         i, h3 {
             background-color: $global-green-color;
             color: $global-bg-color;
-            //padding: 6px;
         }
         i {
             margin-top: 5px;
         }    
     }
     .content-container {
+        animation: foldDown 3s ease-in;
         border-top: none;
         min-height: 8vh;
         min-width: 100%;
-        -webkit-box-shadow: -4px 6px 17px -3px rgba(104, 104, 104, 0.64); 
-        box-shadow: -4px 6px 17px -3px rgba(104, 104, 104, 0.64);
+        //-webkit-box-shadow: -4px 6px 15px -3px rgba(104, 104, 104, 0.64); 
+        box-shadow: -4px 6px 15px -3px rgba(104, 104, 104, 0.64);
         padding: 0.6rem 1rem;
         p {
             //color: $global-bg-color;
             font-size: 1rem;
         }       
     }
+
+    .fade-enter-active,
+    .fade-leave-active{
+        transition: all .3s ease-in-out;
+        overflow: hidden;
+    }
+    .fade-enter, 
+    .fade-leave-to{
+        opacity: 0;
+        //transform: scaleY(0);
+    }
+     
 }
 
 </style>
