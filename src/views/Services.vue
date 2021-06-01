@@ -40,13 +40,13 @@ export default {
     .services-wrapper {
         // min-height: 100vh;
         width: 100vw;
-        margin: 0 auto;
+        //margin: 0 auto;
         h2 {
             color: $global-font-color;
             text-align: center;
             font-weight: normal;
             letter-spacing: 1.5px;
-            margin-bottom: 20px;
+            margin-bottom: 2rem;
         }
     }
 }

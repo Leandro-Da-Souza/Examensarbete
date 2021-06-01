@@ -25,12 +25,16 @@ export default {
 
 <style scoped lang="scss">
   #about{
+    display: flex;
+    flex-direction: column;
+    //justify-content: center;
+    align-items: center;
     padding-top: 3rem;
 
     h2{
       font-weight: initial;
       text-align: center;
-      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
     }
     .about-image{
       height: 15vh;
@@ -40,13 +44,36 @@ export default {
     }
     .about-text{
       display: block;
-      padding: 2rem 3rem;
-      //white-space:nowrap;
+      padding: 2rem 0rem;
+      width: 90vw;
+      
       span{
         display: inline-block;
         margin: 10px 0; 
       }
 
     }
+    @media screen and (min-width: 765px) {
+      h2{
+          font-size: 36px;
+      }
+      .about-image{
+          height: 16.5vh;
+      }
+      .about-text{
+        font-size: 20px; 
+      }
+    }
+    @media screen and (min-width: 1204px) {
+      .about-image{
+          height: 18vh;
+      }
+    }
+    @media screen and (min-width: 1920px) {
+      h2{
+        font-size: 48px;
+      }
+    }
   }
+  
 </style>
