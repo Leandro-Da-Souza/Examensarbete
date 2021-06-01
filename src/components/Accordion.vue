@@ -1,13 +1,13 @@
 <template>
   <div class="accordion-wrapper">
-      <div class="title-container">
-        <h3>{{title}}</h3>
-        <i class="fas fa-arrow-circle-down fa-lg" @click="toggle = !toggle" v-if="!toggle"></i>
-        <i class="fas fa-arrow-circle-up fa-lg" @click="toggle = !toggle" v-else></i>
-      </div>
-    <div class="content-container" v-if="toggle">
-        <p class="text-content">{{content}}</p>
-    </div>
+        <div class="title-container">
+            <h3>{{title}}</h3>
+            <i class="fas fa-arrow-circle-down fa-lg" @click="toggle = !toggle" v-if="!toggle"></i>
+            <i class="fas fa-arrow-circle-up fa-lg" @click="toggle = !toggle" v-else></i>
+        </div>
+        <div class="content-container" v-if="toggle">
+            <p class="text-content">{{content}}</p>
+        </div>
   </div>
 </template>
 
@@ -43,7 +43,7 @@ export default {
     margin: 0;
     box-sizing: border-box;
     margin-bottom: 10px;
-    width: 90%;
+    width: 90vw;
     .title-container {
         background-color: $global-green-color;
         display: flex;

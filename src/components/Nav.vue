@@ -1,9 +1,9 @@
 <template>
 <div class="nav-container">
     <div class="nav">
-        <a href="/#home">
+        <router-link to="/">
             <img src="@/assets/Logo.svg" alt="logo"/>
-        </a>
+        </router-link>
         
         <i @click="showModal = true" class="hamburger-icon fas fa-bars fa-2x"></i>
 
@@ -99,7 +99,8 @@ export default {
         }
     }
         .hamburger-icon{
-            display: none;
+            visibility: hidden;
+            //display: none;
         }
 
     }

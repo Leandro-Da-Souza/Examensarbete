@@ -58,12 +58,12 @@ export default {
     },
     bgImg(){
       return { 'background-image': 'url('+ require(`@/assets/${this.currentImg}`) +')' };
-    }
-    
+    }  
   }
 }
 </script>
 <style scoped lang="scss">
+
   #home{
     //padding-top: 6rem;
     div{

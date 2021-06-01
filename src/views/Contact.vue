@@ -2,14 +2,16 @@
     <div id="contact">
         <div class="contact-container">
             <h2>Kontakta oss</h2>
-            <p class="contact-info">Om du har några frågor eller vill boka ett möta skicka ett mail så hör vi av oss så fort vi kan.</p>
+            <p class="contact-info">Om du har några frågor eller vill boka ett möte skicka ett mail så hör vi av oss så fort vi kan.</p>
             <form class="form-container" @submit.prevent="handleForm">
                 <input type="text" placeholder="namn" v-model="name">
                 <input type="text" placeholder="email" v-model="email">
                 <textarea placeholder="ditt meddelande" v-model="message"></textarea>
                 <button type="submit">Skicka</button>
             </form>
-            <p class="number">Eller ring oss på 08-124 45 57</p>
+            <p class="number">Eller ring oss på
+                <a href="tel:+081244557">08-124 45 57</a>
+            </p>
         </div>
     </div>
 </template>
@@ -57,36 +59,36 @@ export default {
                 text-align: center;
                 font-weight: normal;
                 letter-spacing: 1.5px;
-                margin-bottom: 20px;
+                margin-bottom: 1.25rem;
             }
             .contact-info {
-                padding: 0px 40px 10px 40px;
+                padding: 0px 2.5rem 0.5rem 2.5rem;
                 text-align: center;
                 letter-spacing: 0.8px;
             }
             .form-container {
                 margin-top: 3px;
-                width: 100%;
+                width: 100vw;
                 height: 100%;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 input[type="text"] {
-                    width: 240px;
-                    height: 36px;
+                    width: 15.25rem;
+                    height: 2.5rem;
                     margin: 10px 0;
-                    border-radius: 20px;
+                    border-radius: 1.25rem;
                     border: none;
                     box-shadow: 2px 4px 6px rgba(0,0,0,0.25);
                     text-indent: 15px;
                 }
                 textarea {
-                    width: 244px;
-                    height: 97px;
+                    width: 15.25rem;
+                    height: 8rem;
                     margin: 10px 0;
                     border: none;
-                    border-radius: 20px;
+                    border-radius: 1.25rem;
                     text-indent: 10px;
                     box-shadow: 2px 4px 6px rgba(0,0,0,0.25);
                 }
@@ -111,5 +113,43 @@ export default {
             }
             
         }
+        
     }
+    @media screen and (min-width: 765px) {
+            #contact{
+        margin-top: 6rem;
+        height: 80vh;
+        .contact-container {
+            h2 {
+                font-size: 36px;
+            }
+            .contact-info {
+                padding: 0px 2.5rem 0.5rem 2.5rem;
+                text-align: center;
+                letter-spacing: 0.8px;
+            }
+            
+            .form-container {
+                input[type="text"] {
+                    width: 32rem;
+                    height: 3.75rem;
+                    margin: 10px 0;
+                    border-radius: 3rem;
+                }
+                textarea {
+                    width: 32rem;
+                    height: 11.5rem;
+                    margin: 10px 0;
+                }
+                button[type="submit"] {
+                    width: 150px;
+                    height: 50px;
+                    margin: 10px 0;
+                    font-size: 1.4rem;
+                    //border-radius: 6px;
+                }   
+            }  
+        }   
+    }           
+}
 </style>
