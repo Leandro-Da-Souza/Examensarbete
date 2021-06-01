@@ -42,7 +42,7 @@ export default {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    margin-bottom: 10px;
+    margin-bottom: 0.8rem;
     width: 90vw;
     .title-container {
         background-color: $global-green-color;
@@ -50,25 +50,26 @@ export default {
         justify-content: space-between;
         width: 100%;
         height: 100%;
+        padding: 0.6rem 1rem;
         i, h3 {
             background-color: $global-green-color;
             color: $global-bg-color;
-            padding: 6px;
+            //padding: 6px;
         }
         i {
-            margin-top: 5px
-        }
-        
+            margin-top: 5px;
+        }    
     }
     .content-container {
         border-top: none;
-        min-height: 100px;
+        min-height: 8vh;
         min-width: 100%;
-        -webkit-box-shadow: -4px 6px 17px -3px rgba(0,0,0,0.64); 
-        box-shadow: -4px 6px 17px -3px rgba(0,0,0,0.64);
+        -webkit-box-shadow: -4px 6px 17px -3px rgba(104, 104, 104, 0.64); 
+        box-shadow: -4px 6px 17px -3px rgba(104, 104, 104, 0.64);
+        padding: 0.6rem 1rem;
         p {
-            font-size: 0.88rem;
-            padding: 0px 3px;
+            //color: $global-bg-color;
+            font-size: 1rem;
         }       
     }
 }

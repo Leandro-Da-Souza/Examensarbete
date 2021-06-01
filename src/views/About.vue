@@ -55,7 +55,7 @@ export default {
     }
     @media screen and (min-width: 765px) {
       h2{
-          font-size: 2.25rem;
+          font-size: 1.9rem;
       }
       .about-image{
           height: 16.5vh;
@@ -65,6 +65,9 @@ export default {
       }
     }
     @media screen and (min-width: 1204px) {
+      h2{
+          font-size: 2.25rem;
+      }
       .about-image{
           height: 18vh;
       }
