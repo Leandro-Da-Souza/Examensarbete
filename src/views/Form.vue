@@ -13,7 +13,7 @@
               Ladda upp bild
           </button>
         </div>
-        <input type="file" name="imgfile" id="imgUpload" :style="{display:'none'}">
+        <input type="file" name="imgfile" id="imgUpload" :style="{display:'none'}" accept="image/*" />>
         <textarea name="imgtext" placeholder="Lägg till bildtext" v-model="imgtext"></textarea>
         <button class="btn" :style="{width: '107px', height: '35px', borderRadius: '6px'}">Publicera</button>
       </form>
@@ -22,6 +22,8 @@
 
 <script>
 import Logo from '../components/Logo'
+import db from '../db'
+
 export default {
   components: {
     Logo
@@ -36,11 +38,18 @@ export default {
       this.$el.querySelector('#imgUpload').click()
     },
     handleFileUpload(e) {
-      console.log(e.target.files[0])
+      let file = e.target.files[0]
+
+      let storageRef = db.storage().ref('images/' + file.name)
+
+      let task = storageRef.put(file)
+
+      console.log(task)
+
     }
   },
   mounted() {
-    this.$el.querySelector('#imgUpload').addEventListener('change',e => this.handleFileUpload(e) 
+    this.$el.querySelector('#imgUpload').addEventListener('change',e => this.handleFileUpload(e),
     )
   }
 }
