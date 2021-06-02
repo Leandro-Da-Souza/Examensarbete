@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import db from '../db'
-// import CardClass from '../helpers/CardClass'
+import CardClass from '../helpers/CardClass'
 
 Vue.use(Vuex)
 
@@ -20,10 +20,10 @@ export default new Vuex.Store({
       let collection = await db.database().ref('images')
       collection.on('value', snap => {
         // console.log(snap.val())
-        snap.forEach(img => {
+        snap.forEach(data => {
           // console.log(img.val())
-          console.log(img.val().img)
-          // commit('SET_CARDS', new CardClass(`${val.val()}`, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, laborum corporis perferendis repellendus voluptates dignissimos esse!", "corporis perferendis repellendus" ))
+          console.log(data.val())
+          commit('SET_CARDS', new CardClass(`${data.val().img}`, `${data.val().description}`, "corporis perferendis repellendus" ))
         })
       })
       
