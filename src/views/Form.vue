@@ -8,12 +8,11 @@
           <button 
             class="ghost-btn" 
             :style="{padding: '3px', borderRadius: '6px'}"
-            @click.prevent="handleSubmit"
-          >
+            @click.prevent="handleSubmit">
               Ladda upp bild
           </button>
         </div>
-        <input type="file" name="imgfile" id="imgUpload" :style="{display:'none'}" accept="image/*" />>
+        <input type="file" name="imgfile" id="imgUpload" :style="{display:'none'}" accept="image/*" />
         <textarea name="imgtext" placeholder="Lägg till bildtext" v-model="imgtext"></textarea>
         <button class="btn" :style="{width: '107px', height: '35px', borderRadius: '6px'}">Publicera</button>
       </form>

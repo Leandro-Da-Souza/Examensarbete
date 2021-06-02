@@ -30,8 +30,9 @@ export default {
         align-items: center;
         border-radius: 30px;
         img {
-            margin: 40px 0px;
+            margin: 40px 0 0 0;
             width: 229px;
+            height: 172px;
             background-position: center;
         }
         .description {
