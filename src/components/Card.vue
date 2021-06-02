@@ -2,7 +2,7 @@
     <div class="card" :class="active ? 'active-card' : ''">
         <img :src="item.img">
         <p class="description">{{item.description}}</p>
-        <p class="quote">"{{item.quote}}"</p>
+        <p class="quote">"{{item.quote ? item.quote : 'ajksdnoajsdnasjkn'}}"</p>
     </div>
 </template>
 

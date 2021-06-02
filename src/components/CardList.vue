@@ -14,7 +14,7 @@
 
 <script>
 import Card from './Card.vue'
-import CardClass from '../helpers/CardClass'
+// import CardClass from '../helpers/CardClass'
 
 export default {
     name: "CardList",
@@ -24,9 +24,9 @@ export default {
     data() {
         return {
             cards: [
-                new CardClass('https://source.unsplash.com/1600x900/?nature,flowers', "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, laborum corporis perferendis repellendus voluptates dignissimos esse!", "corporis perferendis repellendus"),
-                new CardClass('https://source.unsplash.com/1600x900/?nature,trees', "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, laborum corporis perferendis repellendus voluptates dignissimos esse!", "corporis perferendis repellendus"),
-                new CardClass('https://source.unsplash.com/1600x900/?nature,garden', "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, laborum corporis perferendis repellendus voluptates dignissimos esse!", "corporis perferendis repellendus")
+                // new CardClass('https://source.unsplash.com/1600x900/?nature,flowers', "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, laborum corporis perferendis repellendus voluptates dignissimos esse!", "corporis perferendis repellendus"),
+                // new CardClass('https://source.unsplash.com/1600x900/?nature,trees', "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, laborum corporis perferendis repellendus voluptates dignissimos esse!", "corporis perferendis repellendus"),
+                // new CardClass('https://source.unsplash.com/1600x900/?nature,garden', "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, laborum corporis perferendis repellendus voluptates dignissimos esse!", "corporis perferendis repellendus")
             ],
             storeCards: [],
             currentIndex: 1,
