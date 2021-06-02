@@ -53,7 +53,7 @@ export default {
     align-items: center;
     justify-content: space-between;
     height: 5rem;
-    padding-left: 20px;
+    margin: 0rem 5vw;
 
     img{
         width: 8rem;
@@ -68,14 +68,13 @@ export default {
         display: block;
        // position: absolute;
         //right: 100%;
-        width: 50px;  
-    }
-    
+        //width: 50px;  
+    } 
 }
 
 @media screen and (min-width: 765px) {
     .nav-container{
-
+        
        .nav-links{
         display: flex;
         align-items: center;
@@ -93,7 +92,7 @@ export default {
                 font-family: $global-nav-font;
                 font-size: 1.2rem;
                 text-decoration: none;
-                margin-right: 2.7rem;
+                margin-left: 2.7rem;
                 white-space: nowrap;
             }
         }
