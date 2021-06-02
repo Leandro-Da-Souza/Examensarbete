@@ -23,7 +23,6 @@ export default {
         }
     },
     mounted() { 
-        console.log(db.auth)
         const { username, password } = this.$route.params
         this.authenticateUser(username, password)
     }

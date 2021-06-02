@@ -41,11 +41,20 @@ export default {
       let file = e.target.files[0]
 
       let storageRef = db.storage().ref('images/' + file.name)
+      let collectionRef = db.database().ref('images')
 
       let task = storageRef.put(file)
 
-      console.log(task)
-
+      task.on('state_changed', (snap) => {
+        console.log(snap)
+      }, (err) => {
+        console.log(err)
+      }, async () => {
+        const url = await storageRef.getDownloadURL()
+        // console.log(url)
+        // console.log(collectionRef)
+        collectionRef.push(url);
+      })
     }
   },
   mounted() {

@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import db from '../db'
+// import db from '../db'
 import Nav from '../components/Nav'
 import Home from '../views/Home'
 import About from '../views/About'
@@ -23,7 +23,7 @@ import Contact from '../views/Contact.vue'
 export default {
   name: "Landing",  
   mounted() {
-    console.log(db)
+    // console.log(db)
   },
   components: {
     Nav,
