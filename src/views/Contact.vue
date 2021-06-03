@@ -142,6 +142,9 @@ export default {
                     font-size: 1.4rem;
                 }   
             }  
+            p{
+                font-size: 1.125rem;
+            }
         }   
     } 
     @media screen and (min-width: 1204px) {

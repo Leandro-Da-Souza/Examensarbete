@@ -1,12 +1,12 @@
 <template>
   <div id="home">
-    <!--<transition name="fade" tag="div" >-->
+    <transition name="show" >
      <div :style="bgImg">
        <div class="circle-home">
-        <p>Plantera mera, hjälper dig med trädgården sedan 2007.</p>
+          <p>Plantera mera, hjälper dig med trädgården sedan 2007.</p>
         </div>
      </div>
-    <!--</transition>-->
+    </transition>
 
     <!--
     <a class="prev" @click="prev" href="#">&#10094; Previous</a>
@@ -16,7 +16,6 @@
 </template>
 
 <script>
-
 
 export default { 
   name: 'Home', 
@@ -32,20 +31,19 @@ export default {
         "background-image-2.jpg",
         "background-image-3.jpg"
       ],
-      current: 0,
+      currentIndex: 0,
       timer: 0,
     } 
   },
-  mounted() {
-    this.startSlide();
+  beforeMount() {
+    this.startSlide(); 
   },
   methods:{
     startSlide() {
-      this.timer = setInterval(this.next, 8000);
+      this.timer = setInterval(this.next, 6000);
     },
-    
     next() {
-      this.current += 1;
+      this.currentIndex += 1;
     },
     /**
     prev() {
@@ -54,7 +52,7 @@ export default {
   },
   computed: {
     currentImg() {
-      return this.images[Math.abs(this.current) % this.images.length];
+      return this.images[Math.abs(this.currentIndex) % this.images.length];
     },
     bgImg(){
       return { 'background-image': 'url('+ require(`@/assets/${this.currentImg}`) +')' };
@@ -76,8 +74,9 @@ export default {
       background-position: center;
       height: 100vh;
       width: 100%;
-     
+      transition: fade;
     }
+       
     .circle-home{
       display: flex;
       align-items: center;
@@ -94,6 +93,41 @@ export default {
       }
       
     }
+    @media screen and (min-width: 765px) {
+      .circle-home{
+        height: 16rem;
+        width: 16rem;
+        p{
+          font-size: 18px;
+        }
+      }
+    }
+    @media screen and (min-width: 1204px) {
+      .circle-home{
+         height: 18rem;
+         width: 18rem;
+        p{
+          font-size: 20px;
+        }
+      } 
+    }
+    @media screen and (min-width: 1920px) {
+      .circle-home{
+        height: 20rem;
+        width: 20rem;
+        
+      } 
+    }
+  }
+
+  .show-enter-active,
+  .show-leave-enter {
+    transform: translateX(0);
+    transition: all .3s linear;
+  }
+  .show-enter,
+  .show-leave-to {
+    transform: translateX(100%);
   }
 /** 
   .fade-enter-active,

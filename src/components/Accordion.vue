@@ -62,7 +62,6 @@ export default {
         }    
     }
     .content-container {
-        animation: foldDown 3s ease-in;
         border-top: none;
         min-height: 8vh;
         min-width: 100%;
