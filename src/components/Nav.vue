@@ -1,9 +1,9 @@
 <template>
 <div class="nav-container">
     <div class="nav">
-        <router-link to="/">
+        <a href="#home">
             <img src="@/assets/Logo.svg" alt="logo"/>
-        </router-link>
+        </a>
         
         <i @click="showModal = true" class="hamburger-icon fas fa-bars fa-2x"></i>
 

@@ -56,7 +56,7 @@ export default {
         display: grid;
         column-gap: 2rem;
         grid-template: 1fr;
-        position: relative;  
+        //position: relative;  
         //width: 40vw;
     }
     @media screen and (min-width: 765px) {

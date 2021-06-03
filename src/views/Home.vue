@@ -35,6 +35,7 @@ export default {
       timer: 0,
     } 
   },
+  
   beforeMount() {
     this.startSlide(); 
   },
@@ -63,8 +64,6 @@ export default {
 <style scoped lang="scss">
 
   #home{
-    //padding-top: 6rem;
-    //position: absolute;
     height: 100vh;
     .bgImage{
       padding-top: 6rem;
@@ -77,8 +76,8 @@ export default {
       width: 100%;
       height: 100vh;
       position: absolute;
-      -webkit-transition: all 2s ease;
-      transition: all 2s ease;
+      -webkit-transition: all 2s ease-in-out;
+      transition: all 2s ease-in-out;
     }
        
     .circle-home{
@@ -136,6 +135,6 @@ export default {
 
 .fade1-enter,
 .fade1-leave-to {
-  opacity: 0.6;
+  opacity: 0;
 }
 </style>
