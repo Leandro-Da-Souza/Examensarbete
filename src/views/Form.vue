@@ -1,6 +1,9 @@
 <template>
   <div class="form-container">
-      <Logo/>
+      <header>
+        <Logo/>
+        <button class="ghost-btn" @click="logOut">Logga ut</button> 
+      </header>
       <div v-if="uploading">
         <Spinner/>
       </div>
@@ -48,6 +51,13 @@ export default {
     }
   },
   methods: {
+    logOut() {
+      db.auth().signOut().then(() => {
+        this.$router.replace({name: 'Login'});
+      }).catch((e) => {
+        console.log('something went wrong: ' + e)
+      })
+    },
     openUpload() {
       this.$el.querySelector('#imgUpload').click()
     },
@@ -116,6 +126,16 @@ export default {
 <style scoped lang="scss">
 @import '../variables';
 .form-container {
+  header {
+    display: flex;
+    justify-content: space-between;
+    button {
+      height: 10%;
+      align-self: center;
+      padding: 3px 5px;
+      margin-right: 3px;
+    }
+  }
   .form-wrapper {
     margin-top: 10%;
     display: flex;
