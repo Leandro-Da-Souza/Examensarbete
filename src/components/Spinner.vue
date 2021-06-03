@@ -1,31 +1,15 @@
 <template>
-    <Spinner/>
+  <div class="loader">
+    <span></span>
+    <span></span>
+    <span></span>
+ </div>
 </template>
 
 <script>
-import db from '../db';
-import Spinner from '../components/Spinner'
 
 export default {
-    components: {
-      Spinner
-    },
-    methods: {
-        async authenticateUser(name, pass) {
-            try {
-                const res = await db.auth().signInWithEmailAndPassword(name, pass)
-                console.log(res)
-                this.$router.replace({name: 'Form', meta: res})
-            } catch (e) {
-                console.log(e)
-                this.$router.replace({name: 'Login', meta: e})
-            }
-        }
-    },
-    mounted() { 
-        const { username, password } = this.$route.params
-        this.authenticateUser(username, password)
-    }
+    name: 'Spinner'
 }
 </script>
 

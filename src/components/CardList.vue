@@ -14,6 +14,7 @@
 
 <script>
 import Card from './Card.vue'
+// import CardClass from '../helpers/CardClass'
 
 export default {
     name: "CardList",
@@ -23,22 +24,11 @@ export default {
     data() {
         return {
             cards: [
-                {
-                    img: "https://source.unsplash.com/1600x900/?nature,flowers",
-                    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, laborum corporis perferendis repellendus voluptates dignissimos esse!",
-                    quote: "corporis perferendis repellendus"
-                },
-                {
-                    img: "https://source.unsplash.com/1600x900/?nature,trees",
-                    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, laborum corporis perferendis repellendus voluptates dignissimos esse!",
-                    quote: "corporis perferendis repellendus"
-                },
-                {
-                    img: "https://source.unsplash.com/1600x900/?nature,garden",
-                    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, laborum corporis perferendis repellendus voluptates dignissimos esse!",
-                    quote: "corporis perferendis repellendus"
-                },
+                // new CardClass('https://source.unsplash.com/1600x900/?nature,flowers', "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, laborum corporis perferendis repellendus voluptates dignissimos esse!", "corporis perferendis repellendus"),
+                // new CardClass('https://source.unsplash.com/1600x900/?nature,trees', "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, laborum corporis perferendis repellendus voluptates dignissimos esse!", "corporis perferendis repellendus"),
+                // new CardClass('https://source.unsplash.com/1600x900/?nature,garden', "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, laborum corporis perferendis repellendus voluptates dignissimos esse!", "corporis perferendis repellendus")
             ],
+            storeCards: [],
             currentIndex: 1,
             touch: {
                 startX: 0,
@@ -85,7 +75,10 @@ export default {
                 this.prevIndex()
         }
     },
-    mounted() {
+    async mounted() {
+        await this.$store.dispatch('GET_CARDS')
+        this.cards = this.$store.state.cards
+        console.log(this.storeCards) 
         this.$el.addEventListener('touchstart', event => this.touchstart(event));
         this.$el.addEventListener('touchmove', event => this.touchmove(event));
         this.$el.addEventListener('touchend', () => this.touchend());

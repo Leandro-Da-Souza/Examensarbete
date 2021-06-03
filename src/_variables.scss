@@ -7,3 +7,23 @@ $global-font-color: #6a6a6a;
 $global-heading-color: #272727;
 $global-green-color: #86a687;
 $global-bg-color: #fbfbfb;
+
+.btn {
+    width: 97px;
+    height: 35px;
+    margin-top: 30px;
+    align-self: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: none;
+    background-color: $global-green-color;
+    color: #fff;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.ghost-btn {
+    font-size: 0.9rem;
+    background-color: #fff;
+    color: $global-green-color;
+    border-color: $global-green-color;
+}

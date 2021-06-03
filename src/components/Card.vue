@@ -2,7 +2,7 @@
     <div class="card" :class="active ? 'active-card' : ''">
         <img :src="item.img">
         <p class="description">{{item.description}}</p>
-        <p class="quote">"{{item.quote}}"</p>
+        <p class="quote">"{{item.quote ? item.quote : 'ajksdnoajsdnasjkn'}}"</p>
     </div>
 </template>
 
@@ -30,8 +30,9 @@ export default {
         align-items: center;
         border-radius: 30px;
         img {
-            margin: 40px 0px;
+            margin: 40px 0 0 0;
             width: 229px;
+            height: 172px;
             background-position: center;
         }
         .description {
