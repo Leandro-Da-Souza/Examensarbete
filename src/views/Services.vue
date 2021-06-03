@@ -39,7 +39,7 @@ export default {
 }
 
 #services{
-    
+    position: relative;
     padding-top: 3rem;
     h2 {
         color: $global-font-color;
