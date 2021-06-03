@@ -23,12 +23,7 @@ export default {
     },
     data() {
         return {
-            cards: [
-                // new CardClass('https://source.unsplash.com/1600x900/?nature,flowers', "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, laborum corporis perferendis repellendus voluptates dignissimos esse!", "corporis perferendis repellendus"),
-                // new CardClass('https://source.unsplash.com/1600x900/?nature,trees', "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, laborum corporis perferendis repellendus voluptates dignissimos esse!", "corporis perferendis repellendus"),
-                // new CardClass('https://source.unsplash.com/1600x900/?nature,garden', "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, laborum corporis perferendis repellendus voluptates dignissimos esse!", "corporis perferendis repellendus")
-            ],
-            storeCards: [],
+            cards: [],
             currentIndex: 1,
             touch: {
                 startX: 0,
@@ -78,7 +73,6 @@ export default {
     async mounted() {
         await this.$store.dispatch('GET_CARDS')
         this.cards = this.$store.state.cards
-        console.log(this.storeCards) 
         this.$el.addEventListener('touchstart', event => this.touchstart(event));
         this.$el.addEventListener('touchmove', event => this.touchmove(event));
         this.$el.addEventListener('touchend', () => this.touchend());
@@ -93,13 +87,16 @@ export default {
 @import '../variables';
     .card-list {
         margin: 10px;
-        // width: 100%;
+        width: 100%;
         ul {
             display: flex;
             overflow: hidden;
             list-style-type: none;
+            width: 100%;
+            margin-bottom: 20px;
             li {
-                margin: 20px 10px;
+                margin-bottom: 12px;
+                margin-left: auto;
             }
         }
         .bullet-container {

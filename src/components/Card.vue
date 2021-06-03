@@ -23,7 +23,6 @@ export default {
     .card {
         width: 287.45px;
         height: 367px;
-        // padding: 10px 20px;
         box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
         display: flex;
         flex-direction: column;
@@ -47,6 +46,8 @@ export default {
             height: 375px;
             box-shadow: 0px 7px 7px rgba(0,0,0,0.35);
             transition: all 0.5s ease;
+            align-self: center;
+            justify-self: center;
     }
 
     @media screen and(min-width: 768px) {
