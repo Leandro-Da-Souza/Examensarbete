@@ -2,7 +2,9 @@
     <div id="contact">
         <div class="contact-container">
             <h2>Kontakta oss</h2>
-            <p class="contact-info">Om du har några frågor eller vill boka ett möte skicka ett mail så hör vi av oss så fort vi kan.</p>
+            <p class="contact-info">Om du har några frågor eller vill boka ett möte med oss kan du skriva i formuläret nedan, så hör vi av oss så fort vi kan. Du kan även maila till oss direkt: 
+                <a href="mailto:planteramera@gmail.com">planteramera@gmail.com</a>
+            </p>
             <form class="form-container" @submit.prevent="handleForm">
                 <input type="text" placeholder="namn" v-model="name">
                 <input type="text" placeholder="email" v-model="email">
@@ -11,7 +13,10 @@
             </form>
             <p class="number">Eller ring oss på
                 <a href="tel:+081244557">08-124 45 57</a>
+                <br>
+                Mån-fre: 08:00-16:00
             </p>
+            
         </div>
     </div>
 </template>
@@ -75,7 +80,7 @@ export default {
                 justify-content: center;
                 align-items: center;
                 input[type="text"] {
-                    width: 48vw;
+                    width: 60vw;
                     height: 2.5rem;
                     margin: 10px 0;
                     border-radius: 1.25rem;
@@ -84,7 +89,7 @@ export default {
                     text-indent: 15px;
                 }
                 textarea {
-                    width: 48vw;
+                    width: 60vw;
                     height: 8rem;
                     margin: 10px 0;
                     border: none;
@@ -109,10 +114,9 @@ export default {
                 text-align: center;
                 margin-top: 20px;
                 font-size: 0.85rem;
-            }
-            
-        }
-        
+                padding-bottom: 4rem;
+            }  
+        }  
     }
     @media screen and (min-width: 765px) {
         #contact{

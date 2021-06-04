@@ -1,7 +1,7 @@
 <template>
   <div id="home">
-    <transition name="show" >
-     <div :style="bgImg">
+    <transition name="fade1">
+     <div class="bgImage" :style="bgImg" :key="currentIndex">
        <div class="circle-home">
           <p>Plantera mera, hjälper dig med trädgården sedan 2007.</p>
         </div>
@@ -35,12 +35,13 @@ export default {
       timer: 0,
     } 
   },
+  
   beforeMount() {
     this.startSlide(); 
   },
   methods:{
     startSlide() {
-      this.timer = setInterval(this.next, 6000);
+      this.timer = setInterval(this.next, 5000);
     },
     next() {
       this.currentIndex += 1;
@@ -63,18 +64,20 @@ export default {
 <style scoped lang="scss">
 
   #home{
-    //padding-top: 6rem;
-    div{
+    height: 100vh;
+    .bgImage{
       padding-top: 6rem;
       display: flex;
       align-items: center;
       justify-content: center;
       background-repeat: no-repeat;
       background-size: cover;
-      background-position: center;
-      height: 100vh;
+      background-position: center center;
       width: 100%;
-      transition: fade;
+      height: 100vh;
+      position: absolute;
+      -webkit-transition: all 2s ease-in-out;
+      transition: all 2s ease-in-out;
     }
        
     .circle-home{
@@ -90,8 +93,7 @@ export default {
       p{
         background: transparent;
         font-weight: bold;
-      }
-      
+      } 
     }
     @media screen and (min-width: 765px) {
       .circle-home{
@@ -120,31 +122,19 @@ export default {
     }
   }
 
-  .show-enter-active,
-  .show-leave-enter {
-    transform: translateX(0);
-    transition: all .3s linear;
-  }
-  .show-enter,
-  .show-leave-to {
-    transform: translateX(100%);
-  }
-/** 
-  .fade-enter-active,
-  .fade-leave-active {
-    transition: all 10s ease;
-    overflow: hidden;
-    visibility: visible;
-    position: absolute;
-    width:100%;
-    opacity: 1;
-  }
+.fade1-enter-active {
+  //border: solid 5px red;
+  opacity: 1;
+  z-index: 999;
+}
 
-.fade-enter,
-.fade-leave-to {
-  visibility: hidden;
-  width:100%;
+.fade1-leave-active {
+  //border: solid 5px red;
+  opacity: 1;
+}
+
+.fade1-enter,
+.fade1-leave-to {
   opacity: 0;
-}*/
-
+}
 </style>

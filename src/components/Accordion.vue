@@ -76,8 +76,8 @@ export default {
 
     .fade-enter-active,
     .fade-leave-active{
-        transition: all .3s ease-in-out;
-        overflow: hidden;
+        transition: all 1s ease;
+        //overflow: hidden;
     }
     .fade-enter, 
     .fade-leave-to{
