@@ -1,6 +1,9 @@
 <template>
   <div class="form-container">
-      <Logo/>
+      <header>
+        <Logo/>
+        <button class="ghost-btn" @click="logOut">Logga ut</button> 
+      </header>
       <div v-if="uploading">
         <Spinner/>
       </div>
@@ -48,11 +51,33 @@ export default {
     }
   },
   methods: {
+    logOut() {
+      db.auth().signOut().then(() => {
+        this.$router.replace({name: 'Login'});
+      }).catch((e) => {
+        console.log('something went wrong: ' + e)
+      })
+    },
     openUpload() {
       this.$el.querySelector('#imgUpload').click()
     },
     handleFileUpload(e) {
       this.file = e.target.files[0]
+      let element = this.$el.querySelector('.file-upload');
+      let reader = new FileReader();
+
+      reader.onloadend = function () {
+        element.style.backgroundImage = `
+        url("${reader.result}")
+        
+        `;
+      }
+
+      if(this.file) {
+        reader.readAsDataURL(this.file)
+      }
+
+      // console.log(this.file)
     },
     handleStatus(msg) {
       this.status.showMessage = true,
@@ -71,9 +96,10 @@ export default {
       let collectionRef = db.database().ref('images')
 
       let task = storageRef.put(this.file)
+      console.log(this.$el)
 
       task.on('state_changed', (snap) => {
-          this.uploading = true
+        this.uploading = true
           console.log(snap)
         }, (err) => {
           console.log(err)
@@ -91,6 +117,7 @@ export default {
   },
   mounted() {
     this.$el.querySelector('#imgUpload').addEventListener('change',e => this.handleFileUpload(e),
+    console.log(this.$el.querySelector('.file-upload').style.backgroundImage)
     )
   }
 }
@@ -99,6 +126,16 @@ export default {
 <style scoped lang="scss">
 @import '../variables';
 .form-container {
+  header {
+    display: flex;
+    justify-content: space-between;
+    button {
+      height: 10%;
+      align-self: center;
+      padding: 3px 5px;
+      margin-right: 3px;
+    }
+  }
   .form-wrapper {
     margin-top: 10%;
     display: flex;
@@ -125,6 +162,8 @@ export default {
       width: 244px;
       height: 226px;
       background-color: rgba(186,186,186, 0.2); 
+      background-position: center;
+      background-size: cover;
       border: 1px solid #bababa;
       .upload {
         color: $global-green-color;
