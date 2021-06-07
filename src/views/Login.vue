@@ -36,6 +36,9 @@ export default {
             this.username = ""
             this.password = ""
         }
+    },
+    mounted() {
+        console.log(localStorage)
     }
 }
 </script>
