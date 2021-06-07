@@ -116,7 +116,7 @@ export default {
           this.handleStatus('något gick fel, kontakta IT')
         }, async () => {
           const url = await storageRef.getDownloadURL()
-          collectionRef.push({img: url, description: this.imgtext, user: this.currentUser});
+          collectionRef.push({name: this.file.name, img: url, description: this.imgtext, user: this.currentUser});
           this.uploading = false  
           this.imgtext = ""
           this.file = ''

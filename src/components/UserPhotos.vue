@@ -6,11 +6,11 @@
     <div v-else>
       <h2>Dina bilder</h2>
       <ul>
-        <li v-for="(photos,index) in userPhotos" :key="index + ''">
-          <img :src="photos.img" alt="">
+        <li v-for="(photo,index) in userPhotos" :key="index + ''">
+          <img :src="photo.img" alt="">
           <div>
-            <p>{{photos.description | truncateText(15)}}</p>
-            <i class="fas fa-times-circle"></i>
+            <p>{{photo.description | truncateText(15)}}</p>
+            <i class="fas fa-times-circle" @click="deletePhoto(photo)"></i>
           </div>
         </li>
       </ul>
@@ -33,12 +33,26 @@ export default {
           await db.database().ref('images').on('value', snap => {
           snap.forEach(key => {
             if(key.val().user === localStorage.getItem('uid')) {
-              this.userPhotos.push(key.val())
+              if(this.userPhotos.findIndex(i => i.img === key.val().img) > -1) {
+                console.log('image exists')
+              }
+              else {
+                this.userPhotos.push(key.val())
+              }
             }
           })
         })
-        console.log(this.userPhotos)
         },
+        async deletePhoto(photo) {
+          console.log(photo)
+          let image = await db.storage().ref().child(`images/${photo.user}/${photo.name}`);
+          await image.delete().then(() => {
+            console.log('success')
+          }).catch(e => {
+            console.log(e)
+          }) 
+          
+        }
     },
     filters: {
       truncateText(text, length) {
