@@ -26,7 +26,7 @@
           <button @click.prevent="handleSubmit" class="btn" :style="{width: '107px', height: '35px', borderRadius: '6px'}">Publicera</button>
         </form>
       </div>
-      <UserPhotos />
+      <UserPhotos :reload="handleReload"/>
   </div>
 </template>
 
@@ -62,6 +62,9 @@ export default {
       }).catch((e) => {
         console.log('something went wrong: ' + e)
       })
+    },
+    handleReload() {
+      console.log('reload')
     },
     openUpload() {
       this.$el.querySelector('#imgUpload').click()

@@ -47,10 +47,21 @@ export default {
           console.log(photo)
           let image = await db.storage().ref().child(`images/${photo.user}/${photo.name}`);
           await image.delete().then(() => {
-            console.log('success')
+            }).catch(e => {
+              console.log(e)
+          }) 
+
+          await db.database().ref('images').on('value', snap => {
+            snap.forEach(key => {
+              if(key.val().name === photo.name) {
+                key.ref.remove()
+                this.userPhotos = this.userPhotos.filter(photo => photo.name !== key.val().name)
+              }  
+            })
           }).catch(e => {
             console.log(e)
           }) 
+          
           
         }
     },
