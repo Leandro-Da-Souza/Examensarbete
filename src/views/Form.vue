@@ -2,7 +2,7 @@
   <div class="form-container">
       <header>
         <Logo/>
-        <button class="ghost-btn" @click="logOut">Logga ut</button> 
+        <button class="ghost-btn" :style="{borderRadius: '6px'}" @click="logOut">Logga ut</button> 
       </header>
       <div v-if="uploading">
         <Spinner/>
@@ -70,6 +70,7 @@ export default {
       this.$el.querySelector('#imgUpload').click()
     },
     handleFileUpload(e) {
+      console.log(e.target.value)
       this.file = e.target.files[0]
       let element = this.$el.querySelector('.file-upload');
       let reader = new FileReader();
@@ -85,7 +86,6 @@ export default {
         reader.readAsDataURL(this.file)
       }
 
-      // console.log(this.file)
     },
     async getCurrentUser() {
       this.currentUser = await db.auth().currentUser.uid
@@ -128,7 +128,10 @@ export default {
     }
   },
   mounted() {
-    this.$el.querySelector('#imgUpload').addEventListener('change',e => this.handleFileUpload(e))
+    this.$el.querySelector('#imgUpload').addEventListener('change',e => {
+      this.handleFileUpload(e)
+      e.target.value = ''
+    })
     this.currentUser = localStorage.getItem('uid')
   },
   beforeDestroy() {

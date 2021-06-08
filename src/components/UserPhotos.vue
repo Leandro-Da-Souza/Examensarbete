@@ -58,9 +58,7 @@ export default {
                 this.userPhotos = this.userPhotos.filter(photo => photo.name !== key.val().name)
               }  
             })
-          }).catch(e => {
-            console.log(e)
-          }) 
+          })
           
           
         }
