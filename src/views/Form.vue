@@ -41,7 +41,7 @@ export default {
     Spinner
   },
   data() {
-    return {
+    return { 
       imgtext: '',
       file: "",
       uploading: false,
