@@ -24,7 +24,7 @@
             <!-- <span v-if="status.showMessage" class="status-message-conent">{{status.message}}</span> -->
             <h3>{{status.message}}</h3>
           </div>
-          <input type="file" name="imgfile" id="imgUpload" :style="{display:'none'}" accept="image/*" />
+          <input type="file" name="imgfile" id="imgUpload" :style="{display:'none'}" accept="image/*" @change="handleFileUpload"/>
           <textarea name="imgtext" placeholder="Lägg till bildtext" v-model="imgtext"></textarea>
           <button @click.prevent="handleSubmit" class="btn" :style="{width: '107px', height: '35px', borderRadius: '6px'}">Publicera</button>
         </form>
@@ -127,9 +127,9 @@ export default {
     }
   },
   mounted() {
-    this.$el.querySelector('#imgUpload').addEventListener('change',e => {
-      this.handleFileUpload(e)
-    })
+    // this.$el.querySelector('#imgUpload').addEventListener('change',e => {
+    //   this.handleFileUpload(e)
+    // })
     this.currentUser = localStorage.getItem('uid')
   },
   beforeDestroy() {
