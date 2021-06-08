@@ -43,9 +43,11 @@ export default {
 .accordion-wrapper {
     padding: 0;
     margin: 0;
+    top: 0;
     box-sizing: border-box;
     margin-bottom: 0.8rem;
     width: 90vw;
+    
     .title-container {
         background-color: $global-green-color;
         display: flex;
@@ -76,8 +78,11 @@ export default {
 
     .fade-enter-active,
     .fade-leave-active{
-        transition: all 1s ease;
+        transition: all 0.8s ease;
         //overflow: hidden;
+    }
+    .fade-leave-active{
+        transition: all 0.3s ease;
     }
     .fade-enter, 
     .fade-leave-to{
