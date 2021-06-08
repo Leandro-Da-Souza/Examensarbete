@@ -8,10 +8,14 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     cards: [],
+    currentUser: ""
   },
   mutations: {
     SET_CARDS: (state, data) => {
       state.cards.push(data) 
+    },
+    SET_CURRENT_USER: (state, data) => {
+      state.currentUser = data
     }
   },
   actions: {
@@ -27,7 +31,10 @@ export default new Vuex.Store({
             }
         })
       })
-      
+    },
+    async GET_CURRENT_USER({commit}) {
+      let uid = await db.auth().currentUser.uid;
+      commit('SET_CURRENT_USER', uid)
     }
   },
   modules: {
