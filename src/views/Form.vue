@@ -20,13 +20,16 @@
             </button>
           </div>
           <span>{{!file ? 'ingen bild vald' : this.file.name}}</span>
-          <span v-if="status.showMessage">{{status.message}}</span>
+          <div class="status-message" v-if="status.showMessage">
+            <!-- <span v-if="status.showMessage" class="status-message-conent">{{status.message}}</span> -->
+            <h3>{{status.message}}</h3>
+          </div>
           <input type="file" name="imgfile" id="imgUpload" :style="{display:'none'}" accept="image/*" />
           <textarea name="imgtext" placeholder="Lägg till bildtext" v-model="imgtext"></textarea>
           <button @click.prevent="handleSubmit" class="btn" :style="{width: '107px', height: '35px', borderRadius: '6px'}">Publicera</button>
         </form>
       </div>
-      <UserPhotos />
+      <UserPhotos v-if="!uploading"/>
   </div>
 </template>
 
@@ -161,10 +164,23 @@ export default {
       letter-spacing: 1.5px;
       margin-bottom: 5px;
     }
-    .message{
-      font-size: 1.2rem;
-      color: $global-green-color;
-      transition: font-size 2s ease;
+    .status-message {
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: 100;
+      left: 0;
+      top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      h3 {
+        font-size: 1.6rem;
+        padding: 10px 20px;
+        border-radius: 4px;
+        color: $global-green-color;
+      }
     }
     .file-upload {
       display: flex;

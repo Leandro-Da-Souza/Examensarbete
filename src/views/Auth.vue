@@ -18,8 +18,8 @@ export default {
                 localStorage.setItem('uid', this.$store.state.currentUser)
                 this.$router.replace({name: 'Form', meta: res})
             } catch (e) {
-                console.log(e)
-                this.$router.replace({name: 'Login', meta: e})
+                // console.log(e)
+                this.$router.replace({name: 'Login', params: e})
             }
         }
     },
