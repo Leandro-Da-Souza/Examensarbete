@@ -2,9 +2,9 @@
     <div id="MenuModal">
         
         <ul class="nav-links">
-			<li><a @click="$emit('close')" href="/#about">Om oss</a></li>
-			<li><a @click="$emit('close')" href="/#services">Våra tjänster</a></li>
-			<li><a @click="$emit('close')" href="/#references">Referenser</a></li>
+			<li><a @click="$emit('close')" href="#about">Om oss</a></li>
+			<li><a @click="$emit('close')" href="#services">Våra tjänster</a></li>
+			<li><a @click="$emit('close')" href="#references">Referenser</a></li>
             <li><a @click="$emit('close'), scrollTo()">Kontakt</a></li>
 		</ul>
      

@@ -39,8 +39,9 @@ export default {
 }
 
 #services{
-    position: relative;
-    padding-top: 3rem;
+    height: 100vh;
+    //position: relative;
+    padding-top: 6rem;
     h2 {
         color: $global-font-color;
         text-align: center;
