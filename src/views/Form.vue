@@ -26,7 +26,7 @@
           <button @click.prevent="handleSubmit" class="btn" :style="{width: '107px', height: '35px', borderRadius: '6px'}">Publicera</button>
         </form>
       </div>
-      <UserPhotos :reload="handleReload"/>
+      <UserPhotos />
   </div>
 </template>
 
@@ -63,14 +63,10 @@ export default {
         console.log('something went wrong: ' + e)
       })
     },
-    handleReload() {
-      console.log('reload')
-    },
     openUpload() {
       this.$el.querySelector('#imgUpload').click()
     },
     handleFileUpload(e) {
-      console.log(e.target.value)
       this.file = e.target.files[0]
       let element = this.$el.querySelector('.file-upload');
       let reader = new FileReader();
@@ -130,7 +126,6 @@ export default {
   mounted() {
     this.$el.querySelector('#imgUpload').addEventListener('change',e => {
       this.handleFileUpload(e)
-      e.target.value = ''
     })
     this.currentUser = localStorage.getItem('uid')
   },

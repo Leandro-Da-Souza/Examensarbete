@@ -44,7 +44,6 @@ export default {
         })
         },
         async deletePhoto(photo) {
-          console.log(photo)
           let image = await db.storage().ref().child(`images/${photo.user}/${photo.name}`);
           await image.delete().then(() => {
             }).catch(e => {
