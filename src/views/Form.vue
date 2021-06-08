@@ -1,7 +1,8 @@
 <template>
   <div class="form-container">
       <header>
-        <Logo/>
+        <!--<Logo/>-->
+        <img src="@/assets/Logo.svg" alt="logo"/>
         <button class="ghost-btn" @click="logOut">Logga ut</button> 
       </header>
       <div v-if="uploading">
@@ -31,12 +32,12 @@
 
 <script>
 import Spinner from '../components/Spinner.vue'
-import Logo from '../components/Logo'
+//import Logo from '../components/Logo'
 import db from '../db'
 
 export default {
   components: {
-    Logo,
+    //Logo,
     Spinner
   },
   data() {
@@ -129,6 +130,10 @@ export default {
   header {
     display: flex;
     justify-content: space-between;
+    img{
+      margin: 1rem 2rem;
+      width: 8rem;
+    }
     button {
       height: 10%;
       align-self: center;

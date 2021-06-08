@@ -2,13 +2,13 @@
     <div id="contact">
         <div class="contact-container">
             <h2>Kontakta oss</h2>
-            <p class="contact-info">Om du har några frågor eller vill boka ett möte med oss kan du skriva i formuläret nedan, så hör vi av oss så fort vi kan. Du kan även maila till oss direkt: 
+            <p class="contact-info"><span>Om du har några frågor eller vill boka ett möte med oss kan du skriva i formuläret nedan, så hör vi av oss så fort vi kan.</span> <br> Du kan även maila till oss direkt: 
                 <a href="mailto:planteramera@gmail.com">planteramera@gmail.com</a>
             </p>
             <form class="form-container" @submit.prevent="handleForm">
-                <input type="text" placeholder="namn" v-model="name">
-                <input type="text" placeholder="email" v-model="email">
-                <textarea placeholder="ditt meddelande" v-model="message"></textarea>
+                <input type="text" placeholder="För- och efternamn" v-model="name">
+                <input type="text" placeholder="E-mail" v-model="email">
+                <textarea placeholder="Ditt meddelande" v-model="message"></textarea>
                 <button type="submit">Skicka</button>
             </form>
             <p class="number">Eller ring oss på
@@ -87,6 +87,12 @@ export default {
                     border: none;
                     box-shadow: 2px 4px 6px rgba(0,0,0,0.25);
                     text-indent: 15px;
+                    &:active, 
+                    &:focus, 
+                    &:hover{
+                        outline: none;
+                    }
+
                 }
                 textarea {
                     width: 60vw;
@@ -96,6 +102,11 @@ export default {
                     border-radius: 1.25rem;
                     text-indent: 10px;
                     box-shadow: 2px 4px 6px rgba(0,0,0,0.25);
+                    &:active, 
+                    &:focus, 
+                    &:hover{
+                        outline: none;
+                    }
                 }
                 button[type="submit"] {
                     width: 97px;
@@ -130,6 +141,7 @@ export default {
                 font-size: 1.125rem;
             }
             .form-container {
+                
                 input[type="text"] {
                     max-width: 32rem;
                     height: 3.2rem;
@@ -152,6 +164,9 @@ export default {
         }   
     } 
     @media screen and (min-width: 1204px) {
+        ::placeholder{
+            font-size: 1rem;
+        }
         h2{
             font-size: 2.25rem;
         }

@@ -1,6 +1,7 @@
 <template>
   <div class="login-container">
-    <Logo/>
+    <!--<Logo/>-->
+    <img src="@/assets/Logo.svg" alt="logo"/>
     <div class="form-wrapper">
         <h1>LOGGA IN</h1>
         <form class="form-container" @submit.prevent="handleSubmit">
@@ -13,7 +14,7 @@
 </template>
 
 <script>
-import Logo from '../components/Logo'
+//import Logo from '../components/Logo'
 export default {    
     name: 'Login',
     data() {
@@ -23,7 +24,7 @@ export default {
         }
     },
     components: {
-        Logo
+        //Logo
     },
     methods: {
         handleSubmit() {
@@ -46,6 +47,7 @@ export default {
     .login-container {
         height: 100vh;
         img {
+            margin: 1rem 2rem;
             width: 8rem;
         }
         .form-wrapper {
