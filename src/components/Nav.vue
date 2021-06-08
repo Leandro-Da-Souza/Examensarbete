@@ -1,18 +1,18 @@
 <template>
 <div class="nav-container">
     <div class="nav">
-        <a href="#home">
+        <a @click="scrollToHome()">
             <img src="@/assets/Logo.svg" alt="logo"/>
         </a>
         
         <i @click="showModal = true" class="hamburger-icon fas fa-bars fa-2x"></i>
 
-        <ul class="nav-links">
-			<li><a href="/#about">Om oss</a></li>
-			<li><a href="/#services">Våra tjänster</a></li>
-			<li><a href="/#references">Referenser</a></li>
-            <li><a @click="scrollToTop()">Kontakt</a></li>
-		</ul>
+        <div class="nav-links">
+			<a @click="scrollToAbout()">Om oss</a>
+			<a @click="scrollToServices()">Våra tjänster</a>
+			<a @click="scrollToRef()">Referenser</a>
+            <a @click="scrollToContact()">Kontakt</a>
+		</div>
         
         <MenuModal v-if="showModal" @close="showModal = false" />
     </div>
@@ -30,10 +30,26 @@ export default {
         MenuModal
     },
     methods:{
-        scrollToTop() {
-        var element = document.getElementById("contact");
-        element.scrollIntoView({behavior: "smooth"});
-        }
+        scrollToHome() {
+            var home = document.getElementById("home");
+            home.scrollIntoView({behavior: "smooth", block: 'start'});
+        },
+        scrollToAbout() {
+            var about = document.getElementById("about");
+            about.scrollIntoView({behavior: "smooth", block: 'start'});
+        },
+        scrollToServices() {
+            var services = document.getElementById("services");
+            services.scrollIntoView({behavior: "smooth", block: 'start'});
+        },
+        scrollToRef() {
+            var ref = document.getElementById("references");
+            ref.scrollIntoView({behavior: "smooth", block: 'start'});
+        },
+        scrollToContact() {
+            var contact = document.getElementById("contact");
+            contact.scrollIntoView({behavior: "smooth", block: 'start'});
+        }   
     }  
     
 }
@@ -74,28 +90,24 @@ export default {
 
 @media screen and (min-width: 765px) {
     .nav-container{
-        
        .nav-links{
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        //padding: 3.2rem;
         width: 100%;
-        li{
-            border-bottom: solid 2px rgba(255, 255, 255, 0.3);
-            cursor: pointer;
-            list-style: none;
-            margin-bottom: 0.4rem;
-            margin-top: 0.4rem;
             a{
+                cursor: pointer;
                 color: $global-green-color;
                 font-family: $global-nav-font;
                 font-size: 1.2rem;
                 text-decoration: none;
+                list-style: none;
+                margin-bottom: 0.4rem;
+                margin-top: 0.4rem;
                 margin-left: 2.7rem;
                 white-space: nowrap;
             }
-        }
+        
     }
         .hamburger-icon{
             visibility: hidden;

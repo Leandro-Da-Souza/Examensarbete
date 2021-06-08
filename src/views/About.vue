@@ -18,19 +18,21 @@
 </template>
 
 <script>
-export default {
+export default { 
   name: 'About',
 }
 </script>
 
 <style scoped lang="scss">
+@import '../variables';
+
   #about{
     display: flex;
     flex-direction: column;
     //justify-content: center;
     align-items: center;
-    padding-top: 3rem;
-
+    padding-top: 6rem;
+    height: 100%;
     h2{
       font-weight: initial;
       text-align: center;
@@ -46,14 +48,12 @@ export default {
       display: block;
       padding: 2rem 0rem;
       width: 90vw;
-      
       span{
         display: inline-block;
         margin: 10px 0; 
       }
-
     }
-    @media screen and (min-width: 765px) {
+    @media screen and (min-width: $sm) {
       h2{
           font-size: 1.9rem;
       }
@@ -64,7 +64,7 @@ export default {
         font-size: 1.125rem; 
       }
     }
-    @media screen and (min-width: 1204px) {
+    @media screen and (min-width: $md) {
       h2{
           font-size: 2.25rem;
       }
@@ -75,7 +75,7 @@ export default {
         font-size: 1.25rem; 
       }
     }
-    @media screen and (min-width: 1920px) {
+    @media screen and (min-width: $lg) {
       h2{
         font-size: 3rem;
       }

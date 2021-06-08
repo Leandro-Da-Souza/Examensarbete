@@ -39,8 +39,9 @@ export default {
 }
 
 #services{
-    position: relative;
-    padding-top: 3rem;
+    height: 100vh;
+    //position: relative;
+    padding-top: 6rem;
     h2 {
         color: $global-font-color;
         text-align: center;
@@ -55,7 +56,8 @@ export default {
     .services-wrapper {
         display: grid;
         column-gap: 2rem;
-        grid-template: 1fr;
+        grid-template-columns: 1fr;
+        //height: 100%;
         //position: relative;  
         //width: 40vw;
     }
@@ -65,7 +67,15 @@ export default {
         }
         p{
             font-size: 1.125rem;
+            margin-bottom: 3rem;
         }
+        .services-wrapper {
+            grid-template: 1fr/1fr 1fr;
+            width: 90vw;
+            .accordion{
+            max-width: 43vw;
+            }
+        } 
         
     }
     @media screen and (min-width: 1204px) {
@@ -76,7 +86,7 @@ export default {
             font-size: 1.25rem; 
         }
         .services-wrapper {
-            grid-template: 1fr/ 1fr 1fr;
+            grid-template: 1fr/1fr 1fr;
             width: 90vw;
             .accordion{
             max-width: 43vw;

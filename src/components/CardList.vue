@@ -2,7 +2,7 @@
     <div class="card-list">
         <ul>
             <li v-for="(card, index) in cards" :key="index" :style="listPosition" @click="changeImage(index)" >
-                <Card :item="card" :active="index == currentIndex" />
+                <Card class="card" :item="card" :active="index == currentIndex" />
             </li>
         </ul>
         <div class="bullet-container">
@@ -86,17 +86,27 @@ export default {
 <style scoped lang="scss">
 @import '../variables';
     .card-list {
-        margin: 10px;
-        width: 100%;
+        display: flex;
+        //margin: 10px;
+        width: 100vw;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
         ul {
             display: flex;
             overflow: hidden;
             list-style-type: none;
+            justify-content: center;
+            align-items: center;
             width: 100%;
             margin-bottom: 20px;
+            //margin-left: 19rem;
             li {
                 margin-bottom: 12px;
-                margin-left: auto;
+                //margin-left: auto;
+                .card{
+                    margin: 0rem 0.5rem;
+                }
             }
         }
         .bullet-container {
