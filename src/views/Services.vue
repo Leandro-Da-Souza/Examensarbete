@@ -46,6 +46,7 @@ export default {
     height: 100%;
     //position: relative;
     padding-top: 6rem;
+    margin: 0 2rem;
     h2 {
         color: $global-font-color;
         text-align: center;
@@ -55,7 +56,7 @@ export default {
     }
     p{
         margin-bottom: 2rem;
-        width: 90vw;
+        //width: 90vw;
     }
     .services-wrapper {
         display: grid;
@@ -78,9 +79,10 @@ export default {
             align-items: start;
             justify-items: start;
             grid-auto-flow: unset;
-            width: 90vw;
+            //width: 90vw;
             min-width: 0;
             overflow: hidden;
+            margin: 0 2rem;
             .accordion{
             max-width: 43vw;
             min-width: 0;

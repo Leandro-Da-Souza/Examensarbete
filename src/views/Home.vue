@@ -98,7 +98,6 @@ export default {
         font-style: italic;
       } 
     }
-    
     @media screen and (min-width: 765px) {
       .circle-home{
         height: 16rem;
@@ -108,12 +107,12 @@ export default {
         }
       }
       .circle-home:hover{
-      background-color: $global-green-color;
-      color: $global-bg-color;
-      p{
+        background-color: $global-green-color;
         color: $global-bg-color;
+        p{
+          color: $global-bg-color;
+        }
       }
-    }
     }
     @media screen and (min-width: 1204px) {
       .circle-home{
@@ -138,12 +137,10 @@ export default {
   opacity: 1;
   z-index: 999;
 }
-
 .fade1-leave-active {
   //border: solid 5px red;
   opacity: 1;
 }
-
 .fade1-enter,
 .fade1-leave-to {
   opacity: 0;

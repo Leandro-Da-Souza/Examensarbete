@@ -47,7 +47,8 @@ export default {
     .about-text{
       display: block;
       padding: 2rem 0rem;
-      width: 90vw;
+      //width: 90vw;
+      margin: 0 2rem;
       span{
         display: inline-block;
         margin: 10px 0; 

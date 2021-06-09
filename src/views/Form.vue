@@ -1,8 +1,9 @@
 <template>
   <div class="form-container">
       <header>
-
-        <img src="@/assets/Logo.svg" alt="logo"/>
+        <router-link to="/">
+          <img src="@/assets/Logo.svg" alt="logo"/>
+        </router-link>
         <button class="ghost-btn" :style="{borderRadius: '6px'}" @click="logOut">Logga ut</button> 
 
       </header>

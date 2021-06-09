@@ -1,7 +1,9 @@
 <template>
   <div class="login-container">
     <!--<Logo/>-->
-    <img src="@/assets/Logo.svg" alt="logo"/>
+    <router-link to="/">
+        <img src="@/assets/Logo.svg" alt="logo"/>
+    </router-link>
     <div class="form-wrapper">
         <h1>LOGGA IN</h1>
         <form class="form-container" @submit.prevent="handleSubmit">

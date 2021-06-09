@@ -14,6 +14,7 @@
                 <a @click="scrollToServices(), showMenu = false, burgerAni = false">Våra tjänster</a>
                 <a @click="scrollToRef(), showMenu = false, burgerAni = false">Referenser</a>
                 <a @click="scrollToContact(), showMenu = false, burgerAni = false">Kontakt</a>
+                <router-link to="/login" class="log-in">Logga in</router-link>
             </div>
 
             <div class="hamburger-icon" @click="showMenu = !showMenu; burgerAni = !burgerAni">
@@ -69,17 +70,18 @@ export default {
         align-items: center;
         justify-content: space-between;
         height: 5rem;
-        padding: 0rem 1.8rem;
+        //padding: 0rem 1.8rem;
         width: 100%;
         .logo{
             cursor: pointer;
+            margin: 0 0 0 1.8rem;
             img{
                 width: 8rem;
             }
         }
         .nav-links{
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             justify-content: flex-end;
             //width: 100%;
             a{
@@ -91,14 +93,19 @@ export default {
                 font-size: 1.2rem;
                 text-decoration: none;
                 list-style: none;
-                margin: 0 1.5rem;
+                margin: 0 1.8rem 0 0;
                 white-space: nowrap;
+            }
+            .log-in{
+                color: #6a6a6a;
+                font-size: 1rem;
             }
         }
         .hamburger-icon{
             background: none;
             cursor: pointer;
             display: none;
+            margin: 0 1.8rem 0 0;
             div{
                 background-color: $global-green-color;
                 height: 4px;  
@@ -128,11 +135,16 @@ export default {
             z-index: -2;
             a{
                 border-bottom: solid 2px rgba(255, 255, 255, 0.3) !important;
-                color: white !important;
+                color: $global-bg-color !important;
                 font-size: 1.8rem !important;
                 padding: 2rem 0;
                 margin: 0rem !important;
                 width: 100%;
+            }
+            .log-in{
+                border: none !important;
+                color: #6a6a6a !important;
+                font-size: 1.5rem !important;
             }
         }
         .active-nav{
@@ -158,5 +170,6 @@ export default {
         }
     }
 }
+
 
 </style>

@@ -28,7 +28,7 @@ export default {
             text-align: center;
             font-weight: normal;
             letter-spacing: 1.5px;
-            margin-bottom: 20px;
+            margin-bottom: 2rem;
         }
     }
 </style>

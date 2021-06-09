@@ -86,17 +86,18 @@ export default {
         margin-top: 6rem;
         height: 80vh;
         .contact-container {
+            margin: 0 2rem;
             h2 {
                 color: $global-font-color;
                 font-weight: normal;
                 letter-spacing: 1.5px;
-                margin-bottom: 1.25rem;
+                margin-bottom: 2rem;
                 text-align: center;
             }
             .contact-info {
                 letter-spacing: 0.8px;
-                padding: 0px 2.5rem 0.5rem 2.5rem;
-                text-align: center;
+                margin-bottom: 2rem;
+                text-align: start;
             }
             .form-container {
                 display: flex;
@@ -104,8 +105,8 @@ export default {
                 justify-content: center;
                 align-items: center;
                 height: 100%;
-                margin-top: 3px;
-                width: 100vw;
+                //margin-top: 3px;
+                width: 100%;
                 input[type="text"], 
                 input[type="email"] {
                     width: 60vw;
@@ -127,7 +128,7 @@ export default {
                     border-radius: 1.25rem;
                     box-shadow: 2px 4px 6px rgba(0,0,0,0.25);
                     height: 8rem;
-                    margin: 10px 0;
+                    margin: 15px 0;
                     padding: 1rem;
                     //text-indent: 15px;
                     width: 60vw;
