@@ -10,10 +10,10 @@
             </div>-->
 
             <div class="nav-links" :class="showMenu ? 'active' : ''">
-                <a @click="scrollToAbout()">Om oss</a>
-                <a @click="scrollToServices()">Våra tjänster</a>
-                <a @click="scrollToRef()">Referenser</a>
-                <a @click="scrollToContact()">Kontakt</a>
+                <a @click="scrollToAbout(), showMenu = false">Om oss</a>
+                <a @click="scrollToServices(), showMenu = false">Våra tjänster</a>
+                <a @click="scrollToRef(), showMenu = false">Referenser</a>
+                <a @click="scrollToContact(), showMenu = false">Kontakt</a>
             </div>
 
             <div class="hamburger-icon" @click="showMenu = !showMenu">
