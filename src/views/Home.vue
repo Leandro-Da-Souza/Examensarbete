@@ -18,12 +18,11 @@ export default {
   data(){
     return{
       images: [
-        "background-image-basil.png",
+        "background-image-1.png",
         "background-image-2.png",
         "background-image-3.jpg"
       ],
       currentIndex: 0,
-      timer: 0,
     } 
   },
   
@@ -32,22 +31,19 @@ export default {
   },
   methods:{
     startSlide() {
-      this.timer = setInterval(this.next, 5000);
+      setInterval(this.next, 5000);
     },
     next() {
-      this.currentIndex += 1;
-    },
-    /**
-    prev() {
-      this.current -= 1;
-    }*/
+      if(this.currentIndex >= this.images.length -1) {
+        this.currentIndex = 0
+      } else {
+        this.currentIndex += 1;
+      }
+    }
   },
   computed: {
-    currentImg() {
-      return this.images[Math.abs(this.currentIndex) % this.images.length];
-    },
     bgImg(){
-      return { 'background-image': 'url('+ require(`@/assets/${this.currentImg}`) +')' };
+      return { 'background-image': 'url('+ require(`@/assets/${this.images[this.currentIndex]}`) +')' };
     }  
   }
 }
