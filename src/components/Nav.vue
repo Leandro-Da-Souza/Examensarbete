@@ -4,10 +4,6 @@
             <a class="logo" @click="scrollToHome()">
                 <img src="@/assets/Logo.svg" alt="logo"/>
             </a>
-            <!--
-            <div id="hamburger-icon" v-if="mobileView">
-                <i @click="showModal = true" class="fas fa-bars fa-2x"></i>
-            </div>-->
 
             <div class="nav-links" :class="showMenu ? 'active-nav' : ''">
                 <a @click="scrollToAbout(), showMenu = false, burgerAni = false">Om oss</a>
@@ -70,7 +66,6 @@ export default {
         align-items: center;
         justify-content: space-between;
         height: 5rem;
-        //padding: 0rem 1.8rem;
         width: 100%;
         .logo{
             cursor: pointer;
@@ -83,7 +78,6 @@ export default {
             display: flex;
             align-items: center;
             justify-content: flex-end;
-            //width: 100%;
             a{
                 background-color: transparent;
                 border: none;
@@ -156,15 +150,12 @@ export default {
             z-index: 5000;
            
             .active-burger{
-                //background-color: $global-bg-color !important;
                 transform: rotate(-44deg) translate(-5px, 5px);
             }
             .active-burger2{
-                //background-color: $global-bg-color !important;
                 opacity: 0;
             }
             .active-burger3{
-                //background-color: $global-bg-color !important;
                 transform: rotate(45deg) translate(-8px, -7px);
             }
         }

@@ -28,7 +28,6 @@ export default {
   #about{
     display: flex;
     flex-direction: column;
-    //justify-content: center;
     align-items: center;
     padding-top: 6rem;
     height: 100%;
@@ -46,7 +45,6 @@ export default {
     .about-text{
       display: block;
       padding: 2rem 0rem;
-      //width: 90vw;
       margin: 0 2rem;
       span{
         display: inline-block;

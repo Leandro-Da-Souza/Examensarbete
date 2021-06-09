@@ -1,11 +1,6 @@
 <template>
     <div id="contact">
         <div class="contact-container">
-            <!--<h3>firebaseData</h3>
-            {{ firebaseData }}
-            <h3>Form Data</h3>
-            {{ formData }}-->
-            
             <h2>Kontakta oss</h2>
             <p class="contact-info"><span>Om du har några frågor eller vill boka ett möte med oss kan du skriva i formuläret nedan, så hör vi av oss så fort vi kan.</span> <br> Du kan även maila till oss direkt: 
                 <a href="mailto:planteramera@gmail.com">planteramera@gmail.com</a>
@@ -97,7 +92,7 @@ export default {
             .contact-info {
                 letter-spacing: 0.8px;
                 margin-bottom: 2rem;
-                text-align: start;
+                text-align: center;
             }
             .form-container {
                 display: flex;
@@ -105,7 +100,6 @@ export default {
                 justify-content: center;
                 align-items: center;
                 height: 100%;
-                //margin-top: 3px;
                 width: 100%;
                 input[type="text"], 
                 input[type="email"] {
@@ -116,7 +110,6 @@ export default {
                     border: none;
                     box-shadow: 2px 4px 6px rgba(0,0,0,0.25);
                     padding: 1rem;
-                    //text-indent: 15px;
                     &:active, 
                     &:focus, 
                     &:hover{
@@ -130,7 +123,6 @@ export default {
                     height: 8rem;
                     margin: 15px 0;
                     padding: 1rem;
-                    //text-indent: 15px;
                     width: 60vw;
                     &:active, 
                     &:focus, 
@@ -162,7 +154,6 @@ export default {
     @media screen and (min-width: $sm) {
         #contact{
             margin-top: 6rem;
-            //height: 80vh;
         .contact-container {
             margin: 0 3rem;
             h2{

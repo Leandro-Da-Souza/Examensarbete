@@ -44,7 +44,6 @@ export default {
 
 #services{
     height: 100%;
-    //position: relative;
     padding-top: 6rem;
     margin: 0 2rem;
     h2 {
@@ -56,66 +55,48 @@ export default {
     }
     p{
         margin-bottom: 2rem;
-        //margin: 0rem 1rem 2rem;
-        //width: 90vw;
     }
     .services-wrapper {
         display: grid;
         column-gap: 2rem;
         grid-template-columns: 1fr;
-        
-        //height: 100%;
-        //position: relative;  
-        //width: 40vw;
     }
     @media screen and (min-width: $sm) {
-        //#services{
-            //margin: 0 3rem;
-        //}
-            h2{
+        h2{
             font-size: 1.9rem;
-            }
-            p{
-                font-size: 1.125rem;
-                margin: 0rem 1.5rem 3rem;
-            }
-            .services-wrapper {
-                grid-template-columns: repeat(2, 43vw);
-                align-items: start;
-                justify-items: start;
-                grid-auto-flow: unset;
-                //width: 90vw;
-                min-width: 0;
-                overflow: hidden;
-                //margin: 0 6rem;
-                .accordion{
+        }
+        p{
+            font-size: 1.125rem;
+            margin: 0rem 1.5rem 3rem;
+        }
+        .services-wrapper {
+            grid-template-columns: repeat(2, 43vw);
+            align-items: start;
+            justify-items: start;
+            grid-auto-flow: unset;
+            min-width: 0;
+            overflow: hidden;
+            .accordion{
                 max-width: 43vw;
                 min-width: 0;
-                }
             }
-        
-        
+        }      
     }
     @media screen and (min-width: $md) {
-        //#services{
-            //margin: 0 4rem;
-        //}
-            h2{
-                font-size: 2.25rem;
-            }
-            p{
-                font-size: 1.25rem; 
-                margin: 0rem 2rem 3rem;
-            }
-            .services-wrapper {
-                grid-template: 1fr/1fr 1fr;
-                width: 90vw;
-                .accordion{
-                // max-width: 43vw;
+        h2{
+            font-size: 2.25rem;
+        }
+        p{
+            font-size: 1.25rem; 
+            margin: 0rem 2rem 3rem;
+        }
+        .services-wrapper {
+            grid-template: 1fr/1fr 1fr;
+            width: 90vw;
+            .accordion{
                 min-width: 0;
-                }
-            } 
-        
+            }
+        }   
     }
     @media screen and (min-width: $lg) {
 

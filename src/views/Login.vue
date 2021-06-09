@@ -1,6 +1,5 @@
 <template>
   <div class="login-container">
-    <!--<Logo/>-->
     <router-link to="/">
         <img src="@/assets/Logo.svg" alt="logo"/>
     </router-link>
@@ -18,7 +17,6 @@
 </template>
 
 <script>
-//import Logo from '../components/Logo'
 export default {    
     name: 'Login',
     data() {
@@ -30,9 +28,6 @@ export default {
                 password: false,
             }
         }
-    },
-    components: {
-        //Logo
     },
     methods: {
         handleSubmit() {

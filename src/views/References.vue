@@ -21,10 +21,6 @@ export default {
         height: 100%;
         width: 100vw;
         padding-top: 6rem;
-        // display: flex;
-        // justify-content: center;
-        // align-items: center;
-        // flex-direction: column;
         h2 {
             text-align: center;
             font-weight: normal;

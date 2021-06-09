@@ -32,8 +32,7 @@ export default {
         log(msg) {
             console.log(msg)
         }
-    }
-    
+    }   
 }
 </script>
 
@@ -66,12 +65,10 @@ export default {
     .content-container {
         border-top: none;
         min-height: 8vh;
-        min-width: 100%;
-        //-webkit-box-shadow: -4px 6px 15px -3px rgba(104, 104, 104, 0.64); 
+        min-width: 100%; 
         box-shadow: -4px 6px 15px -3px rgba(104, 104, 104, 0.64);
         padding: 0.6rem 1rem;
         p {
-            //color: $global-bg-color;
             font-size: 1rem;
         }       
     }
@@ -79,7 +76,6 @@ export default {
     .fade-enter-active,
     .fade-leave-active{
         transition: all 0.8s ease;
-        //overflow: hidden;
     }
     .fade-leave-active{
         transition: all 0.3s ease;
@@ -87,9 +83,6 @@ export default {
     .fade-enter, 
     .fade-leave-to{
         opacity: 0;
-        //transform: scaleY(0);
-    }
-     
+    }   
 }
-
 </style>

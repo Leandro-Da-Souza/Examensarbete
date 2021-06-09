@@ -18,7 +18,6 @@ export default {
                 localStorage.setItem('uid', this.$store.state.currentUser)
                 this.$router.replace({name: 'Form', meta: res})
             } catch (e) {
-                // console.log(e)
                 this.$router.replace({name: 'Login', params: e})
             }
         }
@@ -39,7 +38,6 @@ export default {
   justify-content: center;
   align-items: center;
 }
-
 .loader > span {
   display: inline-block;
   background-color: $global-green-color;

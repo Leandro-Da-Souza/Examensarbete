@@ -39,12 +39,10 @@
 <script>
 import UserPhotos from '../components/UserPhotos'
 import Spinner from '../components/Spinner.vue'
-//import Logo from '../components/Logo'
 import db from '../db'
 
 export default {
   components: {
-    //Logo,
     Spinner,
     UserPhotos
   },
@@ -171,7 +169,7 @@ export default {
       margin-bottom: 5px;
     }
     .status-message {
-      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      background-color: rgba(0,0,0,0.4);
       position: fixed;
       width: 100%;
       height: 100%;
@@ -225,7 +223,5 @@ export default {
     }
   }
 }
-
-// @keyframes
 
 </style>

@@ -58,7 +58,6 @@ export default {
     align-items: center;
     justify-content: center;
     .bgImage{
-      //margin-top: 6rem;
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
@@ -67,7 +66,6 @@ export default {
       position: absolute;
       -webkit-transition: all 2s ease-in-out;
       transition: all 2s ease-in-out;
-      //margin-top: 5rem;
     }
     .circle-home{
       display: flex;
@@ -84,7 +82,6 @@ export default {
       position: absolute;
       text-decoration: none;
       transition: background-color 1s ease;
-      
       p{
         background: transparent;
       } 
@@ -133,12 +130,10 @@ export default {
   }
 
 .fade1-enter-active {
-  //border: solid 5px red;
   opacity: 1;
   z-index: 999;
 }
 .fade1-leave-active {
-  //border: solid 5px red;
   opacity: 1;
 }
 .fade1-enter,
