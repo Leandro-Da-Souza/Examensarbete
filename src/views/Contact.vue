@@ -162,8 +162,9 @@ export default {
     @media screen and (min-width: $sm) {
         #contact{
             margin-top: 6rem;
-            height: 80vh;
+            //height: 80vh;
         .contact-container {
+            margin: 0 3rem;
             h2{
                 font-size: 1.9rem;
             }
@@ -171,7 +172,6 @@ export default {
                 font-size: 1.125rem;
             }
             .form-container {
-                
                 input[type="text"],
                 input[type="email"] {
                     max-width: 32rem;
@@ -195,15 +195,21 @@ export default {
         }   
     } 
     @media screen and (min-width: $md) {
-        ::placeholder{
-            font-size: 1rem;
-        }
-        h2{
-            font-size: 2.25rem;
-        }
-        p{
-            font-size: 1.25rem; 
-        }   
+        #contact{
+            .contact-container{
+                margin: 0 4rem;
+            
+                ::placeholder{
+                    font-size: 1rem;
+                }
+                h2{
+                    font-size: 2.25rem;
+                }
+                p{
+                    font-size: 1.25rem; 
+                } 
+            }
+        }  
     }
     @media screen and (min-width: $lg) {
 

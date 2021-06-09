@@ -62,7 +62,7 @@ export default {
       }
       .about-text{
         font-size: 1.125rem; 
-        margin: 0 4rem;
+        margin: 0 3rem;
       }
     }
     @media screen and (min-width: $md) {
@@ -74,6 +74,7 @@ export default {
       }
       .about-text{
         font-size: 1.25rem; 
+        margin: 0 4rem;
       }
     }
     @media screen and (min-width: $lg) {
