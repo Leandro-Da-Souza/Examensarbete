@@ -11,7 +11,6 @@
                 <a href="mailto:planteramera@gmail.com">planteramera@gmail.com</a>
             </p>
             <form class="form-container" @submit.prevent="handleForm">
-                <label for="Full Name">För- och efternamn:</label>
                 <input 
                 type="text" 
                 name="Full Name" 
@@ -19,7 +18,6 @@
                 v-model="name"
                 maxlength="40"
                 >
-                <label for="Email">E-postadress:</label>
                 <input 
                 type="email" 
                 name="Email"
@@ -27,7 +25,6 @@
                 maxlength="40"
                 v-model="email"
                 >
-                <label for="Message">Ditt meddelande:</label>
                 <textarea 
                 name="Message" 
                 placeholder="Ditt meddelande" 
@@ -47,10 +44,7 @@
 </template>
 
 <script>
-//import db from '../db';
-
-//create collection in firebase named contacts 'collection/{documentID}'
-//const documentPath = 'contacts/contact-form';
+import db from '../db';
 
 export default {
     name: 'Contact',
@@ -58,11 +52,11 @@ export default {
         return {
             name: "",
             email: "",
-            message: "",
+            message: ""
         }
     },
     methods: {
-            handleForm() {
+        handleForm() {
             
             if(!this.name || !this.email || !this.message) {
                 console.log('please fill out form')
@@ -73,6 +67,8 @@ export default {
                 email: this.email,
                 message: this.message
             }
+
+            db.database().ref('contact').push(userRequest)
 
             this.name = ""
             this.email = ""
