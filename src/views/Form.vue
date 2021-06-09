@@ -4,7 +4,7 @@
         <router-link to="/">
           <img src="@/assets/Logo.svg" alt="logo"/>
         </router-link>
-        <button class="ghost-btn" :style="{borderRadius: '6px'}" @click="logOut">Logga ut</button> 
+        <button class="ghost-btn log-out" :style="{borderRadius: '6px'}" @click="logOut">Logga ut</button> 
       </header>
       <div v-if="uploading">
         <Spinner/>
@@ -23,8 +23,12 @@
           </div>
           <span>{{!file ? 'ingen bild vald' : this.file.name}}</span>
           <div class="status-message" v-if="status.showMessage">
-            <i class="far fa-times-circle fa-2x" @click="closeModal"></i>
-            <h3>{{status.message}}</h3>
+            <h3>
+              <br>
+              {{status.message}}
+              <br>
+              <i class="far fa-times-circle" @click="closeModal"></i>
+            </h3>
           </div>
           <input type="file" name="imgfile" id="imgUpload" :style="{display:'none'}" accept="image/*" @change="handleFileUpload"/>
           <textarea name="imgtext" placeholder="Lägg till bildtext" v-model="imgtext"></textarea>
@@ -85,7 +89,6 @@ export default {
       reader.onloadend = function () {
         element.style.backgroundImage = `
         url("${reader.result}")
-        
         `;
       }
 
@@ -124,7 +127,7 @@ export default {
           this.uploading = false  
           this.imgtext = ""
           this.file = ''
-          this.handleStatus('bild upplagd')
+          this.handleStatus('Din referens är nu publicerad')
         })
     }
   },
@@ -151,7 +154,7 @@ export default {
       height: 10%;
       align-self: center;
       padding: 3px 5px;
-      margin-right: 3px;
+      margin-right: 2rem;
     }
   }
   .form-wrapper {
@@ -169,7 +172,7 @@ export default {
     }
     .status-message {
       background-color: rgba(0,0,0,0.4);
-      position: fixed;
+      position: absolute;
       width: 100%;
       height: 100%;
       z-index: 100;
@@ -178,19 +181,23 @@ export default {
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       overflow: auto;
+      
       h3 {
-        font-size: 1.6rem;
-        padding: 10px 20px;
+        display: flex;
+        font-size: 1.3rem;
+        padding: 10px 10px;
         border-radius: 4px;
         color: $global-green-color;
-        margin-top: 60%;
-      }
-      i {
-        align-self: flex-end;
-        color: $global-green-color;
-        border-radius: 50%;
-      }
+        i {
+          color: #6a6a6a;
+          background: transparent;
+          border-radius: 50%;
+          font-size: 1.2rem;
+          padding-left: 0.2rem;
+        }
+      }  
     }
     .file-upload {
       display: flex;
@@ -219,6 +226,11 @@ export default {
       margin-top: 20px;
       text-indent: 15px;
       padding-top: 5px;
+      &:active, 
+      &:focus, 
+      &:hover{
+        outline: none;
+      }
     }
   }
 }

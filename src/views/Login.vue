@@ -74,15 +74,22 @@ export default {
         .form-container {
             display: flex;
             flex-direction: column;
-            input[type="text"], input[type="password"] {
+            input[type="text"], 
+            input[type="password"] {
                 width: 250px;
                 height: 36px;
                 margin: 14px 0;
                 border-radius: 20px;
                 border: none;
                 text-indent: 15px;
-                box-shadow: 2px 4px 6px rgba(0,0,0, 0.25)
+                box-shadow: 2px 4px 6px rgba(0,0,0, 0.25);
+                &:active, 
+                &:focus, 
+                &:hover{
+                    outline: none;
+                }
             }
+           
             span {
                 display: inline;
                 font-size: 0.8rem;

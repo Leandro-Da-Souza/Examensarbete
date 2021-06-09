@@ -1,7 +1,9 @@
 <template>
   <div class="user-photos">
     <div v-if="this.userPhotos.length === 0">
-      <p :style="{textAlign: 'center', marginTop: '20px' }">Du har inte laddat upp några bilder än, använd formuläret ovanför!</p>
+      <p :style="{textAlign: 'center', marginTop: '20px' }">
+        Du har inte laddat upp några bilder än, använd formuläret ovanför!
+      </p>
     </div>
     <div v-else>
       <h3>Dina publicerade referenser:</h3>
