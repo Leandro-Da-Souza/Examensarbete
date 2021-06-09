@@ -20,6 +20,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '../variables';
     .card {
         width: 18rem;
         height: 23rem;
@@ -54,7 +55,7 @@ export default {
        // justify-content: center;     
     }
 
-    @media screen and(min-width: 765px) {
+    @media screen and(min-width: $sm) {
         .card {
             width: 28rem;
             height: 40rem;

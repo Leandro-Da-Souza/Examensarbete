@@ -25,7 +25,6 @@ export default {
 
 <style scoped lang="scss">
 @import '../variables';
-
   #about{
     display: flex;
     flex-direction: column;
@@ -63,6 +62,7 @@ export default {
       }
       .about-text{
         font-size: 1.125rem; 
+        margin: 0 4rem;
       }
     }
     @media screen and (min-width: $md) {

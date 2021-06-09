@@ -74,7 +74,7 @@ export default {
         width: 100%;
         .logo{
             cursor: pointer;
-            margin: 0 0 0 1.8rem;
+            margin: 0 0 0 2rem;
             img{
                 width: 8rem;
             }
@@ -93,7 +93,7 @@ export default {
                 font-size: 1.2rem;
                 text-decoration: none;
                 list-style: none;
-                margin: 0 1.8rem 0 0;
+                margin: 0 2rem 0 0;
                 white-space: nowrap;
             }
             .log-in{
@@ -117,7 +117,7 @@ export default {
     }    
 }
 
-@media screen and (max-width: 765px) {
+@media screen and (max-width: $sm) {
     .nav-container{
         .nav-links{
             position: absolute;

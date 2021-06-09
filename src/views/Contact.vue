@@ -159,7 +159,7 @@ export default {
             }  
         }  
     }
-    @media screen and (min-width: 765px) {
+    @media screen and (min-width: $sm) {
         #contact{
             margin-top: 6rem;
             height: 80vh;
@@ -194,7 +194,7 @@ export default {
             }
         }   
     } 
-    @media screen and (min-width: 1204px) {
+    @media screen and (min-width: $md) {
         ::placeholder{
             font-size: 1rem;
         }
@@ -205,7 +205,7 @@ export default {
             font-size: 1.25rem; 
         }   
     }
-    @media screen and (min-width: 1920px) {
+    @media screen and (min-width: $lg) {
 
     }          
 }

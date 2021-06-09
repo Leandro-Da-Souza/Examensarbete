@@ -66,7 +66,10 @@ export default {
         //position: relative;  
         //width: 40vw;
     }
-    @media screen and (min-width: 765px) {
+    @media screen and (min-width: $sm) {
+        #services{
+            margin: 0 4rem;
+        }
         h2{
           font-size: 1.9rem;
         }
@@ -90,7 +93,7 @@ export default {
         } 
         
     }
-    @media screen and (min-width: 1204px) {
+    @media screen and (min-width: $md) {
         h2{
             font-size: 2.25rem;
         }
@@ -106,7 +109,7 @@ export default {
             }
         } 
     }
-    @media screen and (min-width: 1920px) {
+    @media screen and (min-width: $lg) {
 
     }
 }
