@@ -1,9 +1,10 @@
 <template>
   <div class="form-container">
       <header>
-        <!--<Logo/>-->
+
         <img src="@/assets/Logo.svg" alt="logo"/>
-        <button class="ghost-btn" @click="logOut">Logga ut</button> 
+        <button class="ghost-btn" :style="{borderRadius: '6px'}" @click="logOut">Logga ut</button> 
+
       </header>
       <div v-if="uploading">
         <Spinner/>
@@ -21,16 +22,21 @@
             </button>
           </div>
           <span>{{!file ? 'ingen bild vald' : this.file.name}}</span>
-          <span v-if="status.showMessage">{{status.message}}</span>
-          <input type="file" name="imgfile" id="imgUpload" :style="{display:'none'}" accept="image/*" />
+          <div class="status-message" v-if="status.showMessage">
+            <!-- <span v-if="status.showMessage" class="status-message-conent">{{status.message}}</span> -->
+            <h3>{{status.message}}</h3>
+          </div>
+          <input type="file" name="imgfile" id="imgUpload" :style="{display:'none'}" accept="image/*" @change="handleFileUpload"/>
           <textarea name="imgtext" placeholder="Lägg till bildtext" v-model="imgtext"></textarea>
           <button @click.prevent="handleSubmit" class="btn" :style="{width: '107px', height: '35px', borderRadius: '6px'}">Publicera</button>
         </form>
       </div>
+      <UserPhotos v-if="!uploading"/>
   </div>
 </template>
 
 <script>
+import UserPhotos from '../components/UserPhotos'
 import Spinner from '../components/Spinner.vue'
 //import Logo from '../components/Logo'
 import db from '../db'
@@ -38,7 +44,8 @@ import db from '../db'
 export default {
   components: {
     //Logo,
-    Spinner
+    Spinner,
+    UserPhotos
   },
   data() {
     return { 
@@ -49,11 +56,13 @@ export default {
         showMessage: false,
         message: ''
       },
+      currentUser: ""
     }
   },
   methods: {
     logOut() {
       db.auth().signOut().then(() => {
+        localStorage.clear()
         this.$router.replace({name: 'Login'});
       }).catch((e) => {
         console.log('something went wrong: ' + e)
@@ -78,7 +87,9 @@ export default {
         reader.readAsDataURL(this.file)
       }
 
-      // console.log(this.file)
+    },
+    async getCurrentUser() {
+      this.currentUser = await db.auth().currentUser.uid
     },
     handleStatus(msg) {
       this.status.showMessage = true,
@@ -93,7 +104,8 @@ export default {
         this.handleStatus('fälten får inte vara tomma')
         return
       }
-      let storageRef = db.storage().ref('images/' + this.file.name)
+      // let storageRef = db.storage().ref('images/' + this.file.name)
+      let storageRef = db.storage().ref(`images/${this.currentUser}/${this.file.name}`)
       let collectionRef = db.database().ref('images')
 
       let task = storageRef.put(this.file)
@@ -108,7 +120,7 @@ export default {
           this.handleStatus('något gick fel, kontakta IT')
         }, async () => {
           const url = await storageRef.getDownloadURL()
-          collectionRef.push({img: url, description: this.imgtext});
+          collectionRef.push({name: this.file.name, img: url, description: this.imgtext, user: this.currentUser});
           this.uploading = false  
           this.imgtext = ""
           this.file = ''
@@ -117,9 +129,13 @@ export default {
     }
   },
   mounted() {
-    this.$el.querySelector('#imgUpload').addEventListener('change',e => this.handleFileUpload(e),
-    console.log(this.$el.querySelector('.file-upload').style.backgroundImage)
-    )
+    // this.$el.querySelector('#imgUpload').addEventListener('change',e => {
+    //   this.handleFileUpload(e)
+    // })
+    this.currentUser = localStorage.getItem('uid')
+  },
+  beforeDestroy() {
+    localStorage.clear()
   }
 }
 </script>
@@ -154,10 +170,23 @@ export default {
       letter-spacing: 1.5px;
       margin-bottom: 5px;
     }
-    .message{
-      font-size: 1.2rem;
-      color: $global-green-color;
-      transition: font-size 2s ease;
+    .status-message {
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: 100;
+      left: 0;
+      top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      h3 {
+        font-size: 1.6rem;
+        padding: 10px 20px;
+        border-radius: 4px;
+        color: $global-green-color;
+      }
     }
     .file-upload {
       display: flex;

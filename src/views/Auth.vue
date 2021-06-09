@@ -14,11 +14,12 @@ export default {
         async authenticateUser(name, pass) {
             try {
                 const res = await db.auth().signInWithEmailAndPassword(name, pass)
-                console.log(res)
+                await this.$store.dispatch('GET_CURRENT_USER'),
+                localStorage.setItem('uid', this.$store.state.currentUser)
                 this.$router.replace({name: 'Form', meta: res})
             } catch (e) {
-                console.log(e)
-                this.$router.replace({name: 'Login', meta: e})
+                // console.log(e)
+                this.$router.replace({name: 'Login', params: e})
             }
         }
     },

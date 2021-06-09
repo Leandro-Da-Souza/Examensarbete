@@ -47,7 +47,7 @@
 </template>
 
 <script>
-//import { db } from '../db';
+//import db from '../db';
 
 //create collection in firebase named contacts 'collection/{documentID}'
 //const documentPath = 'contacts/contact-form';
@@ -59,23 +59,11 @@ export default {
             name: "",
             email: "",
             message: "",
-
-            //firebaseData: db.doc(documentPath),
-            //formData:{},
-            //state: 'loading',
         }
     },
     methods: {
-        /**async*/ handleForm() {
-            /** 
-            try{
-                await db.doc(documentPath).set(this.formData);
-                this.state = 'synced';
-            } catch (error){
-                this.errorMessage = JSON.stringify(error)
-                this.state = 'error';
-            }
-            */
+            handleForm() {
+            
             if(!this.name || !this.email || !this.message) {
                 console.log('please fill out form')
                 return
@@ -92,15 +80,6 @@ export default {
             console.log(userRequest)
         }
     },
-    /** 
-    created: async function(){
-        const docRef = db.doc(documentPath);
-        let data = (await docRef.get() ).data();
-        
-        if(!data){
-            data = { name: '', email: '', message: '' }
-        }
-    }*/
 }
 </script>
 
