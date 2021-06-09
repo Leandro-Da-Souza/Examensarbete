@@ -39,7 +39,7 @@ export default {
 }
 
 #services{
-    height: 100vh;
+    height: 100%;
     //position: relative;
     padding-top: 6rem;
     h2 {
