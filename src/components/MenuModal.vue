@@ -1,11 +1,15 @@
 <template>
     <div id="MenuModal">
+
+        <button class="close-menumodal" @click="$emit('close')">
+           <!-- <i class="fas fa-times"></i>--> <div>&plus;</div> 
+        </button>
         
         <ul class="nav-links">
-			<li><a @click="$emit('close')" href="#about">Om oss</a></li>
-			<li><a @click="$emit('close')" href="#services">Våra tjänster</a></li>
-			<li><a @click="$emit('close')" href="#references">Referenser</a></li>
-            <li><a @click="$emit('close'), scrollTo()">Kontakt</a></li>
+			<li><a @click="$emit('close')">Om oss</a></li>
+			<li><a @click="$emit('close')">Våra tjänster</a></li>
+			<li><a @click="$emit('close')">Referenser</a></li>
+            <li><a @click="$emit('close')">Kontakt</a></li>
 		</ul>
      
     </div>   
@@ -29,13 +33,30 @@ export default {
 #MenuModal{
     background-color: $global-green-color;
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
     position: fixed;
+    padding: 0rem 1.8rem;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    .close-menumodal{
+        background-color: $global-green-color;
+        border: none;
+        color: $global-bg-color;
+        cursor: pointer;
+        margin-top: -0.8rem;
+        margin-right: -0.5rem;
+        top: 0;
+        div{
+            background-color: $global-green-color;
+            color: $global-bg-color; 
+            font-size: 5rem;
+            transform: rotate(45deg);
+        }
+    }
     .menu-overlay{
         z-index: 10;
     }
@@ -43,9 +64,10 @@ export default {
         background-color: $global-green-color;
         font-size: 2rem;      
     }
-
     .nav-links{
-        padding: 3.2rem;
+        height: 100%;
+        //margin-top: -2rem;
+        //padding: 3.2rem;
         width: 100%;
         li{
             border-bottom: solid 2px rgba(255, 255, 255, 0.3);
