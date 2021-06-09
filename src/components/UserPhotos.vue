@@ -58,8 +58,6 @@ export default {
               }  
             })
           })
-          
-          
         }
     },
     filters: {
@@ -99,7 +97,6 @@ export default {
         }
         img {
           position: relative;
-          // margin: 20px 0 0 0;
           margin-top: 5px;
           max-width: 140px;
           height: 140px;

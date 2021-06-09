@@ -44,8 +44,8 @@ export default {
 
 #services{
     height: 100%;
-    //position: relative;
     padding-top: 6rem;
+    margin: 0 2rem;
     h2 {
         color: $global-font-color;
         text-align: center;
@@ -55,56 +55,50 @@ export default {
     }
     p{
         margin-bottom: 2rem;
-        width: 90vw;
     }
     .services-wrapper {
         display: grid;
         column-gap: 2rem;
         grid-template-columns: 1fr;
-        //height: 100%;
-        //position: relative;  
-        //width: 40vw;
     }
-    @media screen and (min-width: 765px) {
+    @media screen and (min-width: $sm) {
         h2{
-          font-size: 1.9rem;
+            font-size: 1.9rem;
         }
         p{
             font-size: 1.125rem;
-            margin-bottom: 3rem;
+            margin: 0rem 1.5rem 3rem;
         }
         .services-wrapper {
             grid-template-columns: repeat(2, 43vw);
             align-items: start;
             justify-items: start;
             grid-auto-flow: unset;
-            width: 90vw;
             min-width: 0;
             overflow: hidden;
             .accordion{
-            max-width: 43vw;
-            min-width: 0;
+                max-width: 43vw;
+                min-width: 0;
             }
-        } 
-        
+        }      
     }
-    @media screen and (min-width: 1204px) {
+    @media screen and (min-width: $md) {
         h2{
             font-size: 2.25rem;
         }
         p{
             font-size: 1.25rem; 
+            margin: 0rem 2rem 3rem;
         }
         .services-wrapper {
             grid-template: 1fr/1fr 1fr;
             width: 90vw;
             .accordion{
-            // max-width: 43vw;
-            min-width: 0;
+                min-width: 0;
             }
-        } 
+        }   
     }
-    @media screen and (min-width: 1920px) {
+    @media screen and (min-width: $lg) {
 
     }
 }

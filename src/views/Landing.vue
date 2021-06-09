@@ -11,7 +11,6 @@
 </template>
 
 <script>
-// import db from '../db' 
 import Nav from '../components/Nav'
 import Home from '../views/Home'
 import About from '../views/About'

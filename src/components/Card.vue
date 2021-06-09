@@ -2,7 +2,6 @@
     <div class="card" :class="active ? 'active-card' : ''">
         <img :src="item.img">
         <p class="description">{{item.description}}</p>
-        <!--<p class="quote">"{{item.quote ? item.quote : 'ajksdnoajsdnasjkn'}}"</p>-->
     </div>
 </template>
 
@@ -20,6 +19,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '../variables';
     .card {
         width: 18rem;
         height: 23rem;
@@ -30,8 +30,8 @@ export default {
         border-radius: 1.9rem;
         img {
             margin: 40px 0 0 0;
-            width: 14.3rem;
-            height: 10.75rem;
+            width: 80%;
+            height: 20vh;
             object-position: center;
             object-fit: cover;
         }
@@ -39,34 +39,31 @@ export default {
             background-color: transparent;
             padding: 10px 30px;
         }
-        /** 
-        .quote {
-            font-style: italic;
-        } */
     }
     .active-card {
-       // display: flex;
         width: 18rem;
         height: 23.5rem;
         box-shadow: 0px 7px 7px rgba(0,0,0,0.35);
-        transition: all 0.5s ease;
-       // align-items: center;
-       // justify-content: center;     
+        transition: all 0.5s ease;  
     }
 
-    @media screen and(min-width: 765px) {
+    @media screen and(min-width: $sm) {
         .card {
-            width: 28rem;
-            height: 40rem;
+            width: 22rem;
+            height: 30rem;
             img {
-                width: 22rem;
-                height: 15rem;
+                width: 80%;
+                height: 25vh;
             }
             .description {
-            background-color: transparent;
-            padding: 10px 30px;
+            font-size: 1.125rem;
+            }
         }
+        .active-card {
+            width: 22rem;
+            height: 30.5rem;
+            box-shadow: 0px 7px 7px rgba(0,0,0,0.35);
+            transition: all 0.5s ease;  
         }
     }
-
 </style>

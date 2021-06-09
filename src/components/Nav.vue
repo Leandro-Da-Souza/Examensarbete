@@ -4,48 +4,32 @@
             <a class="logo" @click="scrollToHome()">
                 <img src="@/assets/Logo.svg" alt="logo"/>
             </a>
-            <!--
-            <div id="hamburger-icon" v-if="mobileView">
-                <i @click="showModal = true" class="fas fa-bars fa-2x"></i>
-            </div>-->
 
-            <div class="nav-links" :class="showMenu ? 'active' : ''">
-                <a @click="scrollToAbout(), showMenu = false">Om oss</a>
-                <a @click="scrollToServices(), showMenu = false">Våra tjänster</a>
-                <a @click="scrollToRef(), showMenu = false">Referenser</a>
-                <a @click="scrollToContact(), showMenu = false">Kontakt</a>
+            <div class="nav-links" :class="showMenu ? 'active-nav' : ''">
+                <a @click="scrollToAbout(), showMenu = false, burgerAni = false">Om oss</a>
+                <a @click="scrollToServices(), showMenu = false, burgerAni = false">Våra tjänster</a>
+                <a @click="scrollToRef(), showMenu = false, burgerAni = false">Referenser</a>
+                <a @click="scrollToContact(), showMenu = false, burgerAni = false">Kontakt</a>
+                <router-link to="/login" class="log-in">Logga in</router-link>
             </div>
 
-            <div class="hamburger-icon" @click="showMenu = !showMenu">
-                <div class="line-1"></div>
-                <div class="line-2"></div>
-                <div class="line-3"></div>
+            <div class="hamburger-icon" @click="showMenu = !showMenu; burgerAni = !burgerAni">
+                <div class="line-1" :class="burgerAni ? 'active-burger' : ''"></div>
+                <div class="line-2" :class="burgerAni ? 'active-burger2' : ''"></div>
+                <div class="line-3" :class="burgerAni ? 'active-burger3' : ''"></div>
             </div>
-            
-            <!--<MenuModal v-if="showModal" @close="showModal = false" />-->
         </div>
     </div>
 </template>
 <script>
-//import MenuModal from '@/components/MenuModal.vue'
 export default {
     data() {
         return {
-            //mobileView: true,
-            //showNav: false,
             showMenu: false,
-            showModal: false,
+            burgerAni: false,
         }
     },
-    components:{
-        //MenuModal
-    },
     methods:{
-        /** 
-        handleView(){
-            this.mobileView = window.innerWidth <= 675;
-        },*/
-
         scrollToHome() {
             var home = document.getElementById("home");
             home.scrollIntoView({behavior: "smooth", block: 'start'});
@@ -65,27 +49,8 @@ export default {
         scrollToContact() {
             var contact = document.getElementById("contact");
             contact.scrollIntoView({behavior: "smooth", block: 'start'});
-        },
-        /**
-        navAni(){
-            const hamburger = document.querySelector('.hamburger');
-            const nav = document.querySelector('.nav-links');
-            const navLinks = document.querySelectorAll('.nav-links a')
-
-            hamburger.addEventListener('click,' ()=>{
-                nav.classList.toggle('nav-active');
-            })
-            navLinks.forEach(link,index => {
-                console.log(index)
-            })
-             navAni();
-        }*/
-       
+        },   
     },
-    /** 
-    created(){
-        this.handleView();
-    }  */
 }
 </script>
 
@@ -101,85 +66,101 @@ export default {
         align-items: center;
         justify-content: space-between;
         height: 5rem;
-        margin: 0rem 1.8rem;
+        width: 100%;
         .logo{
             cursor: pointer;
+            margin: 0 0 0 2rem;
             img{
                 width: 8rem;
             }
         }
-        /** 
-        #hamburger-icon{
-            i{
-            color: $global-green-color;
-            cursor: pointer;
-            display: block;
-            }
-        } 
-        */
         .nav-links{
             display: flex;
             align-items: center;
             justify-content: flex-end;
-            width: 100%;
             a{
                 background-color: transparent;
+                border: none;
                 cursor: pointer;
                 color: $global-green-color;
                 font-family: $global-nav-font;
                 font-size: 1.2rem;
                 text-decoration: none;
                 list-style: none;
-                margin-bottom: 0.4rem;
-                margin-top: 0.4rem;
-                margin-left: 2.7rem;
+                margin: 0 2rem 0 0;
                 white-space: nowrap;
             }
+            .log-in{
+                color: #6a6a6a;
+                font-size: 1rem;
+            }
         }
-        
         .hamburger-icon{
+            background: none;
             cursor: pointer;
             display: none;
+            margin: 0 1.8rem 0 0;
             div{
                 background-color: $global-green-color;
                 height: 4px;  
                 margin: 5px;
                 width: 28px; 
+                transition: all 0.3s ease;
             }
         }
     }    
 }
 
-@media screen and (max-width: 765px) {
-    
+@media screen and (max-width: $sm) {
     .nav-container{
-        //overflow-x: hidden;
         .nav-links{
             position: absolute;
-            right: 0px;
+            right: 0rem;
             height: 100vh;
             width: 100%;
-            top: 5rem;
+            top: 0rem;
             background-color: $global-green-color;
             flex-direction: column;
+            align-items: flex-start !important;
             justify-content: center !important;
             transform: translateX(100%);
-            transition: transform 0.5s ease-in;
+            transition: all 0.5s ease-in;
+            padding: 0 1.8rem;
+            z-index: -2;
             a{
-                color: white !important;
-                //opacity: 0;
+                border-bottom: solid 2px rgba(255, 255, 255, 0.3) !important;
+                color: $global-bg-color !important;
+                font-size: 1.8rem !important;
+                padding: 2rem 0;
+                margin: 0rem !important;
+                width: 100%;
+            }
+            .log-in{
+                border: none !important;
+                color: #6a6a6a !important;
+                font-size: 1.5rem !important;
             }
         }
-        .hamburger-icon{
-            display: block !important;
-        }
-        .active{
+        .active-nav{
             transform: translateX(0%);
+        }   
+        .hamburger-icon{
+            background: none;
+            display: block !important;
+            z-index: 5000;
+           
+            .active-burger{
+                transform: rotate(-44deg) translate(-5px, 5px);
+            }
+            .active-burger2{
+                opacity: 0;
+            }
+            .active-burger3{
+                transform: rotate(45deg) translate(-8px, -7px);
+            }
         }
-        
-        
     }
-
 }
+
 
 </style>

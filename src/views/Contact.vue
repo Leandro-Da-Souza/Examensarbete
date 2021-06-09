@@ -1,17 +1,11 @@
 <template>
     <div id="contact">
         <div class="contact-container">
-            <!--<h3>firebaseData</h3>
-            {{ firebaseData }}
-            <h3>Form Data</h3>
-            {{ formData }}-->
-            
             <h2>Kontakta oss</h2>
             <p class="contact-info"><span>Om du har några frågor eller vill boka ett möte med oss kan du skriva i formuläret nedan, så hör vi av oss så fort vi kan.</span> <br> Du kan även maila till oss direkt: 
                 <a href="mailto:planteramera@gmail.com">planteramera@gmail.com</a>
             </p>
             <form class="form-container" @submit.prevent="handleForm">
-                <label for="Full Name">För- och efternamn:</label>
                 <input 
                 type="text" 
                 name="Full Name" 
@@ -19,7 +13,6 @@
                 v-model="name"
                 maxlength="40"
                 >
-                <label for="Email">E-postadress:</label>
                 <input 
                 type="email" 
                 name="Email"
@@ -27,7 +20,6 @@
                 maxlength="40"
                 v-model="email"
                 >
-                <label for="Message">Ditt meddelande:</label>
                 <textarea 
                 name="Message" 
                 placeholder="Ditt meddelande" 
@@ -47,10 +39,7 @@
 </template>
 
 <script>
-//import db from '../db';
-
-//create collection in firebase named contacts 'collection/{documentID}'
-//const documentPath = 'contacts/contact-form';
+import db from '../db';
 
 export default {
     name: 'Contact',
@@ -58,11 +47,11 @@ export default {
         return {
             name: "",
             email: "",
-            message: "",
+            message: ""
         }
     },
     methods: {
-            handleForm() {
+        handleForm() {
             
             if(!this.name || !this.email || !this.message) {
                 console.log('please fill out form')
@@ -73,6 +62,8 @@ export default {
                 email: this.email,
                 message: this.message
             }
+
+            db.database().ref('contact').push(userRequest)
 
             this.name = ""
             this.email = ""
@@ -90,16 +81,17 @@ export default {
         margin-top: 6rem;
         height: 80vh;
         .contact-container {
+            margin: 0 2rem;
             h2 {
                 color: $global-font-color;
                 font-weight: normal;
                 letter-spacing: 1.5px;
-                margin-bottom: 1.25rem;
+                margin-bottom: 2rem;
                 text-align: center;
             }
             .contact-info {
                 letter-spacing: 0.8px;
-                padding: 0px 2.5rem 0.5rem 2.5rem;
+                margin-bottom: 2rem;
                 text-align: center;
             }
             .form-container {
@@ -108,8 +100,7 @@ export default {
                 justify-content: center;
                 align-items: center;
                 height: 100%;
-                margin-top: 3px;
-                width: 100vw;
+                width: 100%;
                 input[type="text"], 
                 input[type="email"] {
                     width: 60vw;
@@ -119,7 +110,6 @@ export default {
                     border: none;
                     box-shadow: 2px 4px 6px rgba(0,0,0,0.25);
                     padding: 1rem;
-                    //text-indent: 15px;
                     &:active, 
                     &:focus, 
                     &:hover{
@@ -131,9 +121,8 @@ export default {
                     border-radius: 1.25rem;
                     box-shadow: 2px 4px 6px rgba(0,0,0,0.25);
                     height: 8rem;
-                    margin: 10px 0;
+                    margin: 15px 0;
                     padding: 1rem;
-                    //text-indent: 15px;
                     width: 60vw;
                     &:active, 
                     &:focus, 
@@ -162,11 +151,11 @@ export default {
             }  
         }  
     }
-    @media screen and (min-width: 765px) {
+    @media screen and (min-width: $sm) {
         #contact{
             margin-top: 6rem;
-            height: 80vh;
         .contact-container {
+            margin: 0 3rem;
             h2{
                 font-size: 1.9rem;
             }
@@ -174,7 +163,6 @@ export default {
                 font-size: 1.125rem;
             }
             .form-container {
-                
                 input[type="text"],
                 input[type="email"] {
                     max-width: 32rem;
@@ -197,18 +185,24 @@ export default {
             }
         }   
     } 
-    @media screen and (min-width: 1204px) {
-        ::placeholder{
-            font-size: 1rem;
-        }
-        h2{
-            font-size: 2.25rem;
-        }
-        p{
-            font-size: 1.25rem; 
-        }   
+    @media screen and (min-width: $md) {
+        #contact{
+            .contact-container{
+                margin: 0 4rem;
+            
+                ::placeholder{
+                    font-size: 1rem;
+                }
+                h2{
+                    font-size: 2.25rem;
+                }
+                p{
+                    font-size: 1.25rem; 
+                } 
+            }
+        }  
     }
-    @media screen and (min-width: 1920px) {
+    @media screen and (min-width: $lg) {
 
     }          
 }

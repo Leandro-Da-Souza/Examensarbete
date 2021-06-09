@@ -25,11 +25,9 @@ export default {
 
 <style scoped lang="scss">
 @import '../variables';
-
   #about{
     display: flex;
     flex-direction: column;
-    //justify-content: center;
     align-items: center;
     padding-top: 6rem;
     height: 100%;
@@ -47,7 +45,7 @@ export default {
     .about-text{
       display: block;
       padding: 2rem 0rem;
-      width: 90vw;
+      margin: 0 2rem;
       span{
         display: inline-block;
         margin: 10px 0; 
@@ -62,6 +60,7 @@ export default {
       }
       .about-text{
         font-size: 1.125rem; 
+        margin: 0 3rem;
       }
     }
     @media screen and (min-width: $md) {
@@ -73,6 +72,7 @@ export default {
       }
       .about-text{
         font-size: 1.25rem; 
+        margin: 0 4rem;
       }
     }
     @media screen and (min-width: $lg) {
