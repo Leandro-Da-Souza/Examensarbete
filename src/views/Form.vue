@@ -23,7 +23,7 @@
           </div>
           <span>{{!file ? 'ingen bild vald' : this.file.name}}</span>
           <div class="status-message" v-if="status.showMessage">
-            <!-- <span v-if="status.showMessage" class="status-message-conent">{{status.message}}</span> -->
+            <i class="far fa-times-circle fa-2x" @click="closeModal"></i>
             <h3>{{status.message}}</h3>
           </div>
           <input type="file" name="imgfile" id="imgUpload" :style="{display:'none'}" accept="image/*" @change="handleFileUpload"/>
@@ -59,6 +59,9 @@ export default {
       currentUser: ""
     }
   },
+  watch: {
+    
+  },
   methods: {
     logOut() {
       db.auth().signOut().then(() => {
@@ -67,6 +70,11 @@ export default {
       }).catch((e) => {
         console.log('something went wrong: ' + e)
       })
+    },
+    closeModal() {
+      this.status.showMessage = false;
+      this.status.message = '';
+      document.documentElement.style.overflow = 'auto'
     },
     openUpload() {
       this.$el.querySelector('#imgUpload').click()
@@ -94,22 +102,17 @@ export default {
     handleStatus(msg) {
       this.status.showMessage = true,
       this.status.message = msg
-      setTimeout(() => {
-        this.status.showMessage = false,
-        this.status.message = ''
-      }, 4000)
+      document.documentElement.style.overflow = 'hidden'
     },
     async handleSubmit() {
       if(!this.file || !this.imgtext) {
         this.handleStatus('fälten får inte vara tomma')
         return
       }
-      // let storageRef = db.storage().ref('images/' + this.file.name)
       let storageRef = db.storage().ref(`images/${this.currentUser}/${this.file.name}`)
       let collectionRef = db.database().ref('images')
 
       let task = storageRef.put(this.file)
-      console.log(this.$el)
 
       task.on('state_changed', (snap) => {
         this.uploading = true
@@ -129,9 +132,6 @@ export default {
     }
   },
   mounted() {
-    // this.$el.querySelector('#imgUpload').addEventListener('change',e => {
-    //   this.handleFileUpload(e)
-    // })
     this.currentUser = localStorage.getItem('uid')
   },
   beforeDestroy() {
@@ -179,13 +179,20 @@ export default {
       left: 0;
       top: 0;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
+      overflow: auto;
       h3 {
         font-size: 1.6rem;
         padding: 10px 20px;
         border-radius: 4px;
         color: $global-green-color;
+        margin-top: 60%;
+      }
+      i {
+        align-self: flex-end;
+        color: $global-green-color;
+        border-radius: 50%;
       }
     }
     .file-upload {
