@@ -10,10 +10,10 @@
             </div>-->
 
             <div class="nav-links" :class="showMenu ? 'active-nav' : ''">
-                <a @click="scrollToAbout(), showMenu = false">Om oss</a>
-                <a @click="scrollToServices(), showMenu = false">Våra tjänster</a>
-                <a @click="scrollToRef(), showMenu = false">Referenser</a>
-                <a @click="scrollToContact(), showMenu = false">Kontakt</a>
+                <a @click="scrollToAbout(), showMenu = false, burgerAni = false">Om oss</a>
+                <a @click="scrollToServices(), showMenu = false, burgerAni = false">Våra tjänster</a>
+                <a @click="scrollToRef(), showMenu = false, burgerAni = false">Referenser</a>
+                <a @click="scrollToContact(), showMenu = false, burgerAni = false">Kontakt</a>
             </div>
 
             <div class="hamburger-icon" @click="showMenu = !showMenu; burgerAni = !burgerAni">
@@ -90,6 +90,7 @@ export default {
                 font-size: 1.2rem;
                 text-decoration: none;
                 list-style: none;
+                margin: 0 1.5rem;
                 white-space: nowrap;
             }
         }
@@ -112,7 +113,7 @@ export default {
     .nav-container{
         .nav-links{
             position: absolute;
-            right: 0px;
+            right: 0rem;
             height: 100vh;
             width: 100%;
             top: 5rem;
@@ -121,16 +122,20 @@ export default {
             align-items: flex-start !important;
             justify-content: center !important;
             transform: translateX(100%);
-            transition: transform 0.5s ease-in;
+            transition: all 0.5s ease-in;
             padding: 0 1.8rem;
             a{
                 border-bottom: solid 2px rgba(255, 255, 255, 0.3) !important;
                 color: white !important;
                 font-size: 1.8rem !important;
                 padding: 2rem 0;
+                margin: 0rem !important;
                 width: 100%;
             }
         }
+        .active-nav{
+            transform: translateX(0%);
+        }   
         .hamburger-icon{
             background: none;
             display: block !important;
@@ -149,9 +154,6 @@ export default {
                 transform: rotate(45deg) translate(-8px, -7px);
             }
         }
-        .active-nav{
-            transform: translateX(0%);
-        }   
     }
 }
 
