@@ -88,7 +88,7 @@ export default {
     .card-list {
         display: flex;
         //margin: 10px;
-        width: 100vw;
+        width: 100%;
         align-items: center;
         justify-content: center;
         flex-direction: column;
@@ -96,14 +96,13 @@ export default {
             display: flex;
             overflow: hidden;
             list-style-type: none;
-            justify-content: center;
-            align-items: center;
+            // justify-content: center;
+            // align-items: center;
             width: 100%;
             margin-bottom: 20px;
             //margin-left: 19rem;
             li {
                 margin-bottom: 12px;
-                //margin-left: auto;
                 .card{
                     margin: 0rem 0.5rem;
                 }
