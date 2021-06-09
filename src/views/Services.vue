@@ -70,10 +70,16 @@ export default {
             margin-bottom: 3rem;
         }
         .services-wrapper {
-            grid-template: 1fr/1fr 1fr;
+            grid-template-columns: repeat(2, 43vw);
+            align-items: start;
+            justify-items: start;
+            grid-auto-flow: unset;
             width: 90vw;
+            min-width: 0;
+            overflow: hidden;
             .accordion{
             max-width: 43vw;
+            min-width: 0;
             }
         } 
         
@@ -89,7 +95,8 @@ export default {
             grid-template: 1fr/1fr 1fr;
             width: 90vw;
             .accordion{
-            max-width: 43vw;
+            // max-width: 43vw;
+            min-width: 0;
             }
         } 
     }
