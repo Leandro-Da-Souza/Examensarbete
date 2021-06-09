@@ -5,15 +5,19 @@
         När ni bokar ett möte med oss ser vi till att anpassa oss efter era önskemål och diskuterar hur just ni vill ha det.
     </p>
     <div class="services-wrapper">
-        <Accordion class="accordion" title="Gräsklippning" content="Gräsklippning är något vi gärna hjälper till med. Vi både klipper gräs och trimmar gräset på svårotkomliga ställen, såsom vid grusgångar eller rabatter."/>  
-        <Accordion class="accordion" title="Beskärning" content="Vi hjälper dig att beskära dina träd, och andra växter. Under våren beskär vi rosor, klängväxter som klematis och buskar som blommar på årets nya skott, så kallade årsskott. Känsliga träd och buskar beskär vi under JAS-månaderna (juli, augusti och september) och stenfrukt som plommon och körsbär på hösten efter skörd."/>  
-        <Accordion class="accordion" title="Ogräsrensning" content="Vi kommer och rensar rabatterna och gräsmattan från allt ogräs. Det är lätt hänt att man låter ogräset vara kvar under en längre tid och detta kan göra att det tillslut blir stora hål i gräsmattan när du rensar bort det. Vi ser till att ta bort allt ogräs och lägger såfrön på gräsmattan om det behövs vid borttagningen av ogräset."/>  
-        <Accordion class="accordion" title="Plantering" content="Vi hjälper dig plantera träd, häckar, blommor och alla typer av växter."/>  
-        <Accordion class="accordion" title="Häckklippning" content="
-        Förutom möjligheten att vi kan reglera storlek och form på din häck, så blir de klippta häckarna framförallt tätare än de friväxande.
-        Det kan finnas lagkrav på din häck, är det risk att häcken skymmer sikten vid t.ex vägkorsning eller utfart bör man kontakta sin kommun och fråga om vilken höjd häcken max får ha. Är du osäker så hjälper vi dig!"
-        />   
-        <Accordion class="accordion" title="Trädgårdsdesign" content="Trädgårdsdesign"/>
+        <div>
+            <Accordion class="accordion" title="Gräsklippning" content="Gräsklippning är något vi gärna hjälper till med. Vi både klipper gräs och trimmar gräset på svårotkomliga ställen, såsom vid grusgångar eller rabatter."/>  
+            <Accordion class="accordion" title="Beskärning" content="Vi hjälper dig att beskära dina träd, och andra växter. Under våren beskär vi rosor, klängväxter som klematis och buskar som blommar på årets nya skott, så kallade årsskott. Känsliga träd och buskar beskär vi under JAS-månaderna (juli, augusti och september) och stenfrukt som plommon och körsbär på hösten efter skörd."/>  
+            <Accordion class="accordion" title="Ogräsrensning" content="Vi kommer och rensar rabatterna och gräsmattan från allt ogräs. Det är lätt hänt att man låter ogräset vara kvar under en längre tid och detta kan göra att det tillslut blir stora hål i gräsmattan när du rensar bort det. Vi ser till att ta bort allt ogräs och lägger såfrön på gräsmattan om det behövs vid borttagningen av ogräset."/>  
+        </div>
+        <div>
+            <Accordion class="accordion" title="Plantering" content="Vi hjälper dig plantera träd, häckar, blommor och alla typer av växter."/>  
+            <Accordion class="accordion" title="Häckklippning" content="
+            Förutom möjligheten att vi kan reglera storlek och form på din häck, så blir de klippta häckarna framförallt tätare än de friväxande.
+            Det kan finnas lagkrav på din häck, är det risk att häcken skymmer sikten vid t.ex vägkorsning eller utfart bör man kontakta sin kommun och fråga om vilken höjd häcken max får ha. Är du osäker så hjälper vi dig!"
+            />   
+            <Accordion class="accordion" title="Trädgårdsdesign" content="Trädgårdsdesign"/>
+        </div>
     </div>
 </div>
 </template>
