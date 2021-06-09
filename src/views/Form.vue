@@ -5,7 +5,6 @@
           <img src="@/assets/Logo.svg" alt="logo"/>
         </router-link>
         <button class="ghost-btn" :style="{borderRadius: '6px'}" @click="logOut">Logga ut</button> 
-
       </header>
       <div v-if="uploading">
         <Spinner/>

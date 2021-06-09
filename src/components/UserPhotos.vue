@@ -4,14 +4,12 @@
       <p :style="{textAlign: 'center', marginTop: '20px' }">Du har inte laddat upp några bilder än, använd formuläret ovanför!</p>
     </div>
     <div v-else>
-      <h2>Dina bilder</h2>
+      <h3>Dina publicerade referenser:</h3>
       <ul>
         <li v-for="(photo,index) in userPhotos" :key="index + ''">
+          <i class="fas fa-times-circle" @click="deletePhoto(photo)"></i>
           <img :src="photo.img" alt="">
-          <div>
-            <p>{{photo.description | truncateText(15)}}</p>
-            <i class="fas fa-times-circle" @click="deletePhoto(photo)"></i>
-          </div>
+          <p>{{photo.description | truncateText(90)}}</p>
         </li>
       </ul>
     </div>
@@ -75,33 +73,54 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../variables';
   .user-photos {
-    h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h3 {
       color: #272727;
       text-align: center;
+      font-size: 1.2rem;
       font-weight: normal;
       letter-spacing: 1.5px;
       margin: 20px 0;
     }
     ul {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      display: flex;
       list-style-type: none;
       justify-items: center;
+      align-items: center;
+      padding-bottom: 3rem;
+      width: 100%;
       li {
+        background-color: #ffffff;
+        border-radius: 8%;
+        box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+        height: 13rem;
+        padding: 0.3rem 1rem;
+        margin: 0 0.5rem;
+        width: 10rem;
         display: flex;
+        justify-items: center;
+        align-items: flex-start;
         flex-direction: column;
-        i {
-          justify-self: flex-end;
-          align-self: flex-end;
+        i{
+          background: transparent;
+          padding: 0.4rem 0;
         }
         img {
-          position: relative;
-          margin-top: 5px;
-          max-width: 140px;
-          height: 140px;
-          background-position: center;
+          width: 8rem;
+          height: 5rem;
+          object-position: center;
+          object-fit: cover;
+          margin-bottom: 0.3rem;
           z-index: 0;
+        }
+        p{
+          background: transparent;
+          font-size: 0.7rem;
+          text-align: start;
         }
       }
     }
