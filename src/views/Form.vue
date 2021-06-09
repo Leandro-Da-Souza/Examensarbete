@@ -94,7 +94,6 @@ export default {
       if(this.file) {
         reader.readAsDataURL(this.file)
       }
-
     },
     async getCurrentUser() {
       this.currentUser = await db.auth().currentUser.uid

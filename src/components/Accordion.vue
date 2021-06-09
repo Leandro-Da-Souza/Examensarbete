@@ -2,8 +2,8 @@
   <div class="accordion-wrapper">
         <div class="title-container" @click="toggle = !toggle">
             <h3>{{title}}</h3>
-            <i class="fas fa-arrow-circle-down fa-lg" v-if="!toggle"></i>
-            <i class="fas fa-arrow-circle-up fa-lg" v-else></i>
+            <i class="fas fa-plus fa-lg" v-if="!toggle"></i>
+            <i class="fas fa-minus fa-lg" v-else></i>
         </div>
         <transition name="fade">
             <div class="content-container" v-if="toggle">

@@ -69,7 +69,8 @@ export default {
         align-items: center;
         justify-content: space-between;
         height: 5rem;
-        margin: 0rem 1.8rem;
+        padding: 0rem 1.8rem;
+        width: 100%;
         .logo{
             cursor: pointer;
             img{
@@ -80,10 +81,10 @@ export default {
             display: flex;
             align-items: flex-start;
             justify-content: flex-end;
-            width: 100%;
+            //width: 100%;
             a{
                 background-color: transparent;
-                border:none;
+                border: none;
                 cursor: pointer;
                 color: $global-green-color;
                 font-family: $global-nav-font;
@@ -116,7 +117,7 @@ export default {
             right: 0rem;
             height: 100vh;
             width: 100%;
-            top: 5rem;
+            top: 0rem;
             background-color: $global-green-color;
             flex-direction: column;
             align-items: flex-start !important;
@@ -124,6 +125,7 @@ export default {
             transform: translateX(100%);
             transition: all 0.5s ease-in;
             padding: 0 1.8rem;
+            z-index: -2;
             a{
                 border-bottom: solid 2px rgba(255, 255, 255, 0.3) !important;
                 color: white !important;
