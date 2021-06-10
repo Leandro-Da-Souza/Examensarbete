@@ -21,11 +21,11 @@ export default new Vuex.Store({
   actions: {
     async GET_CARDS({ state, commit }) {
       let collection = await db.database().ref('images')
-      console.log(state.cards)
+      // console.log(state.cards)
       collection.on('value', snap => {
         snap.forEach(data => {
             if(state.cards.findIndex(i => i.img === data.val().img) > -1) {
-              console.log('image exists')
+              return;
             } else {
               commit('SET_CARDS', new CardClass(`${data.val().img}`, `${data.val().description}`, "corporis perferendis repellendus" ))
             }
