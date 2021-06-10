@@ -26,7 +26,7 @@ export default {
         flex-direction: column;
         align-items: center;
         border-radius: 1.9rem;
-        //position: relative;
+        margin: 0rem 0.5rem;
         img {
             margin: 40px 0 0 0;
             width: 80%;
@@ -40,18 +40,18 @@ export default {
         }
     }
     .active-card {
-        //margin-left: 8rem;
-        //position: absolute;
-        width: 18.5rem;
-        height: 24rem;
+        //background-color: rgb(96, 133, 96, 0.5);
         box-shadow: 0px 7px 7px rgba(0,0,0,0.35);
         transition: all 0.5s ease;  
+         .description {
+            //color: $global-bg-color;
+        }
     }
 
     @media screen and(min-width: $sm) {
         .card {
-            width: 22rem;
-            height: 30rem;
+            width: 21rem;
+            height: 26rem;
             margin: 0rem 1rem;
             img {
                 width: 80%;
@@ -60,12 +60,6 @@ export default {
             .description {
             font-size: 1.125rem;
             }
-        }
-        .active-card {
-            width: 22rem;
-            height: 30.5rem;
-            box-shadow: 0px 7px 7px rgba(0,0,0,0.35);
-            transition: all 0.5s ease;  
         }
     }
 </style>
