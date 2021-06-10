@@ -29,6 +29,7 @@ export default {
         flex-direction: column;
         align-items: center;
         border-radius: 1.9rem;
+        //position: relative;
         img {
             margin: 40px 0 0 0;
             width: 80%;
@@ -42,10 +43,13 @@ export default {
         }
     }
     .active-card {
+        //margin-left: 8rem;
+        //position: absolute;
         width: 18.5rem;
         height: 24rem;
         box-shadow: 0px 7px 7px rgba(0,0,0,0.35);
         transition: all 0.5s ease;  
+        //z-index: 1000;
     }
 
     @media screen and(min-width: $sm) {

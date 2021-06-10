@@ -22,7 +22,7 @@ export default {
         width: 100%;
         padding-top: 6rem;
         margin-bottom: -2rem;
-        overflow: hidden;
+        //overflow: hidden;
         display: flex;
         justify-content: center;
         align-items: center;

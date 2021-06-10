@@ -6,8 +6,7 @@
             </li>
         </ul>
         <div class="bullet-container">
-            <div class="bullet" v-for="(card, index) in cards" :key="index" @click="changeImage(index)" :class="index == currentIndex ? 'active-bullet' : ''">
-            </div>
+            <div class="bullet" v-for="(card, index) in cards" :key="index" @click="changeImage(index)" :class="index == currentIndex ? 'active-bullet' : ''"></div>
         </div>
     </div>
 </template>
@@ -86,22 +85,26 @@ export default {
 @import '../variables';
     .card-list {
         display: flex;
-        width: 100%;
+        width: 100vw;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: center;
         flex-direction: column;
         ul {
+            background: transparent;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
+            //overflow: hidden;
             list-style-type: none;
             width: 100%;
             margin-bottom: 20px;
+            margin-left: 50vh;
+            //justify-content: center;
+            //align-items: center;
             li {
+                background: transparent;
                 margin-bottom: 12px;
+                
                 .card{
-                    margin: 0rem 0.8rem;
+                    margin: 0rem 1rem 0 1rem;
                 }
             }
         }
@@ -110,6 +113,7 @@ export default {
             display: flex;
             justify-content: center;
             align-items: center;
+            z-index: 1;
             .bullet {
                 width: 10px;
                 margin: 10px;

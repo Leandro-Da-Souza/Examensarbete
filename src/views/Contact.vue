@@ -76,10 +76,10 @@ export default {
 
 <style scoped lang="scss">
 @import '../variables';
-
     #contact{
-        padding-top: 6rem;
         height: 100vh;
+        padding-top: 6rem;
+        position: absolute;
         .contact-container {
             margin: 0 2rem;
             h2 {
