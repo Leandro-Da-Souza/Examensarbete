@@ -34,7 +34,7 @@
           </div>  
           <button @click.prevent="handleSubmit" class="btn" :style="{width: '107px', height: '35px', borderRadius: '6px'}">Publicera</button>
           <div class="status-message" v-if="status.showMessage">
-            <h3>
+            <h3 :style="{color: status.color}">
               <br>
               {{status.message}}
               <br>
@@ -44,7 +44,10 @@
           <input type="file" name="imgfile" id="imgUpload" :style="{display:'none'}" accept="image/*" @change="handleFileUpload"/>
         </form>
       </div>
-      <UserPhotos v-if="!uploading"/>
+      <div v-if="status.showMessage !== true">
+
+        <UserPhotos v-if="!uploading"/>
+      </div>
   </div>
 </template>
 
@@ -65,7 +68,8 @@ export default {
       uploading: false,
       status: {
         showMessage: false,
-        message: ''
+        message: '',
+        color: ''
       },
       currentUser: ""
     }
@@ -105,14 +109,15 @@ export default {
     async getCurrentUser() {
       this.currentUser = await db.auth().currentUser.uid
     },
-    handleStatus(msg) {
+    handleStatus(msg,color) {
       this.status.showMessage = true,
       this.status.message = msg
+      this.status.color = color
       document.documentElement.style.overflow = 'hidden'
     },
     async handleSubmit() {
       if(!this.file || !this.imgtext) {
-        this.handleStatus('fälten får inte vara tomma')
+        this.handleStatus('fälten får inte vara tomma', '#FF9494')
         return
       }
       let storageRef = db.storage().ref(`images/${this.currentUser}/${this.file.name}`)
@@ -121,7 +126,7 @@ export default {
       let task = storageRef.put(this.file)
 
       if(!this.currentUser) {
-        this.handleStatus('något gick fel, testa att logga in och ut') 
+        this.handleStatus('något gick fel, testa att logga in och ut', '#FF9494') 
         return
       }
       task.on('state_changed', () => {
@@ -129,14 +134,14 @@ export default {
         }, (err) => {
           console.log(err)
           this.uploading = false
-          this.handleStatus('något gick fel, kontakta IT')
+          this.handleStatus('något gick fel, kontakta IT','#FF9494')
         }, async () => {
           const url = await storageRef.getDownloadURL()
           collectionRef.push({name: this.file.name, img: url, description: this.imgtext, user: this.currentUser});
           this.uploading = false  
           this.imgtext = ""
           this.file = ''
-          this.handleStatus('Din referens är nu publicerad')
+          this.handleStatus('Din referens är nu publicerad', '#86a687')
         })
     }
   },
@@ -167,10 +172,10 @@ export default {
     }
   }
   .form-wrapper {
-    margin-top: 10%;
+    margin-top: 3rem;
     display: flex;
     flex-direction: column;
-    // justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     h2 {
       color: #272727;
