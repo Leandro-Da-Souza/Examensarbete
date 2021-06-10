@@ -12,9 +12,6 @@ export default {
         "item",
         "active"
     ],
-    mounted() {
-        console.log(this.active)
-    }
 }
 </script>
 
