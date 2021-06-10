@@ -79,14 +79,16 @@ export default {
         .form-container {
             display: flex;
             flex-direction: column;
+            justify-content: center;
+            align-items: center;
             input[type="text"], 
             input[type="password"] {
-                width: 250px;
-                height: 36px;
+                width: 35vw;
+                height: 2.5rem;
                 margin: 14px 0;
                 border-radius: 20px;
                 border: none;
-                text-indent: 15px;
+                padding: 15px;
                 box-shadow: 2px 4px 6px rgba(0,0,0, 0.25);
                 background-color: #fff;
                 &:active, 
@@ -95,7 +97,6 @@ export default {
                     outline: none;
                 }
             }
-           
             span {
                 display: inline;
                 font-size: 0.8rem;
@@ -103,7 +104,28 @@ export default {
                 margin: 0;
                 color: #FF9494
             }
-        }
-        
+
+            button[type="submit"] {
+                    margin:30px 0px;
+                } 
+        }   
     }
+    @media screen and (min-width: $sm) {
+        .login-container{
+            .form-container{
+                input[type="text"], 
+                input[type="password"] {
+                    border-radius: 3rem;
+                    max-width: 20rem;
+                    height: 3rem;
+                } 
+                button[type="submit"] {
+                    width: 8rem;
+                    height: 40px;
+                    font-size: 1.4rem;
+                }  
+            } 
+        }
+    }
+                    
 </style>

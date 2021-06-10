@@ -45,7 +45,7 @@ export default {
 #services{
     height: 100%;
     padding-top: 6rem;
-    margin: 0 2rem -2rem 2rem;
+    margin: 0 2rem -3rem 2rem;
     h2 {
         color: $global-font-color;
         text-align: center;
@@ -62,6 +62,9 @@ export default {
         grid-template-columns: 1fr;
     }
     @media screen and (min-width: $sm) {
+        #services{
+            margin-bottom: -2rem;
+        }
         h2{
             font-size: 1.9rem;
         }

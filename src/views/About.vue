@@ -29,7 +29,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: -2rem;
+    margin-bottom: -3rem;
     padding-top: 6rem;
     height: 100%;
     h2{
@@ -53,6 +53,9 @@ export default {
       }
     }
     @media screen and (min-width: $sm) {
+      #about{
+        margin-bottom: -2rem;
+      }
       h2{
           font-size: 1.9rem;
       }

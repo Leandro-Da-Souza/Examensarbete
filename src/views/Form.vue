@@ -282,11 +282,8 @@ export default {
         .left-side {
            margin-right: 2rem;
         }
-      }
-      
-      
-    }
-    
+      } 
+    }  
   }
 }
 

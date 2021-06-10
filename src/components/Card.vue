@@ -40,12 +40,8 @@ export default {
         }
     }
     .active-card {
-        //background-color: rgb(96, 133, 96, 0.5);
         box-shadow: 0px 7px 7px rgba(0,0,0,0.35);
         transition: all 0.5s ease;  
-         .description {
-            //color: $global-bg-color;
-        }
     }
 
     @media screen and(min-width: $sm) {
