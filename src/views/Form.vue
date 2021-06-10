@@ -1,10 +1,10 @@
 <template>
   <div class="form-container">
       <header>
-        <router-link to="/">
+        <div @click="logOut('Landing')">
           <img src="@/assets/Logo.svg" alt="logo"/>
-        </router-link>
-        <button class="ghost-btn log-out" :style="{borderRadius: '6px'}" @click="logOut">Logga ut</button> 
+        </div>
+        <button class="ghost-btn log-out" :style="{borderRadius: '6px'}" @click="logOut('Login')">Logga ut</button> 
       </header>
       <div v-if="uploading">
         <Spinner/>
@@ -31,7 +31,7 @@
             </h3>
           </div>
           <input type="file" name="imgfile" id="imgUpload" :style="{display:'none'}" accept="image/*" @change="handleFileUpload"/>
-          <textarea name="imgtext" placeholder="Lägg till bildtext" v-model="imgtext"></textarea>
+          <textarea class="img-text" name="imgtext" placeholder="Lägg till bildtext" v-model="imgtext"></textarea>
           <button @click.prevent="handleSubmit" class="btn" :style="{width: '107px', height: '35px', borderRadius: '6px'}">Publicera</button>
         </form>
       </div>
@@ -65,10 +65,10 @@ export default {
     
   },
   methods: {
-    logOut() {
+    logOut(path) {
       db.auth().signOut().then(() => {
         localStorage.clear()
-        this.$router.replace({name: 'Login'});
+        this.$router.replace({name: path});
       }).catch((e) => {
         console.log('something went wrong: ' + e)
       })
@@ -163,6 +163,9 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    @media screen and (min-width: 745px) {
+      display: flex;
+    }
     h2 {
       color: #272727;
       text-align: center;
@@ -226,12 +229,13 @@ export default {
       margin-top: 20px;
       text-indent: 15px;
       padding-top: 5px;
+      background-color: #fff;
       &:active, 
       &:focus, 
       &:hover{
         outline: none;
       }
-    }
+    } 
   }
 }
 

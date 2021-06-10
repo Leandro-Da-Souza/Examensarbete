@@ -6,8 +6,8 @@
     <div class="form-wrapper">
         <h1>LOGGA IN</h1>
         <form class="form-container" @submit.prevent="handleSubmit">
-            <input type="text" name="username" v-model="username" placeholder="Användarnamn">
-            <span v-if="error.username">användarnamn finns ej</span>
+            <input type="text" name="username" v-model="username" placeholder="E-mail">
+            <span v-if="error.username">email ej registrerad</span>
             <input 
             type="password" 
             name="password" 
@@ -88,6 +88,7 @@ export default {
                 border: none;
                 text-indent: 15px;
                 box-shadow: 2px 4px 6px rgba(0,0,0, 0.25);
+                background-color: #fff;
                 &:active, 
                 &:focus, 
                 &:hover{
