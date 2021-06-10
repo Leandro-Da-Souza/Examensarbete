@@ -21,6 +21,7 @@ export default {
 <style scoped lang="scss">
 @import '../variables';
     .card {
+        background-color: #fff;
         width: 18rem;
         height: 23rem;
         box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
@@ -41,8 +42,8 @@ export default {
         }
     }
     .active-card {
-        width: 18rem;
-        height: 23.5rem;
+        width: 18.5rem;
+        height: 24rem;
         box-shadow: 0px 7px 7px rgba(0,0,0,0.35);
         transition: all 0.5s ease;  
     }

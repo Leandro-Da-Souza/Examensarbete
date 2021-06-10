@@ -103,13 +103,14 @@ export default {
                 width: 100%;
                 input[type="text"], 
                 input[type="email"] {
-                    width: 60vw;
-                    height: 2.5rem;
-                    margin: 10px 0;
+                    background-color: #fff;
                     border-radius: 1.25rem;
                     border: none;
                     box-shadow: 2px 4px 6px rgba(0,0,0,0.25);
+                    height: 2.5rem;
+                    margin: 10px 0;
                     padding: 1rem;
+                    width: 60vw;
                     &:active, 
                     &:focus, 
                     &:hover{
@@ -117,6 +118,7 @@ export default {
                     }
                 }
                 textarea {
+                    background-color: #fff;
                     border: none;
                     border-radius: 1.25rem;
                     box-shadow: 2px 4px 6px rgba(0,0,0,0.25);

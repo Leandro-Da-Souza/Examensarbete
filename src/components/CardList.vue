@@ -88,10 +88,12 @@ export default {
         display: flex;
         width: 100%;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-end;
         flex-direction: column;
         ul {
             display: flex;
+            align-items: center;
+            justify-content: center;
             overflow: hidden;
             list-style-type: none;
             width: 100%;
@@ -99,7 +101,7 @@ export default {
             li {
                 margin-bottom: 12px;
                 .card{
-                    margin: 0rem 0.5rem;
+                    margin: 0rem 0.8rem;
                 }
             }
         }
@@ -123,6 +125,5 @@ export default {
             }
         }
     }
-   
 
 </style>
