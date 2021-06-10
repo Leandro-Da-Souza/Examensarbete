@@ -78,8 +78,8 @@ export default {
 @import '../variables';
 
     #contact{
-        margin-top: 6rem;
-        height: 80vh;
+        padding-top: 6rem;
+        height: 100vh;
         .contact-container {
             margin: 0 2rem;
             h2 {
@@ -153,7 +153,7 @@ export default {
     }
     @media screen and (min-width: $sm) {
         #contact{
-            margin-top: 6rem;
+            //padding-top: 6rem;
         .contact-container {
             margin: 0 3rem;
             h2{

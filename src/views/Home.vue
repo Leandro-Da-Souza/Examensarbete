@@ -57,6 +57,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: -2rem;
     .bgImage{
       background-repeat: no-repeat;
       background-size: cover;

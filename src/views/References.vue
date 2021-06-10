@@ -21,6 +21,7 @@ export default {
         height: 100%;
         width: 100vw;
         padding-top: 6rem;
+        margin-bottom: -2rem;
         h2 {
             text-align: center;
             font-weight: normal;

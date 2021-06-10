@@ -45,7 +45,7 @@ export default {
 #services{
     height: 100%;
     padding-top: 6rem;
-    margin: 0 2rem;
+    margin: 0 2rem -2rem 2rem;
     h2 {
         color: $global-font-color;
         text-align: center;

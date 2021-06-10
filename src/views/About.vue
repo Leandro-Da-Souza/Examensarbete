@@ -29,6 +29,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: -2rem;
     padding-top: 6rem;
     height: 100%;
     h2{
@@ -44,7 +45,7 @@ export default {
     }
     .about-text{
       display: block;
-      padding: 2rem 0rem;
+      padding-top: 2rem;
       margin: 0 2rem;
       span{
         display: inline-block;
