@@ -57,7 +57,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: -2rem;
+    margin-bottom: -3rem;
     .bgImage{
       background-repeat: no-repeat;
       background-size: cover;
@@ -98,6 +98,9 @@ export default {
       } 
     }
     @media screen and (min-width: $sm) {
+      #home{
+        margin-bottom: -2rem;
+      }
       .circle-home{
         height: 16rem;
         width: 16rem;

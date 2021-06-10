@@ -16,13 +16,14 @@ $lg: 1920px;
 .btn {
   width: 97px;
   height: 35px;
-  margin-top: 30px;
-  align-self: center;
-  font-size: 0.9rem;
+  margin: 10px 0;
+  font-size: 1.1rem;
   font-weight: bold;
-  border: none;
   background-color: $global-green-color;
-  color: #fff;
+  color: $global-bg-color;
+  border: none;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
 }
 

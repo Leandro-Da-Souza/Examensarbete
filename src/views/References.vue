@@ -21,7 +21,7 @@ export default {
         height: 100%;
         width: 100%;
         padding-top: 6rem;
-        margin-bottom: -2rem;
+        margin-bottom: -3rem;
         //overflow: hidden;
         display: flex;
         justify-content: center;
@@ -34,6 +34,9 @@ export default {
             margin-bottom: 2rem;
         }
         @media screen and (min-width: $sm) {
+            #references{
+                margin-bottom: -2rem;
+            }
             h2{
                 font-size: 1.9rem;
             }
