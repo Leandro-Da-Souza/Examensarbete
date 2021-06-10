@@ -74,9 +74,6 @@ export default {
         this.$el.addEventListener('touchstart', event => this.touchstart(event));
         this.$el.addEventListener('touchmove', event => this.touchmove(event));
         this.$el.addEventListener('touchend', () => this.touchend());
-        // this.$el.addEventListener('onkeydown', event => this.touchstart(event));
-        // this.$el.addEventListener('onkeypress', event => this.touchmove(event));
-        // this.$el.addEventListener('onkeyup', this.touchend())
     }
 }
 </script>
@@ -91,20 +88,17 @@ export default {
         justify-content: center;
         flex-direction: column;
         ul {
-            //overflow: hidden;
             background: transparent;
             display: flex;
             align-items: center;
             list-style-type: none;
             margin-bottom: 20px;
-            width: 18.5rem;
+            width: 19.5rem;
             
             li {
                 background: transparent;
                 margin-bottom: 12px;
-                .card{
-                   //margin-left: 2rem;
-                }
+                //margin-right: 1rem;
             }
         }
         .bullet-container {
@@ -128,9 +122,11 @@ export default {
             }
         }
     }
-    @media screen and (max-width: $md) {
+    @media screen and (min-width: $sm) {
         .card-list{
-            //width: 22rem;
+            ul{
+                width: 23rem;
+            }
         }
     }
 
