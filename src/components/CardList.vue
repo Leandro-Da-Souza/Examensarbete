@@ -93,7 +93,7 @@ export default {
             align-items: center;
             list-style-type: none;
             margin-bottom: 20px;
-            width: 19.5rem;
+            width: 19rem;
             
             li {
                 background: transparent;
