@@ -11,17 +11,28 @@
       </div>
       <div v-if="!uploading">
         <form action="" class="form-wrapper">
-          <h2>Lägg Till Referens</h2>
-          <div class="file-upload">
-            <i class="fas fa-upload fa-lg upload"></i>
-            <button 
-              class="ghost-btn" 
-              :style="{padding: '3px', borderRadius: '6px'}"
-              @click.prevent="openUpload">
-                Ladda upp bild
-            </button>
-          </div>
-          <span>{{!file ? 'ingen bild vald' : this.file.name}}</span>
+            <h2>Lägg Till Referens</h2>
+          <div class="new-container">
+
+              <div class="left-side">
+                <div class="file-upload">
+                  <i class="fas fa-upload fa-lg upload"></i>
+                  <button 
+                    class="ghost-btn" 
+                    :style="{padding: '3px', borderRadius: '6px'}"
+                    @click.prevent="openUpload">
+                      Ladda upp bild
+                  </button>
+                </div>
+                <span>{{!file ? 'ingen bild vald' : this.file.name}}</span>
+              </div>
+
+
+              <div class="right-side">
+                <textarea class="img-text" name="imgtext" placeholder="Lägg till bildtext" v-model="imgtext"></textarea>
+              </div>
+          </div>  
+          <button @click.prevent="handleSubmit" class="btn" :style="{width: '107px', height: '35px', borderRadius: '6px'}">Publicera</button>
           <div class="status-message" v-if="status.showMessage">
             <h3>
               <br>
@@ -31,8 +42,6 @@
             </h3>
           </div>
           <input type="file" name="imgfile" id="imgUpload" :style="{display:'none'}" accept="image/*" @change="handleFileUpload"/>
-          <textarea class="img-text" name="imgtext" placeholder="Lägg till bildtext" v-model="imgtext"></textarea>
-          <button @click.prevent="handleSubmit" class="btn" :style="{width: '107px', height: '35px', borderRadius: '6px'}">Publicera</button>
         </form>
       </div>
       <UserPhotos v-if="!uploading"/>
@@ -161,7 +170,7 @@ export default {
     margin-top: 10%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    // justify-content: flex-start;
     align-items: center;
     h2 {
       color: #272727;
@@ -169,6 +178,14 @@ export default {
       font-weight: normal;
       letter-spacing: 1.5px;
       margin-bottom: 5px;
+    }
+
+    .new-container {
+      .left-side {
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+      }
     }
     .status-message {
       background-color: rgba(0,0,0,0.4);
@@ -183,7 +200,6 @@ export default {
       align-items: center;
       justify-content: center;
       overflow: auto;
-      
       h3 {
         display: flex;
         font-size: 1.3rem;
@@ -233,6 +249,39 @@ export default {
         outline: none;
       }
     } 
+  }
+}
+
+@media screen and(min-width: $sm) {
+  .form-container {
+    .form-wrapper {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      h2 {
+        margin-bottom: 0;
+      }
+      .new-container {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: row;
+        .right-side {
+          display: flex;
+          flex-direction: column;
+          margin-left: 2rem;
+          textarea {
+            margin-top: 0;
+            height: 226px;
+          }
+        }
+        .left-side {
+           margin-right: 2rem;
+        }
+      }
+      
+      
+    }
+    
   }
 }
 

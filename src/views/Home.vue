@@ -97,7 +97,7 @@ export default {
         font-style: italic;
       } 
     }
-    @media screen and (min-width: 765px) {
+    @media screen and (min-width: $sm) {
       .circle-home{
         height: 16rem;
         width: 16rem;
@@ -113,7 +113,7 @@ export default {
         }
       }
     }
-    @media screen and (min-width: 1204px) {
+    @media screen and (min-width: $md) {
       .circle-home{
          height: 17.5rem;
          width: 17.5rem;
@@ -122,7 +122,7 @@ export default {
         }
       } 
     }
-    @media screen and (min-width: 1920px) {
+    @media screen and (min-width: $lg) {
       .circle-home{
         height: 19rem;
         width: 19rem;
