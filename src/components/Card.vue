@@ -49,13 +49,13 @@ export default {
         height: 24rem;
         box-shadow: 0px 7px 7px rgba(0,0,0,0.35);
         transition: all 0.5s ease;  
-        //z-index: 1000;
     }
 
     @media screen and(min-width: $sm) {
         .card {
             width: 22rem;
             height: 30rem;
+            margin: 0rem 1rem;
             img {
                 width: 80%;
                 height: 25vh;

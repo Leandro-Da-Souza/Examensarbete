@@ -2,8 +2,8 @@
   <div class="accordion-wrapper">
         <div class="title-container" @click="toggle = !toggle">
             <h3>{{title}}</h3>
-            <i class="fas fa-plus fa-lg" v-if="!toggle"></i>
-            <i class="fas fa-minus fa-lg" v-else></i>
+            <i class="fas fa-plus fa-md" v-if="!toggle"></i>
+            <i class="fas fa-minus fa-md" v-else></i>
         </div>
         <transition name="fade">
             <div class="content-container" v-if="toggle">
@@ -85,4 +85,9 @@ export default {
         opacity: 0;
     }   
 }
+@media screen and (min-width: $sm) {
+        .accordion-wrapper{
+            margin-bottom: 1rem;
+        }
+    }  
 </style>

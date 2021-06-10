@@ -22,7 +22,7 @@ export default {
     data() {
         return {
             cards: [],
-            currentIndex: 1,
+            currentIndex: 0,
             touch: {
                 startX: 0,
                 endX: 0
@@ -84,27 +84,26 @@ export default {
 <style scoped lang="scss">
 @import '../variables';
     .card-list {
+        overflow: hidden;
         display: flex;
-        width: 100vw;
+        width: 100%;
         align-items: center;
         justify-content: center;
         flex-direction: column;
         ul {
+            //overflow: hidden;
             background: transparent;
             display: flex;
-            //overflow: hidden;
+            align-items: center;
             list-style-type: none;
-            width: 100%;
             margin-bottom: 20px;
-            margin-left: 50vh;
-            //justify-content: center;
-            //align-items: center;
+            width: 18.5rem;
+            
             li {
                 background: transparent;
                 margin-bottom: 12px;
-                
                 .card{
-                    margin: 0rem 1rem 0 1rem;
+                   //margin-left: 2rem;
                 }
             }
         }
@@ -127,6 +126,11 @@ export default {
                 width: 12px; 
                 height: 12px;
             }
+        }
+    }
+    @media screen and (max-width: $md) {
+        .card-list{
+            //width: 22rem;
         }
     }
 

@@ -62,19 +62,19 @@ export default {
     margin-bottom: 5rem;
     width: 100%;
     z-index: 3000;
-    -webkit-box-shadow: 0 7px 6px -6px #999;
-    -moz-box-shadow: 0 7px 6px -6px #999;
-    box-shadow: 0 7px 6px -6px #999;
+    -webkit-box-shadow: 0 7px 8px -6px rgb(196, 196, 196);
+    -moz-box-shadow: 0 7px 8px -6px rgb(196, 196, 196);
+    box-shadow: 0 7px 8px -6px rgb(196, 196, 196);
     .nav{
         display: flex;
         align-items: center;
         justify-content: space-between;
         height: 5rem;
-        width: 100%;
+        width: 100vw;
         .logo{
             cursor: pointer;
-            margin: 0 0 0 2rem;
             img{
+                margin: 0 0 0 2rem;
                 width: 8rem;
             }
         }
@@ -116,7 +116,17 @@ export default {
 }
 
 @media screen and (max-width: $sm) {
+    
     .nav-container{
+        nav{
+            .logo{
+                //margin: 0 0 0 10rem;
+                background-color: red;
+                img{
+                    margin: 0 0 0 10rem !important;
+                }
+            }
+        }
         .nav-links{
             position: absolute;
             right: 0rem;
@@ -135,7 +145,7 @@ export default {
                 border-bottom: solid 2px rgba(255, 255, 255, 0.3) !important;
                 color: $global-bg-color !important;
                 font-size: 1.8rem !important;
-                padding: 2rem 0;
+                padding:  0 3rem;
                 margin: 0rem !important;
                 width: 100%;
             }

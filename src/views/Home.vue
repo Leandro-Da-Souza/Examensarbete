@@ -3,7 +3,7 @@
     <transition name="fade1">
       <div class="bgImage" :style="bgImg" :key="currentIndex"></div>
     </transition>
-      <a href="#about" class="circle-home">
+      <a @click="$emit(scrollToAbout())" class="circle-home">
           <p class="p1">Plantera mera, hjälper dig med trädgården sedan 2007.</p>
           <p class="p2">Läs mer</p>
           &#8595;
@@ -69,6 +69,7 @@ export default {
       transition: all 2s ease-in-out;
     }
     .circle-home{
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
