@@ -61,9 +61,6 @@ export default {
       currentUser: ""
     }
   },
-  watch: {
-    
-  },
   methods: {
     logOut(path) {
       db.auth().signOut().then(() => {
@@ -114,9 +111,12 @@ export default {
 
       let task = storageRef.put(this.file)
 
-      task.on('state_changed', (snap) => {
-        this.uploading = true
-          console.log(snap)
+      if(!this.currentUser) {
+        this.handleStatus('något gick fel, testa att logga in och ut') 
+        return
+      }
+      task.on('state_changed', () => {
+          this.uploading = true
         }, (err) => {
           console.log(err)
           this.uploading = false
