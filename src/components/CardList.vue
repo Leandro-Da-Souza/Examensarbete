@@ -6,8 +6,7 @@
             </li>
         </ul>
         <div class="bullet-container">
-            <div class="bullet" v-for="(card, index) in cards" :key="index" @click="changeImage(index)" :class="index == currentIndex ? 'active-bullet' : ''">
-            </div>
+            <div class="bullet" v-for="(card, index) in cards" :key="index" @click="changeImage(index)" :class="index == currentIndex ? 'active-bullet' : ''"></div>
         </div>
     </div>
 </template>
@@ -23,7 +22,7 @@ export default {
     data() {
         return {
             cards: [],
-            currentIndex: 1,
+            currentIndex: 0,
             touch: {
                 startX: 0,
                 endX: 0
@@ -85,21 +84,26 @@ export default {
 <style scoped lang="scss">
 @import '../variables';
     .card-list {
+        overflow: hidden;
         display: flex;
         width: 100%;
         align-items: center;
         justify-content: center;
         flex-direction: column;
         ul {
+            //overflow: hidden;
+            background: transparent;
             display: flex;
-            overflow: hidden;
+            align-items: center;
             list-style-type: none;
-            width: 100%;
             margin-bottom: 20px;
+            width: 18.5rem;
+            
             li {
+                background: transparent;
                 margin-bottom: 12px;
                 .card{
-                    margin: 0rem 0.5rem;
+                   //margin-left: 2rem;
                 }
             }
         }
@@ -108,6 +112,7 @@ export default {
             display: flex;
             justify-content: center;
             align-items: center;
+            z-index: 1;
             .bullet {
                 width: 10px;
                 margin: 10px;
@@ -123,6 +128,10 @@ export default {
             }
         }
     }
-   
+    @media screen and (max-width: $md) {
+        .card-list{
+            //width: 22rem;
+        }
+    }
 
 </style>

@@ -16,7 +16,7 @@
             Förutom möjligheten att vi kan reglera storlek och form på din häck, så blir de klippta häckarna framförallt tätare än de friväxande.
             Det kan finnas lagkrav på din häck, är det risk att häcken skymmer sikten vid t.ex vägkorsning eller utfart bör man kontakta sin kommun och fråga om vilken höjd häcken max får ha. Är du osäker så hjälper vi dig!"
             />   
-            <Accordion class="accordion" title="Trädgårdsdesign" content="Trädgårdsdesign"/>
+            <Accordion class="accordion" title="Trädgårdsdesign" content="En trädgårdsdesigner kan hjälpa er att hitta bra rörelsemönster i trädgården, hur man ska tänka runt sittplatser, hur trädgården får samhörighet med huset och hur uteplatser blir en naturlig del av trädgården. "/>
         </div>
     </div>
 </div>
@@ -45,7 +45,7 @@ export default {
 #services{
     height: 100%;
     padding-top: 6rem;
-    margin: 0 2rem;
+    margin: 0 2rem -2rem 2rem;
     h2 {
         color: $global-font-color;
         text-align: center;

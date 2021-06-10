@@ -76,10 +76,10 @@ export default {
 
 <style scoped lang="scss">
 @import '../variables';
-
     #contact{
-        margin-top: 6rem;
-        height: 80vh;
+        height: 100vh;
+        padding-top: 6rem;
+        position: absolute;
         .contact-container {
             margin: 0 2rem;
             h2 {
@@ -103,13 +103,14 @@ export default {
                 width: 100%;
                 input[type="text"], 
                 input[type="email"] {
-                    width: 60vw;
-                    height: 2.5rem;
-                    margin: 10px 0;
+                    background-color: #fff;
                     border-radius: 1.25rem;
                     border: none;
                     box-shadow: 2px 4px 6px rgba(0,0,0,0.25);
+                    height: 2.5rem;
+                    margin: 10px 0;
                     padding: 1rem;
+                    width: 60vw;
                     &:active, 
                     &:focus, 
                     &:hover{
@@ -117,6 +118,7 @@ export default {
                     }
                 }
                 textarea {
+                    background-color: #fff;
                     border: none;
                     border-radius: 1.25rem;
                     box-shadow: 2px 4px 6px rgba(0,0,0,0.25);
@@ -153,7 +155,7 @@ export default {
     }
     @media screen and (min-width: $sm) {
         #contact{
-            margin-top: 6rem;
+            //padding-top: 6rem;
         .contact-container {
             margin: 0 3rem;
             h2{

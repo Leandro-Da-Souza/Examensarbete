@@ -174,7 +174,7 @@ export default {
       background-color: rgba(0,0,0,0.4);
       position: absolute;
       width: 100%;
-      height: 100%;
+      height: 100vh;
       z-index: 100;
       left: 0;
       top: 0;

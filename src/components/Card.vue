@@ -18,6 +18,7 @@ export default {
 <style scoped lang="scss">
 @import '../variables';
     .card {
+        background-color: #fff;
         width: 18rem;
         height: 23rem;
         box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
@@ -25,6 +26,7 @@ export default {
         flex-direction: column;
         align-items: center;
         border-radius: 1.9rem;
+        //position: relative;
         img {
             margin: 40px 0 0 0;
             width: 80%;
@@ -38,8 +40,10 @@ export default {
         }
     }
     .active-card {
-        width: 18rem;
-        height: 23.5rem;
+        //margin-left: 8rem;
+        //position: absolute;
+        width: 18.5rem;
+        height: 24rem;
         box-shadow: 0px 7px 7px rgba(0,0,0,0.35);
         transition: all 0.5s ease;  
     }
@@ -48,6 +52,7 @@ export default {
         .card {
             width: 22rem;
             height: 30rem;
+            margin: 0rem 1rem;
             img {
                 width: 80%;
                 height: 25vh;

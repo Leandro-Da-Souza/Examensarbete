@@ -19,8 +19,14 @@ export default {
 @import '../variables';
     #references {
         height: 100%;
-        width: 100vw;
+        width: 100%;
         padding-top: 6rem;
+        margin-bottom: -2rem;
+        //overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
         h2 {
             text-align: center;
             font-weight: normal;
