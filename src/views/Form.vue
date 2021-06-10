@@ -163,9 +163,6 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    @media screen and (min-width: 745px) {
-      display: flex;
-    }
     h2 {
       color: #272727;
       text-align: center;
