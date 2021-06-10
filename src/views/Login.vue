@@ -8,7 +8,12 @@
         <form class="form-container" @submit.prevent="handleSubmit">
             <input type="text" name="username" v-model="username" placeholder="Användarnamn">
             <span v-if="error.username">användarnamn finns ej</span>
-            <input type="password" name="password" v-model="password" placeholder="Lösenord">
+            <input 
+            type="password" 
+            name="password" 
+            v-model="password" 
+            placeholder="Lösenord"
+            >
             <span v-if="error.password">lösenord finns ej</span>
             <button type="submit" class="btn">LOGGA IN</button>
         </form>

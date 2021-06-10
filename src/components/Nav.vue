@@ -123,7 +123,7 @@ export default {
             flex-direction: column;
             align-items: flex-start !important;
             justify-content: center !important;
-            transform: translateX(100%);
+            transform: translateY(100%);
             transition: all 0.5s ease-in;
             padding: 0 1.8rem;
             z-index: -2;
@@ -142,7 +142,7 @@ export default {
             }
         }
         .active-nav{
-            transform: translateX(0%);
+            transform: translateY(0%);
         }   
         .hamburger-icon{
             background: none;
