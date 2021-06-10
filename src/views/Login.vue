@@ -8,7 +8,12 @@
         <form class="form-container" @submit.prevent="handleSubmit">
             <input type="text" name="username" v-model="username" placeholder="Användarnamn">
             <span v-if="error.username">användarnamn finns ej</span>
-            <input type="password" name="password" v-model="password" placeholder="Lösenord">
+            <input 
+            type="password" 
+            name="password" 
+            v-model="password" 
+            placeholder="Lösenord"
+            >
             <span v-if="error.password">lösenord finns ej</span>
             <button type="submit" class="btn">LOGGA IN</button>
         </form>
@@ -74,15 +79,22 @@ export default {
         .form-container {
             display: flex;
             flex-direction: column;
-            input[type="text"], input[type="password"] {
+            input[type="text"], 
+            input[type="password"] {
                 width: 250px;
                 height: 36px;
                 margin: 14px 0;
                 border-radius: 20px;
                 border: none;
                 text-indent: 15px;
-                box-shadow: 2px 4px 6px rgba(0,0,0, 0.25)
+                box-shadow: 2px 4px 6px rgba(0,0,0, 0.25);
+                &:active, 
+                &:focus, 
+                &:hover{
+                    outline: none;
+                }
             }
+           
             span {
                 display: inline;
                 font-size: 0.8rem;
