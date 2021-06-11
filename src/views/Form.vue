@@ -127,22 +127,22 @@ export default {
 
       if(!this.currentUser) {
         this.handleStatus('något gick fel, testa att logga in och ut', '#FF9494') 
-        return
+      } else {
+        task.on('state_changed', () => {
+            this.uploading = true
+          }, (err) => {
+            console.log(err)
+            this.uploading = false
+            this.handleStatus('något gick fel, kontakta IT','#FF9494')
+          }, async () => {
+            const url = await storageRef.getDownloadURL()
+            collectionRef.push({name: this.file.name, img: url, description: this.imgtext, user: this.currentUser});
+            this.uploading = false  
+            this.imgtext = ""
+            this.file = ''
+            this.handleStatus('Din referens är nu publicerad', '#86a687')
+          })
       }
-      task.on('state_changed', () => {
-          this.uploading = true
-        }, (err) => {
-          console.log(err)
-          this.uploading = false
-          this.handleStatus('något gick fel, kontakta IT','#FF9494')
-        }, async () => {
-          const url = await storageRef.getDownloadURL()
-          collectionRef.push({name: this.file.name, img: url, description: this.imgtext, user: this.currentUser});
-          this.uploading = false  
-          this.imgtext = ""
-          this.file = ''
-          this.handleStatus('Din referens är nu publicerad', '#86a687')
-        })
     }
   },
   mounted() {
