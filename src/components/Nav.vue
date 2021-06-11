@@ -91,7 +91,7 @@ export default {
                 font-size: 1.2rem;
                 text-decoration: none;
                 list-style: none;
-                margin: 0 2rem 0 0;
+                margin: 0 2rem 0rem 0;
                 white-space: nowrap;
             }
             .log-in{
@@ -129,23 +129,21 @@ export default {
         }
         .nav-links{
             position: absolute;
-            right: 0rem;
             height: 100vh;
             width: 100%;
             top: 0rem;
             background-color: $global-green-color;
             flex-direction: column;
-            align-items: flex-start !important;
             justify-content: center !important;
             transform: translateY(100%);
             transition: all 0.5s ease-in;
-            padding: 0 1.8rem;
+            padding: 0 2rem;
             z-index: -2;
             a{
                 border-bottom: solid 2px rgba(255, 255, 255, 0.3) !important;
                 color: $global-bg-color !important;
                 font-size: 1.8rem !important;
-                padding:  0 3rem;
+                padding: 1.5rem 0rem;
                 margin: 0rem !important;
                 width: 100%;
             }
