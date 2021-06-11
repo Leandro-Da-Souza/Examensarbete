@@ -1,7 +1,7 @@
 <template>
     <div class="nav-container">
         <div class="nav">
-            <a class="logo" @click="scrollToHome()">
+            <a class="logo" @click="scrollToHome(), showMenu = false, burgerAni = false">
                 <img src="@/assets/Logo.svg" alt="logo"/>
             </a>
 
