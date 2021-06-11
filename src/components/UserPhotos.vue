@@ -94,6 +94,7 @@ export default {
       display: flex;
       list-style-type: none;
       justify-items: center;
+      flex-wrap: wrap;
       align-items: center;
       padding-bottom: 3rem;
       width: 100%;
@@ -109,6 +110,7 @@ export default {
         justify-items: center;
         align-items: flex-start;
         flex-direction: column;
+        margin-bottom: 1rem;
         i{
           background: transparent;
           padding: 0.4rem 0;
